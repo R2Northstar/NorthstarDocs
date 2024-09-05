@@ -1,38 +1,33 @@
 # Getting Started
 
-Northstar supports the creation of many user mods. This guide will teach
-you the basics of modding to get you started.
+Northstar supports the creation of many user mods. This guide will teach you the basics
+of modding to get you started.
 
-Check out the `usage`  section for further
-information, including `installation` .
+Check out the `usage`  section for further information, including
+`installation` .
 
 ## Basics
 
-This guide assumes you have basic understanding with programming and
-know how to use developer environments. Listed below are tools useful
-for exporting file formats.
+This guide assumes you have basic understanding with programming and know how to use
+developer environments. Listed below are tools useful for exporting file formats.
 
-If you'd like a more lengthy set of tutorials covering many topics.
-Look at: [NoSkill modding guide](https://noskill.gitbook.io/titanfall2/)
+If you'd like a more lengthy set of tutorials covering many topics. Look at: [NoSkill modding guide](https://noskill.gitbook.io/titanfall2/)
 
 ## Tools
 
-To get started with modding for Northstar, we recommend getting yourself
-some tools. Check out the `tools`  section
-for more information.
+To get started with modding for Northstar, we recommend getting yourself some tools.
+Check out the `tools`  section for more information.
 
 ## Quick Start
 
-In order to get started with making your mod, create a folder in
-`R2Northstar/mods`. While it isn't required, it is best practise by mod
-authors to follow the naming scheme `Author.ModName`, such as
-`Northstar.Client`.
+In order to get started with making your mod, create a folder in `R2Northstar/mods`.
+While it isn't required, it is best practise by mod authors to follow the naming scheme
+`Author.ModName`, such as `Northstar.Client`.
 
-After making this folder, inside it add a folder named `mod` and a file
-named `mod.json`.
+After making this folder, inside it add a folder named `mod` and a file named
+`mod.json`.
 
-Provided is a template `mod.json`, for a detailed list of values read
-the `cheatsheet` 
+Provided is a template `mod.json`, for a detailed list of values read the `cheatsheet` 
 
 ``` json
 {
@@ -46,11 +41,10 @@ the `cheatsheet`
 }
 ```
 
-Inside the `mod` folder, existing files found in the engine's virtual
-file system will be overwritten and new files can be added. If you need
-to define new Squirrel files `(.nut/.gnut)` they *must* be declared in
-the `"Scripts"` array in `mod.json`. An example for this
-might be:
+Inside the `mod` folder, existing files found in the engine's virtual file system will
+be overwritten and new files can be added. If you need to define new Squirrel files
+`(.nut/.gnut)` they *must* be declared in the `"Scripts"` array in `mod.json`. An
+example for this might be:
 
 ``` json
 "Scripts": [
@@ -73,19 +67,19 @@ might be:
 ]
 ```
 
-`"Path"` indicates where the script is, `"RunOn"` is the Squirrel VM
-context (see `../native/sqvm` ) as an
-expression, and `"ClientCallback"` and `"ServerCallback"` specify a
-function call that can be `"Before"` and/or `"After"` map-spawn.
+`"Path"` indicates where the script is, `"RunOn"` is the Squirrel VM context (see
+`../native/sqvm` ) as an expression, and `"ClientCallback"` and
+`"ServerCallback"` specify a function call that can be `"Before"` and/or `"After"`
+map-spawn.
 
 ## Detailed `mod.json` architecture
 
-Located at your mod's root folder, the `mod.json` file is the
-entrypoint of your mod; it contains human-readable information about it,
-which scripts to load, and a bunch of interesting stuff.
+Located at your mod's root folder, the `mod.json` file is the entrypoint of your mod;
+it contains human-readable information about it, which scripts to load, and a bunch of
+interesting stuff.
 
-This guide will dig into each of the possible `mod.json` fields. Please
-note that `mod.json` keys must start with an uppercase letter.
+This guide will dig into each of the possible `mod.json` fields. Please note that
+`mod.json` keys must start with an uppercase letter.
 
 This is what a well-formatted `mod.json` looks like:
 
@@ -122,8 +116,8 @@ This is what a well-formatted `mod.json` looks like:
 ```
 
 !!! note
-    The real `Northstar.CustomServers` mod contains more convars and scripts, some have been removed for the readability of the example.
-
+    The real `Northstar.CustomServers` mod contains more convars and scripts, some
+    have been removed for the readability of the example.
 
 ### Name and description
 
@@ -131,46 +125,42 @@ Those ones are pretty self-explanatory. Both fields are used by
 Northstar itself to display in-game information about your mod in the
 main screen `Mods` menu.
 
-Best pratice for your mod's name is to use the `Author.ModName`
-convention.
+Best pratice for your mod's name is to use the `Author.ModName` convention.
 
 ### Version
 
-This field specifies version of your mod using `X.Y.Z` scheme; this
-field must be updated each time you release a new version of your mod.
+This field specifies version of your mod using `X.Y.Z` scheme; this field must be
+updated each time you release a new version of your mod.
 
-Common use is to increase *Z* when you publish a fix (*e.g.* `1.5.0` to
-`1.5.1`), and increase *Y* when you release new features (*e.g.* `1.5.1`
-to `1.6.0`).
+Common use is to increase *Z* when you publish a fix (*e.g.* `1.5.0` to `1.5.1`),
+and increase *Y* when you release new features (*e.g.* `1.5.1` to `1.6.0`).
 
 Best practise is to follow semantic versioning (https://semver.org/).
 
 ### LoadPriority
 
-This field defines the order in which all mods will be loaded by
-Northstar. For example, a mod with `"LoadPriority": 1` will be loaded
-after a mod with `"LoadPriority": 0`.
+This field defines the order in which all mods will be loaded by Northstar. For example,
+a mod with `"LoadPriority": 1` will be loaded after a mod with `"LoadPriority": 0`.
 
-If your mod uses code from another mod, make sure to set a greater
-LoadPriority than the mod you're using code from.
+If your mod uses code from another mod, make sure to set a greater LoadPriority than the
+mod you're using code from.
 
 ### ConVars
 
-This field lists configuration variables, that can be set by servers
-owners to modify behaviour of your mod.
+This field lists configuration variables, that can be set by servers owners to modify
+behaviour of your mod.
 
-Each configuration variable must have a `"Name"` and a `"DefaultValue"`.
-ConVars can also have an optional `"Flags"` field which specifies
-special behaviour and an optional `"HelpString"` field which specifies
-the usage of the ConVar which can be view in-game by running
+Each configuration variable must have a `"Name"` and a `"DefaultValue"`. ConVars can
+also have an optional `"Flags"` field which specifies special behaviour and an
+optional `"HelpString"` field which specifies the usage of the ConVar which can be view in-game by running
 `help <convar>`.
 
-You can access configuration variables from squirrel code using
-`GetConVarInt`, `GetConVarFloat`, `GetConVarBool` or `GetConVarString`
-calls.
+You can access configuration variables from squirrel code using `GetConVarInt`,
+`GetConVarFloat`, `GetConVarBool` or `GetConVarString` calls.
 
 !!! warning
-    No matter the type of your variables, they have to be JSON strings, otherwise game won't start!
+    No matter the type of your variables, they have to be JSON strings, otherwise game
+    won't start!
 
 #### Example
 
@@ -193,9 +183,8 @@ I can setup the `ns_private_match_countdown_length` variable in my
 `R2Northstar/mods/Northstar.CustomServers/mod/cfg/autoexec_ns_server.cfg`
 configuration file.
 
-When starting a match, `Northstar.CustomServers` mod will retrieve the
-configuration variable value, or its default value if it hasn't been
-specified in configuration file:
+When starting a match, `Northstar.CustomServers` mod will retrieve the configuration
+variable value, or its default value if it hasn't been specified in configuration file:
 
 ``` 
 // start countdown
@@ -209,8 +198,8 @@ SetUIVar( level, "gameStartTime", Time() + GetConVarFloat( "ns_private_match_cou
 
 #### Flags
 
-You can assign flags to configuration variables; to use several flags at
-once, just add their values.
+You can assign flags to configuration variables; to use several flags at once, just add
+their values.
 
 |Name|Value|Description|
 |----|-----|-----------|
@@ -245,14 +234,13 @@ once, just add their values.
 |FCVAR_CLIENTCMD_CAN_EXECUTE|1073741824|IVEngineClient::ClientCmd is allowed to execute this command. Note: IVEngineClient::ClientCmd_Unrestricted can run any client command.|
 
 
-
 !!! note
-    Some flags have been skipped due to them being generally useless unless you have very specific requirements.
+    Some flags have been skipped due to them being generally useless unless you have
+    very specific requirements.
 
 ### Scripts
 
-The scripts field lets you declare an array of Squirrel files to import
-into your mod.
+The scripts field lets you declare an array of Squirrel files to import into your mod.
 
 Each script entry must have a \"Path\" value and a \"RunOn\" value.
 
@@ -279,13 +267,12 @@ Each script entry must have a \"Path\" value and a \"RunOn\" value.
 
 #### Path
 
-Path of the Squirrel file to import, without `mod/scripts/vscripts`
-prefix (that's where your script files should go).
+Path of the Squirrel file to import, without `mod/scripts/vscripts` prefix (that's
+where your script files should go).
 
 #### RunOn
 
-A boolean expression which tells the game when and in which context to
-compile the script.
+A boolean expression which tells the game when and in which context to compile the script.
 
 
 |Name|Description|
@@ -299,7 +286,6 @@ compile the script.
 |LOBBY|True in mp_lobby. (Server and client VMs only)|
 |MAP_mp_box|True if the given map name is being loaded|
 |GAMEMODE_at|True if the given game mode is being loaded|
-
 
 `CLIENT && !LOBBY` - Compiles on client and not in the lobby. So during
 actual singeplayer and multiplayer gameplay.
@@ -319,6 +305,7 @@ multiplayer only when the `aitdm` gamemode is set. ( `aitdm` is
 attrition which is multiplayer only so this script only compiles on
 multiplayer )
 
+
 #### ClientCallback / ServerCallback
 
 Specify methods that will be called before/after map spawn.
@@ -327,8 +314,9 @@ Specify methods that will be called before/after map spawn.
 
 This field is an array listing localisation files relative paths.
 
-For more info about localisation works on Northstar, read the
-`localisation`  section.
+For more info about localisation works on Northstar, read the `localisation`
+section.
 
 !!! note
+
     This project is under active development.
