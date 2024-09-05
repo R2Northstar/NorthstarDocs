@@ -1,6 +1,6 @@
 # Crosshair Modding
 
-Example Mod:
+Example Mod: 
 [Custom.Crosshairs](https://github.com/MysteriousRSA/Custom.Crosshairs)
 
 ## How To Modify Crosshairs:
@@ -22,41 +22,40 @@ Example Mod:
 }
 ```
 
-3: change \"ui/crosshair_alternator\" to your desired crosshair
+3: change "ui/crosshair_alternator" to your desired crosshair
 
 ## Overlapping Crosshairs
 
-It is possible to combine crosshairs by modifying the
-.txt *mp_weapon used to be here*
+It is possible to combine crosshairs by modifying the `mp_weapon_[Desired
+Weapons].txt`
 
 **Below is an example of combining the Alternator and R201 crosshairs
 into one**
 
-```    WeaponData
-                
-                    active_crosshair_count              "2" //Amount of crosshairs you want to use
+``` 
+   WeaponData
+   {
+       active_crosshair_count              "2" //Amount of crosshairs you want to use
 
-                    RUI_CrosshairData
-                    {
-                        Crosshair_1                                                                     
-                        {
-                            "ui"                        "ui/crosshair_alternator"   
-                        }                                                                               
-                        Crosshair_2                                                                     
-                        {
-                            "ui"                        "ui/crosshair_tri"          
-                        }                                                                              
-                    }
-                
+       RUI_CrosshairData
+       {
+           Crosshair_1                                                                     
+           {
+               "ui"                        "ui/crosshair_alternator"   
+           }                                                                               
+           Crosshair_2                                                                     
+           {
+               "ui"                        "ui/crosshair_tri"          
+           }                                                                              
+       }
+   }
 ```
 
-**To add more crosshairs add another Crosshair_X following the formating
-in the script above.**
+**To add more crosshairs add another Crosshair\_\ X following the
+formating in the script above.**
 
 !!! note
-
-The limit for this seems to be 4 Crosshairs onscreen at once
-::::
+    The limit for this seems to be 4 Crosshairs onscreen at once
 
 ## How the script above appears:
 
@@ -64,9 +63,12 @@ The limit for this seems to be 4 Crosshairs onscreen at once
 
 ## Adjust Crosshair Spread?
 
-| Simply add the following line below the \"ui\" line
-| `"base_spread"               "3.0"`
-| Below the \"ui\" line, Like this:
+Simply add the following line below the  "ui" line
+```
+`"base_spread"               "3.0"`
+```
+Below the "ui" line, Like this:
+
 ```
     {   
        RUI_CrosshairData
@@ -79,30 +81,29 @@ The limit for this seems to be 4 Crosshairs onscreen at once
        }
     }
 ```
--   This only affects the visual spread of the crosshair, not the actual
-    bullet spread. Positive Values increase spread while negative
-    decrease it. By default it is based on the weapon\'s own stats.
+
+* This only affects the visual spread of the crosshair, not the actual bullet spread. Positive Values increase spread while negative decrease it. By default it is based on the weapon's own stats.
 
 ## No Crosshair?
 ```
-    WeaponData
-    {   
-        RUI_CrosshairData
-        {
-            Crosshair_1 
-            {
-                "ui"                        "ui/crosshair_sniper_amped" //This means NO crosshair
-            }
-        }
-    }
+   WeaponData
+   {   
+       RUI_CrosshairData
+       {
+           Crosshair_1 
+           {
+               "ui"                        "ui/crosshair_sniper_amped" //This means NO crosshair
+           }
+       }
+   }
 ```
+
 ## Crosshair Index:
 
 These are the available crosshairs in-game, along with their in-game
 reference:
 
-![Crosshair
-examples](https://github.com/Riccorbypro/Custom.Crosshairs/raw/main/assets/crosshairs.png)
+![Crosshair examples](https://github.com/Riccorbypro/Custom.Crosshairs/raw/main/assets/crosshairs.png)
 
 Crosshair images are taken from the modding guide on
 https://noskill.gitbook.io/titanfall2/
@@ -115,16 +116,10 @@ https://noskill.gitbook.io/titanfall2/
 
 ### Extra Info
 
--   As with any mod, it is recommended to test this out in a private
-    match first. Save any changes you made to the desired weapon\'s file
-    and type `reload` in your console
+* As with any mod, it is recommended to test this out in a private match first. Save any changes you made to the desired weapon's file and type `reload` in your console
 
--   
-
-    Keep in mind that some weapons have animated or dynamic crosshairs. Weapons like the Charge Rifle, Cold War, Frag Grenade, etc\... have custom animations for their crosshairs. which can cause weirdness or jank when used on other weapons or when using other crosshairs on them.
-
-    :   -   Animated weapons like the Charge rifle will work with
-            animated crosshairs like `ui/crosshair_titan_sniper`
+* Keep in mind that some weapons have animated or dynamic crosshairs. Weapons like the Charge Rifle, Cold War, Frag Grenade, etc... have custom animations for their crosshairs. which can cause weirdness or jank when used on other weapons or when using other crosshairs on them. 
+   * Animated weapons like the Charge rifle will work with animated crosshairs like `ui/crosshair_titan_sniper`
 
 Thank you to `Cpone#0001` and `Nixie#8251` from the [Northstar
 Discord](https://northstar.tf/discord) for helping me figure this out
