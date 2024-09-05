@@ -1,7 +1,6 @@
 # Creating a custom Menu
 
-This tutorial will explain how to create a mod that adds a new menu
-that\'s viewable by a footer in the main menu.
+This tutorial will explain how to create a mod that adds a new menu that's viewable by a footer in the main menu.
 
 ## Setup
 
@@ -28,8 +27,7 @@ Then create `custom_menu.nut` in `./mod/scripts/vscripts/ui`.
 
 ## Minimal Example
 
-Create `AddCustomMenu` in `custom_menu.nut` like this and make it
-global:
+Create `AddCustomMenu` in `custom_menu.nut` like this and make it global:
 
 ``` 
 global function AddCustomMenu
@@ -40,17 +38,11 @@ void function AddCustomMenu()
 }
 ```
 
-`AddCustomMenu` will get called when the UI vm is initializing and
-instantiate your menu. You can access your menu with
-`GetMenu( "CustomMenu" )` after it has been initialized.
+`AddCustomMenu` will get called when the UI vm is initializing and instantiate your menu. You can access your menu with `GetMenu( "CustomMenu" )` after it has been initialized.
 
-Next, create the file that defines the layout of your menu. It\'s
-already referenced in the above code at
-`$"resource/ui/menus/custommenu.menu"`. Create the file
-`./mod/resource/ui/menus/custommenu.menu` and paste this code in it.
+Next, create the file that defines the layout of your menu. It's already referenced in the above code at `$"resource/ui/menus/custommenu.menu"`. Create the file `./mod/resource/ui/menus/custommenu.menu` and paste this code in it.
 
-!!! dropdown
-.menu configuration
+`.menu configuration`
 
 ``` 
 resource/ui/menus/custommenu.menu
@@ -129,14 +121,10 @@ resource/ui/menus/custommenu.menu
     }
 }
 ```
-:::
 
-Now you\'ll need to define `CustomMenu_Init`. This is the function
-previously defined that contains all initializations needed for this
-menu.
+Now you'll need to define `CustomMenu_Init`. This is the function previously defined that contains all initializations needed for this menu.
 
-First, create an instantiated struct for variables that should be
-available in the scope of your custom menu script.
+First, create an instantiated struct for variables that should be available in the scope of your custom menu script.
 
 ``` 
 struct {
@@ -144,10 +132,9 @@ struct {
 } file
 ```
 
-At the moment, this struct can only contain your menu. To set it, edit
-`AddCustomMenu` like this:
+At the moment, this struct can only contain your menu. To set it, edit `AddCustomMenu` like this:
 
-``` diff
+```diff
 void function AddCustomMenu()
 {
    AddMenu( "CustomMenu", $"resource/ui/menus/custommenu.menu", CustomMenu_Init )
@@ -155,9 +142,9 @@ void function AddCustomMenu()
 }
 ```
 
-Now, define `CustomMenu_Init`. It doesn\'t need to be global.
+Now, define `CustomMenu_Init`. It doesn't need to be global.
 
-``` 
+```
 void function CustomMenu_Init()
 {
     AddMenuFooterOption( file.menu, BUTTON_B, "#B_BUTTON_BACK", "#BACK" )
@@ -168,16 +155,13 @@ This adds a footer to your menu, that allows the user to navigate back.
 
 ## Adding a footer to the Main menu
 
-Currently, there is no way to access your menu. You can open your (or
-any other menu) with `AdvanceMenu`.
+Currently, there is no way to access your menu. You can open your (or any other menu) with `AdvanceMenu`.
 
 ``` 
 AdvanceMenu( GetMenu( "CustomMenu" ) )
 ```
 
-This is useful for callbacks triggered by button presses like from
-footers. To add a footer to the Main menu, first edit your `mod.json`
-code callbacks:
+This is useful for callbacks triggered by button presses like from footers. To add a footer to the Main menu, first edit your `mod.json` code callbacks:
 
 ``` diff
 "Scripts": [
@@ -192,9 +176,7 @@ code callbacks:
 ]
 ```
 
-We need a new callback that\'s run after all menus are initialized to
-add any footers to them. Create the global function
-`AddCustomMenuFooter` in `custom_menu.nut` like this:
+We need a new callback that's run after all menus are initialized to add any footers to them. Create the global function `AddCustomMenuFooter` in `custom_menu.nut` like this:
 
 ``` 
 void function AddCustomMenuFooter()
@@ -220,12 +202,9 @@ void function AddCustomMenuFooter()
 
 ### Adding a Counter
 
-We\'ll use the button we defined earlier in the `.menu` file to increase
-a number of clicks and the label to show how often the user has clicked
-that button.
+We'll use the button we defined earlier in the `.menu` file to increase a number of clicks and the label to show how often the user has clicked that button.
 
-first, add `someLabel` and `clicks` to the `file` struct. Then define
-the label in the `AddCustomMenu` and add a callback to the button.
+first, add `someLabel` and `clicks` to the `file` struct. Then define the label in the `AddCustomMenu` and add a callback to the button.
 
 ``` diff
 struct {
@@ -245,8 +224,7 @@ void function AddCustomMenu()
 }
 ```
 
-Now you need to define the `OnSomeButtonClick` callback that\'s
-triggered when the button is activated.
+Now you need to define the `OnSomeButtonClick` callback that's triggered when the button is activated.
 
 ``` 
 void function OnSomeButtonClick( var button )
@@ -278,11 +256,9 @@ ResetButton
 }
 ```
 
-Then add a `UIE_CLICK` callback for the button. It also makes sense to
-move the code that updates the label text to it\'s own function so it
-can be reused by the reset button.
+Then add a `UIE_CLICK` callback for the button. It also makes sense to move the code that updates the label text to it's own function so it can be reused by the reset button.
 
-``` diff
+```diff
 void function AddCustomMenu()
 {
    AddMenu( "CustomMenu", $"resource/ui/menus/custommenu.menu", CustomMenu_Init )
@@ -317,13 +293,11 @@ void function OnResetButtonClick( var button )
 
 ### Resetting the Counter when the Menu is closed
 
-You can add callbacks for menu events, for example when a menu is closed
-or opened.
+You can add callbacks for menu events, for example when a menu is closed or opened.
 
-If you want to reset the counter if the menu is closed, edit
-`AddCustomMenu` like this:
+If you want to reset the counter if the menu is closed, edit `AddCustomMenu` like this:
 
-``` diff
+```diff
 void function AddCustomMenu()
 {
    AddMenu( "CustomMenu", $"resource/ui/menus/custommenu.menu", CustomMenu_Init )
@@ -340,8 +314,7 @@ void function AddCustomMenu()
 }
 ```
 
-And define the callback `OnCloseCustomMenu` to simply call
-`OnResetButtonClick`.
+And define the callback `OnCloseCustomMenu` to simply call `OnResetButtonClick`.
 
 ``` 
 void function OnCloseCustomMenu()
