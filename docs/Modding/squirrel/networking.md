@@ -1,243 +1,228 @@
 Communicating between CLIENT, UI and SERVER scripts
-~~~~~~~~~~~~~~~~~~~~~~
+\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~
 
-All VMs (``CLIENT``, ``UI``, ``SERVER``) are seperate from each other and do not share any variables, even when running on the same machine.
+All VMs (`CLIENT`, `UI`, `SERVER`) are seperate from each other and do
+not share any variables, even when running on the same machine.
 
 However, there are different interfaces to communicate between all VMs.
 
-``SERVER`` to ``CLIENT`` vm
-======================
+`SERVER` to `CLIENT` vm ======================
 
-Remote Functions
-----------------
+# Remote Functions
 
-Remote functions allow the ``SERVER`` vm to call a function from the ``CLIENT`` vm with parameters.
+Remote functions allow the `SERVER` vm to call a function from the
+`CLIENT` vm with parameters.
 
-To use remote functions, you have to make a registration on both the ``CLIENT`` and the ``SERVER`` vm with ``Remote_RegisterFunction``.
+To use remote functions, you have to make a registration on both the
+`CLIENT` and the `SERVER` vm with `Remote_RegisterFunction`.
 
-Northstar provides the 
+Northstar provides the
 
-.. cpp:function:: AddCallback_OnRegisteringCustomNetworkVars( void functionref() identifierFn)
+callback in which you can use the
 
-callback in which you can use the 
+function. It\'s not possible to register remote functions after
+`Remote_EndRegisteringFunctions` has been called. The callback exists to
+allow multiple mods to register remote vars.
 
-.. cpp:function:: Remote_RegisterFunction(string identifier)
-	
-function. It's not possible to register remote functions after ``Remote_EndRegisteringFunctions`` has been called. The callback exists to allow multiple mods to register remote vars.
+!!! warning
 
-.. warning::
 
-	You can only pass parameters of the types ``null``, ``int``, ``float`` or ``bool``.
-	
-	It is possible to communicate entities using eHandles. To get an eHandle, use the ``entity.GetEncodedEHandle()`` function. To get the corresponding entity of a handle, use ``entity ent = GetEntityFromEncodedEHandle( eHandle )``. eHandles are of type ``int``.
+You can only pass parameters of the types `null`, `int`, `float` or
+`bool`.
 
-Example
-^^^^^^^
+It is possible to communicate entities using eHandles. To get an
+eHandle, use the `entity.GetEncodedEHandle()` function. To get the
+corresponding entity of a handle, use
+`entity ent = GetEntityFromEncodedEHandle( eHandle )`. eHandles are of
+type `int`.
+:::
+
+## Example
 
 mod.json extract:
 
-.. code-block:: json
-	
-		"Scripts": [
-		{
-			"Path": "sh_spaceships.nut",
-			"RunOn": "CLIENT || SERVER", // execute the same function on both CLIENT and SERVER
-			"ClientCallback": {
-				"Before": "Spaceship_Network"
-			},
-			"ServerCallback": {
-				"Before": "Spaceship_Network"
-			}
-		},
-		{
-			// more script registrations ...
+``` json
+"Scripts": [
+{
+    "Path": "sh_spaceships.nut",
+    "RunOn": "CLIENT || SERVER", // execute the same function on both CLIENT and SERVER
+    "ClientCallback": {
+        "Before": "Spaceship_Network"
+    },
+    "ServerCallback": {
+        "Before": "Spaceship_Network"
+    }
+},
+{
+    // more script registrations ...
+```
 
 sh_spaceships.nut:
 
-The networked ``CLIENT`` function has to be global
+The networked `CLIENT` function has to be global
 
-.. code-block::
+``` 
+#if CLIENT
+global function Server_GetNetworkedVariable // make the networked function only global on CLIENT
+#endif //CLIENT
 
-	#if CLIENT
-	global function Server_GetNetworkedVariable // make the networked function only global on CLIENT
-	#endif //CLIENT
+global function Spaceship_Network // this gets executed on both CLIENT & SERVER
 
-	global function Spaceship_Network // this gets executed on both CLIENT & SERVER
+void function Spaceship_Network()
+{
+    AddCallback_OnRegisteringCustomNetworkVars( RegisterNetworkVars ) // you can only register remote functions inside of this callback
+}
 
-	void function Spaceship_Network()
-	{
-		AddCallback_OnRegisteringCustomNetworkVars( RegisterNetworkVars ) // you can only register remote functions inside of this callback
-	}
+void function RegisterNetworkVars()
+{
+    // this has to be executed on both CLIENT and SERVER, else they will be out of sync and the client disconnects
+    Remote_RegisterFunction( "Server_GetNetworkedVariable" ) // register a remote function. Note that the parameters are not declared here
+}
 
-	void function RegisterNetworkVars()
-	{
-		// this has to be executed on both CLIENT and SERVER, else they will be out of sync and the client disconnects
-		Remote_RegisterFunction( "Server_GetNetworkedVariable" ) // register a remote function. Note that the parameters are not declared here
-	}
+#if CLIENT
+void function Server_GetNetworkedVariable( int number ) // you can declare as many or few parameters as you wish
+{
+    printt("got integer", number)
+}
+#endif //CLIENT
+```
 
-	#if CLIENT
-	void function Server_GetNetworkedVariable( int number ) // you can declare as many or few parameters as you wish
-	{
-		printt("got integer", number)
-	}
-	#endif //CLIENT
+Calling the `CLIENT` function `Server_GetNetworkedVariable` on `SERVER`
+vm:
 
-Calling the ``CLIENT`` function ``Server_GetNetworkedVariable`` on ``SERVER`` vm:
+``` 
+// player: CPlayer entity that should execute the function
+// func: function identifier string
+// ...: any parameters passed to the function
+Remote_CallFunction_NonReplay( entity player, string func, ... ) // NOT reexecuted in a replay
+Remote_CallFunction_Replay( entity player, string func, ... ) // reexecuted in a replay
 
-.. code-block::
+// for the previous example, this would be a valid remote function call:
 
-	// player: CPlayer entity that should execute the function
-	// func: function identifier string
-	// ...: any parameters passed to the function
-	Remote_CallFunction_NonReplay( entity player, string func, ... ) // NOT reexecuted in a replay
-	Remote_CallFunction_Replay( entity player, string func, ... ) // reexecuted in a replay
+Remote_CallFunction_NonReplay( player, "Server_GetNetworkedVariable", RandomIntRange( 1, 100 ) )
+```
 
-	// for the previous example, this would be a valid remote function call:
+# Server to Client command callbacks
 
-	Remote_CallFunction_NonReplay( player, "Server_GetNetworkedVariable", RandomIntRange( 1, 100 ) )
+Allows the `SERVER` vm to create a `ServerToClientStringCommand` on a
+player which is linked to a Callback locally
 
-Server to Client command callbacks
-----------------------------------
+## Register a server command
 
-Allows the ``SERVER`` vm to create a ``ServerToClientStringCommand`` on a player which is linked to a Callback locally
+!!! note
 
-Register a server command
-^^^^^^^^^^^^^^^^^^^^^^^^^
+this has to be executed on the `Before` Client callback
 
-.. note:: 
-
-	this has to be executed on the ``Before`` Client callback
-
-	the formatting for the server command is like a normal console command. Arguments are seperated by spaces
+the formatting for the server command is like a normal console command.
+Arguments are seperated by spaces
+::::
 
 Register with the function clientside:
 
-.. cpp:function:: AddServerToClientStringCommandCallback( string func, void functionref( array<string> ) reference )
-	
-
 and execute with the function serverside:
 
-.. cpp:function:: ServerToClientStringCommand( entity player /*CPlayer*/, string command )
+## Example
 
+``` 
+void function MessageUtils_ClientInit()
+{
+    AddServerToClientStringCommandCallback( "ServerHUDMessageShow", ServerCallback_CreateServerHUDMessage )
+}
 
-Example
-^^^^^^^
+void function ServerCallback_CreateServerHUDMessage ( array<string> args )
+{
+    // client side command handle logic ...
+}
+```
 
-.. code-block::
+### `SERVER` to `UI` vm
 
-	void function MessageUtils_ClientInit()
-	{
-		AddServerToClientStringCommandCallback( "ServerHUDMessageShow", ServerCallback_CreateServerHUDMessage )
-	}
+> Given a player, function name, and optional parameters, call function
+> in UI script. Allowed var types are null, bool, int, and float.
 
-	void function ServerCallback_CreateServerHUDMessage ( array<string> args )
-	{
-		// client side command handle logic ...
-	}
+## Example
 
-``SERVER`` to ``UI`` vm
-=======================
+``` 
+Remote_CallFunction_UI( player, "ScriptCallback_UnlockAchievement", achievementID )
+```
 
-.. cpp:function:: Remote_CallFunction_UI( entity player, string functionName, ... )
+### `CLIENT` to `SERVER` vm
 
-	Given a player, function name, and optional parameters, call function in UI script. Allowed var types are null, bool, int, and float.
+# Client to Server command callbacks
 
-Example
-^^^^^^^
+Register a client command callback serverside with
 
-.. code-block::
+`player` is the player that called the command clientside. The callback
+function should return `true` if the command was accepted and `false` if
+it was invalid.
 
-	Remote_CallFunction_UI( player, "ScriptCallback_UnlockAchievement", achievementID )
+The `CLIENT` vm can execute commands with the function:
 
-``CLIENT`` to ``SERVER`` vm
-===========================
+These will be handled by the `SERVER` if the command is registered.
 
-Client to Server command callbacks
-----------------------------------
+# ClientCommand Notifications
 
-Register a client command callback serverside with 
+Since version 1.5 mods can receive notifications when a client command
+has been handled. This is different from
+`AddClientCommandCallback`
 
-.. cpp:function:: AddClientCommandCallback( string command, bool functionref( entity player /*CPlayer*/, array<string> args ) callback )
+> Example usage with the `PrivateMatchLaunch` clientcommand
+>
+> ```
+> void function init(){
+>     AddClientCommandNotifyCallback("PrivateMatchLaunch", started)
+> }
+>
+> void function started(entity player, array<string> args){
+>     print(player + " started the match")
+> }
+> ```
 
-``player`` is the player that called the command clientside. The callback function should return ``true`` if the command was accepted and ``false`` if it was invalid.
+Please refer to `list_client_commands`  for
+a list of native client commands you could catch.
 
-The ``CLIENT`` vm can execute commands with the function:
+### `CLIENT` to `UI` vm
 
-.. cpp:function:: player.ClientCommand( string command )
-	
-These will be handled by the ``SERVER`` if the command is registered.
+Create a global function in the `UI` vm and call it in the `CLIENT` vm
+with the function:
 
-ClientCommand Notifications
----------------------------
+You can also pass parameters to the function. `identifier` is the name
+of the function you want to call.
 
-Since version 1.5 mods can receive notifications when a client command has been handled. This is different from :cpp:func:`AddClientCommandCallback`
+## Example
 
-.. cpp:function:: void AddClientCommandNotifyCallback( string, void functionref( entity, array<string>))
+``` 
+#if UI
+global function CallMe
 
-    Example usage with the :doc:`PrivateMatchLaunch` clientcommand
+void function CallMe( int a, int b )
+{
+    printt( a + b )
+}
+#elseif CLIENT
+RunUIScript( "CallMe", 1, 2 ) // 3
+#endif
+```
 
-    .. code-block::
+### `UI` to `CLIENT` vm
 
-        void function init(){
-            AddClientCommandNotifyCallback("PrivateMatchLaunch", started)
-        }
+Create a global function in the `CLIENT` vm and call it in the `UI` vm
+with the function:
 
-        void function started(entity player, array<string> args){
-            print(player + " started the match")
-        }
+You can also pass parameters to the function. `identifier` is the name
+of the function you want to call.
 
-Please refer to :ref:`list_client_commands` for a list of native client commands you could catch.
+## Example
 
-``CLIENT`` to ``UI`` vm
-=======================
+``` 
+#if CLIENT
+global function CallMe
 
-Create a global function in the ``UI`` vm and call it in the ``CLIENT`` vm with the function:
-
-.. cpp:function:: RunUIScript( string identifier, ... ) 
-
-
-You can also pass parameters to the function. ``identifier`` is the name of the function you want to call.
-
-Example
-^^^^^^^
-
-.. code-block::
-
-	#if UI
-	global function CallMe
-	
-	void function CallMe( int a, int b )
-	{
-		printt( a + b )
-	}
-	#elseif CLIENT
-	RunUIScript( "CallMe", 1, 2 ) // 3
-	#endif
-
-``UI`` to ``CLIENT`` vm
-=======================
-
-Create a global function in the ``CLIENT`` vm and call it in the ``UI`` vm with the function:
-
-.. cpp:function:: RunClientScript( string identifier, ... )
-
-
-You can also pass parameters to the function. ``identifier`` is the name of the function you want to call.
-
-Example
-^^^^^^^
-
-.. code-block::
-
-	#if CLIENT
-	global function CallMe
-	
-	void function CallMe( int a, int b )
-	{
-		printt( a + b )
-	}
-	#elseif UI
-	RunClientScript( "CallMe", 1, 2 ) // 3
-	#endif
-
-
+void function CallMe( int a, int b )
+{
+    printt( a + b )
+}
+#elseif UI
+RunClientScript( "CallMe", 1, 2 ) // 3
+#endif
+```

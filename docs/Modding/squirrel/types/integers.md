@@ -1,45 +1,45 @@
-Integers
-========
+# Integers
 
-Integers in Squirrel are 32 bit signed integers and can be any whole number (in the 32 bit confines).
+Integers in Squirrel are 32 bit signed integers and can be any whole
+number (in the 32 bit confines).
 
-An Integer is a primitive type with a default value of ``0``.
+An Integer is a primitive type with a default value of `0`.
 
-The type keyword for Integers is ``int``.
+The type keyword for Integers is `int`.
 
-Literals
---------
+## Literals
 
 Integers can be represented with multiple different literals.
 
-- Decimal
-  
-  Regular decimal letters will always be an integer decimal literal.
-  .. code-block::
+-   Decimal
 
-    int n = 123
+    Regular decimal letters will always be an integer decimal literal.
+    .. code-block:
 
-- Hexadecimal
+        int n = 123
 
-  If any number is prefixed with ``0x``, it is a hexadecimal literal.
+-   Hexadecimal
 
-  .. code-block::
+    If any number is prefixed with `0x`, it is a hexadecimal literal.
 
+    ``` 
     int n = 0x0012 // 18
+    ```
 
-- Octal
-  
-  Numbers starting with a ``0`` are octal literals.
+-   Octal
 
-  .. code-block::
+    Numbers starting with a `0` are octal literals.
 
+    ``` 
     int n = 075 // 61
+    ```
 
-- Chars
+-   Chars
 
-  A single letter or escaped sequence are character literals. Their value is the ASCII value of the letter.
+    A single letter or escaped sequence are character literals. Their
+    value is the ASCII value of the letter.
 
-  .. code-block::
-
+    ``` 
     int a = 'a' // 97
     int newline = '\n' // 10
+    ```
