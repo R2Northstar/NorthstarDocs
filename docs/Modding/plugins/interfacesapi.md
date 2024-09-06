@@ -2,20 +2,14 @@
 
 the plugins system now use source interfaces.
 
-The launcher exposes almost everything required by plugins in interfaces
-that allow for backwards compatibility. The only thing that\'s passed to
-a plugin directly is the northstar dll HWND and a struct of data that\'s
-different for each plugin.
+The launcher exposes almost everything required by plugins in interfaces that allow for backwards compatibility.
+The only thing that's passed to a plugin directly is the northstar dll HWND and a struct of data that's different for each plugin.
 
-Plugins are required to expose a
-`void* CreateInterface(const char* name, int* status)` function to share
-their own interfaces. The launcher loads the `PluginId` interface from
-the plugin to query info such as it\'s name.
+Plugins are required to expose a `void* CreateInterface(const char* name, int* status)` function to share their own interfaces.
+The launcher loads the `PluginId` interface from the plugin to query info such as it's name.
 
-Plugins can use the `CreateInterface` function exposed by the
-northstarDll to use northstar interfaces such as for logging. An
-interface is just an abstract class to force all functions into a
-vftable.
+Plugins can use the `CreateInterface` function exposed by the northstarDll to use northstar interfaces such as for logging.
+An interface is just an abstract class to force all functions into a vftable.
 
 ## Northstar Interfaces
 
@@ -23,7 +17,7 @@ vftable.
 
 Exposes some system functionality to plugins
 
-``` 
+```cpp
 // 32 bit
 enum LogLevel {
   INFO,
@@ -43,7 +37,7 @@ Interfaces that have to be exposed for the plugin to be loaded.
 
 ### PluginId001
 
-``` 
+```cpp
 // strings of data about the plugin itself. may be extended in the future
 // 32 bit
 enum PluginString {
@@ -64,7 +58,7 @@ i64 GetField(PluginField prop);
 
 ### PluginCallbacks001
 
-``` 
+```cpp
 struct PluginNorthstarData { HMODULE handle; };
 
 // COPY THE initData IT MAY BE MOVED AT RUNTIME
@@ -77,14 +71,13 @@ void OnLibraryLoaded(HMODULE module, const char* libraryName); // called for any
 void RunFrame(); // just runs on every frame of the game I think
 ```
 
-## What\'s an interface anyways?
+## What's an interface anyways?
 
-Interfaces are just abstract classes. So make sure the first parameter
-is always a pointer to the instance of the interface you\'re using.
+Interfaces are just abstract classes. So make sure the first parameter is always a pointer to the instance of the interface you're using.
 
 an example what NSSys001 looks like in C:
 
-``` 
+```cpp
 typedef enum {
   LOG_INFO,
   LOG_WARN,
@@ -102,5 +95,4 @@ typedef struct CSys {
 g_c_sys->vftable->log(g_c_sys, g_handle, LOG_INFO, "my balls are itching");
 ```
 
-Interfaces are created with CreateInterface that\'s exposed in another
-dll.
+Interfaces are created with CreateInterface that's exposed in another dll.
