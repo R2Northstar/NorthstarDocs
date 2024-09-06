@@ -6,7 +6,7 @@ Squirrel supports most basic control flow statements.
 
 `if` statements check if a condition evaluates to `true`.
 
-``` 
+```squirrel
 if ( expression )
  body
 ```
