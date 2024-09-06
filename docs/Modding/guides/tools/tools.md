@@ -17,8 +17,7 @@
 ### VTF & VMT
 
 - [VTFEdit](https://developer.valvesoftware.com/wiki/VTFEdit)
-- [VTF Shell Extensions](https://www.wunderboy.org/valve-hl2source-sdk-tools/#vtf_shell) -
-    [Info](https://developer.valvesoftware.com/wiki/VTF_Shell_Extensions)
+- [VTF Shell Extensions](https://www.wunderboy.org/valve-hl2source-sdk-tools/#vtf_shell) - [Info](https://developer.valvesoftware.com/wiki/VTF_Shell_Extensions)
 - [VMT Editor](https://developer.valvesoftware.com/wiki/VMT_Editor)
 
 ## Other utilities
@@ -36,6 +35,7 @@
 - [VSCodium](https://vscodium.com)
 - [Notepad++](https://notepad-plus-plus.org/downloads/)
 - [Kate](https://kate-editor.org/)
+
     - [Kate syntax highlighting for Squirrel](https://gist.github.com/CTalvio/6de535f9258cfebd71ab64d7e6af4ee6)
 
 ### Graphics / animation / color editors
@@ -53,8 +53,7 @@
 - [RGB Tool converter](http://hewmc.blogspot.fr/2012/12/rgb-to-percentage-converter.html)
 - [Color Pick Windows](https://pixelbyte.itch.io/color-pick)
 - [GIF splitter](https://ezgif.com/split)
-- [Rad Tools Bik](http://www.radgametools.com/bnkdown.htm) (needs
-    [Quicktime 7.6](https://support.apple.com/downloads/quicktime))
+- [Rad Tools Bik](http://www.radgametools.com/bnkdown.htm) (needs [Quicktime 7.6](https://support.apple.com/downloads/quicktime))
 - [TexFactory easy DDS conversion](https://otherbenji.gitlab.io/TexFactory/)
 - [Substance Painter to TF2](https://github.com/EM4Volts/tf-2_substance_maker)
 
