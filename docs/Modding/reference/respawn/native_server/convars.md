@@ -2,22 +2,42 @@
 
 ## Getters
 
-> Gets the value of a convar as a string
+!!! cpp-function "string GetConVarString( string cv )"
 
-> Gets the value of a convar as an integer
+  Gets the value of a convar as a string
 
-> Gets the value of a convar as a float
+!!! cpp-function "int GetConVarInt( string cv )"
 
-> Gets the value of a convar as a boolean
+  Gets the value of a convar as an integer
+
+!!! cpp-function "float GetConVarFloat( string cv )"
+
+  Gets the value of a convar as a float
+
+!!! cpp-function "bool GetConVarBool( string cv )"
+
+  Gets the value of a convar as a boolean
+
+!!! cpp-function "bool EverythingUnlockedConVarEnabled()"
 
 ## Setters
 
-> Sets the value of a convar with a string
+!!! cpp-function "void SetConVarString( string cv, string value )"
 
-> Sets the value of a convar with an integer
+  Sets the value of a convar with a string
 
-> Sets the value of a convar with a float
+!!! cpp-function "void SetConVarInt( string cv, int value )"
 
-> Sets the value of a convar with a boolean
+  Sets the value of a convar with an integer
 
-> Sets the value of a convar to its internal default value
+!!! cpp-function "void SetConVarFloat( string cv, float value )"
+
+  Sets the value of a convar with a float
+
+!!! cpp-function "void SetConVarBool( string cv, bool value )"
+
+  Sets the value of a convar with a boolean
+
+!!! cpp-function "void SetConVarToDefault( string cv )"
+
+  Sets the value of a convar to its internal default value
