@@ -26,13 +26,12 @@ See this example stack for reference:
 
 The Squirrel API offers several functions to push and retrieve data from the Stack.
 
-```cpp
-__int64 removeFromStack(HSquirrelVM* sqvm)
-```
+!!! cpp-function "__int64 removeFromStack(HSquirrelVM* sqvm)"
 
-!!! note
-    This function (`server.dll+0x7000`) is not available in the launcher or plugins at the moment.
-    You can open a PR if you need it now.
+    !!! note
+        This function (`server.dll+0x7000`) is not available in the launcher or plugins at the moment.
+        You can open a PR if you need it now.
 
-param `HSquirrelVM\* sqvm` - the target vm  
-pops the top item of the stack.
+    - `HSquirrelVM* sqvm` the target vm
+
+    pops the top item of the stack.
