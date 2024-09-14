@@ -11,57 +11,60 @@ The syntax of squirrel is very similar to C++ or Javascript and very easy to lea
 The programmer doesn't need to think about memory management in scripts since all objects are refcounted and the garbage collector can be invoked manually.
 
 ```squirrel
-int function fibonacci( int n )
-{
- if ( n < 2 )
-   return n
 
- return fibonacci( n - 1 ) + fibonacci( n - 2 )
-}
+   int function fibonacci( int n )
+   {
+    if ( n < 2 )
+      return n
+
+    return fibonacci( n - 1 ) + fibonacci( n - 2 )
+   }
 ```
 
 The language provides easy interfaces for coroutines and asynchronous code.
 
 ```squirrel
-void main()
-{
- thread timer( 1.0, timercallback ) 
-}
 
-void function timercallback( int iteration )
-{
- print( iteration ) 
-}
+   void main()
+   {
+    thread timer( 1.0, timercallback ) 
+   }
 
-// call the callback function every n seconds
-void function timer( float n, void functionref( int ) callback )
-{
- int iterations
- while ( true )
- {
-   wait n
-   iterations += 1
-   callback( iterations )
- }
-}
+   void function timercallback( int iteration )
+   {
+    print( iteration ) 
+   }
+
+   // call the callback function every n seconds
+   void function timer( float n, void functionref( int ) callback )
+   {
+    int iterations
+    while ( true )
+    {
+      wait n
+      iterations += 1
+      callback( iterations )
+    }
+   }
 ```
 
 Signals and Flags allow you to control code execution based on events that happen elsewhere in the code or in the ingame world.
 
 ```squirrel
-void main()
-{
- AddCallback_OnPlayerRespawned( OnPlayerRespawned )
-}
 
-void function OnPlayerRespawned( entity player )
-{
- thread CountPlayerTimeAlive( Time() ) // execute this function as threaded so we can use Signals in there
-}
+   void main()
+   {
+    AddCallback_OnPlayerRespawned( OnPlayerRespawned )
+   }
 
-void function CountPlayerTimeAlive( entity player, float time )
-{
- player.WaitSignal( "OnDestroy" ) // wait until the player dies or disconnects
- print( Time() - time ) // print how long the player was alive
-}
+   void function OnPlayerRespawned( entity player )
+   {
+    thread CountPlayerTimeAlive( Time() ) // execute this function as threaded so we can use Signals in there
+   }
+
+   void function CountPlayerTimeAlive( entity player, float time )
+   {
+    player.WaitSignal( "OnDestroy" ) // wait until the player dies or disconnects
+    print( Time() - time ) // print how long the player was alive
+   }
 ```
