@@ -118,11 +118,10 @@ Make sure you don't add any metadata as this will cause white noise to be at the
 
 This is usually because there's some metadata left in the audio. Remove it to fix this issue.
 
+
 === "Windows"
 
-    You can bulk remove it with
-    [Mp3tag](https://www.mp3tag.de/en/download.html) or individually with
-    Audacity.s1
+    You can bulk remove it with [Mp3tag](https://www.mp3tag.de/en/download.html) or individually with Audacity.
 
 === "Linux"
 
@@ -145,6 +144,7 @@ This is usually because there's some metadata left in the audio. Remove it to fi
 ## Sound Tools {#sound_tools}
 
 - Converters
+
 
 === "Windows"
 
