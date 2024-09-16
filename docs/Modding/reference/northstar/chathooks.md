@@ -297,6 +297,7 @@ With custom messages you can send chat messages at any time, to all players or t
         }
     ```
 
+
 !!! cpp-function "void Chat_ServerPrivateMessage(entity toPlayer, string text, bool whisper, bool withServerTag = true)"
 
     Sends a server message to a specific player in the chat.
