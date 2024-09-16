@@ -121,7 +121,7 @@ This is usually because there's some metadata left in the audio. Remove it to fi
 
 === "Windows"
 
-    You can bulk remove it with [Mp3tag](https://www.mp3tag.de/en/download.html) or individually with Audacity.
+      You can bulk remove it with [Mp3tag](https://www.mp3tag.de/en/download.html) or individually with Audacity.
 
 === "Linux"
 
