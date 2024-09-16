@@ -18,6 +18,7 @@ Contditons you can check for are
 These conditions can also be combined with the regular squirrel boolean expressions
 
 ```squirrel
+
     #if SERVER
     Chat_ServerBroadcast("Message from the server VM")
     #endif
