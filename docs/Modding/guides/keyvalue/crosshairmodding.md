@@ -6,33 +6,36 @@ Example Mod:
 ## How To Modify Crosshairs:
 
 1: Create the following file
-`~/Your.Mod/keyvalues/scripts/weapons/mp_weapon_[desired weapon].txt`
+``~/Your.Mod/keyvalues/scripts/weapons/mp_weapon_[desired weapon].txt``
 
 2: Put the following into the newly created .txt file:
 
-```WeaponData
-{   
-        RUI_CrosshairData
-    {
-        Crosshair_1 
-        {
-            "ui"                        "ui/crosshair_alternator" 
-        }
-    }
-}
+```
+
+   WeaponData
+   {   
+       RUI_CrosshairData
+       {
+           Crosshair_1 
+           {
+               "ui"                        "ui/crosshair_alternator" 
+           }
+       }
+   }
 ```
 
 3: change "ui/crosshair_alternator" to your desired crosshair
 
 ## Overlapping Crosshairs
 
-It is possible to combine crosshairs by modifying the `mp_weapon_[Desired
-Weapons].txt`
+It is possible to combine crosshairs by modifying the mp_weapon_[Desired
+Weapons].txt
 
 **Below is an example of combining the Alternator and R201 crosshairs
 into one**
 
-``` 
+```
+
    WeaponData
    {
        active_crosshair_count              "2" //Amount of crosshairs you want to use
@@ -64,12 +67,11 @@ formating in the script above.**
 ## Adjust Crosshair Spread?
 
 Simply add the following line below the  "ui" line
-```
-`"base_spread"               "3.0"`
-```
+``"base_spread"               "3.0"``
 Below the "ui" line, Like this:
 
 ```
+
     {   
        RUI_CrosshairData
        {
@@ -79,13 +81,15 @@ Below the "ui" line, Like this:
                "base_spread"               "3.0"   //This is a spread Multiplier, Line doesn't exist by default
            }
        }
-    }
+   }
 ```
 
 * This only affects the visual spread of the crosshair, not the actual bullet spread. Positive Values increase spread while negative decrease it. By default it is based on the weapon's own stats.
 
 ## No Crosshair?
+
 ```
+
    WeaponData
    {   
        RUI_CrosshairData
@@ -114,12 +118,15 @@ https://noskill.gitbook.io/titanfall2/
 
 ![CH2](https://user-images.githubusercontent.com/45333346/149503085-154c05b8-4a76-4d03-80aa-fe67fba1bcb1.png)
 
+
 ### Extra Info
 
-* As with any mod, it is recommended to test this out in a private match first. Save any changes you made to the desired weapon's file and type `reload` in your console
+
+* As with any mod, it is recommended to test this out in a private match first. Save any changes you made to the desired weapon's file and type ``reload`` in your console
+
 
 * Keep in mind that some weapons have animated or dynamic crosshairs. Weapons like the Charge Rifle, Cold War, Frag Grenade, etc... have custom animations for their crosshairs. which can cause weirdness or jank when used on other weapons or when using other crosshairs on them. 
-   * Animated weapons like the Charge rifle will work with animated crosshairs like `ui/crosshair_titan_sniper`
+   * Animated weapons like the Charge rifle will work with animated crosshairs like ``ui/crosshair_titan_sniper``
 
-Thank you to `Cpone#0001` and `Nixie#8251` from the [Northstar
+Thank you to ``Cpone#0001`` and ``Nixie#8251`` from the [Northstar
 Discord](https://northstar.tf/discord) for helping me figure this out
