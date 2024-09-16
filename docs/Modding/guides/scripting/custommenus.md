@@ -164,7 +164,8 @@ This adds a footer to your menu, that allows the user to navigate back.
 Currently, there is no way to access your menu. You can open your (or any other menu) with ``AdvanceMenu``.
 
 ```squirrel
-AdvanceMenu( GetMenu( "CustomMenu" ) )
+
+	AdvanceMenu( GetMenu( "CustomMenu" ) )
 ```
 
 This is useful for callbacks triggered by button presses like from footers. To add a footer to the Main menu, first edit your ``mod.json`` code callbacks:
