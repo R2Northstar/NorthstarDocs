@@ -1,7 +1,7 @@
 # Server Authentification
 
 !!! note
-    All of these functions are only exposed to the `UI` VM.
+    All of these functions are only exposed to the ``UI`` VM.
 
 These are functions required for the ingame server browser and the authorization process for the Masterserver and game servers.
 
@@ -9,26 +9,26 @@ These are functions required for the ingame server browser and the authorization
 
 !!! cpp-function "bool NSIsMasterServerAuthenticated()"
 
-    Returns `true` if the client is authenticated with the Masterserver
+    Returns ``true`` if the client is authenticated with the Masterserver
 
 !!! cpp-function "bool NSMasterServerConnectionSuccessful()"
 
-    Returns `true` if a successful connection has been established
+    Returns ``true`` if a successful connection has been established
 
 ## Game Server Authentification
 
 !!! cpp-function "void NSTryAuthWithServer( int serverIndex, string password = "" )"
 
-    Tries authing with the fetched server at `serverIndex` and the provided password
+    Tries authing with the fetched server at ``serverIndex`` and the provided password
 
 !!! cpp-function "bool NSIsAuthenticatingWithServer()"
 
-    Returns `true` if the client is currently authing with a game server
+    Returns ``true`` if the client is currently authing with a game server
 
 
 !!! cpp-function "bool NSWasAuthSuccessful()"
 
-    Returns `true` if the client successfully authed with a game server
+    Returns ``true`` if the client successfully authed with a game server
 
 !!! cpp-function "void NSConnectToAuthedServer()"
 
@@ -45,7 +45,7 @@ These are functions required for the ingame server browser and the authorization
 
 !!! cpp-function "void NSCompleteAuthWithLocalServer()"
 
-    Call this after `NSWasAuthSuccessful` returns `true` to complete the local authorization process. 
+    Call this after `NSWasAuthSuccessful` returns ``true`` to complete the local authorization process. 
 
 ## Server Information
 
@@ -55,7 +55,7 @@ These are functions required for the ingame server browser and the authorization
 
 !!! cpp-function "bool NSIsRequestingServerList()"
 
-    Returns `true` if the last request by 
+    Returns ``true`` if the last request by 
 
 !!! cpp-function "int NSGetServerCount()"
 
@@ -124,7 +124,7 @@ These are functions required for the ingame server browser and the authorization
 
     !!! cpp-var "bool requiresPassword"
 
-        If `true` an extra password is required to connect to the server. Otherwise the password is an empty string
+        If ``true`` an extra password is required to connect to the server. Otherwise the password is an empty string
     
     !!! cpp-var "string region"
 
