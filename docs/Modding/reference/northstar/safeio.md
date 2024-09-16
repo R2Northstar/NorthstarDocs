@@ -20,7 +20,7 @@ Alternatively if you want a faster way to store `table_overview` you can use:
 !!! cpp-function "void NSSaveJSONFile(string file, table data)"
 
 
-    - `string file` The name of the file you want to store, this supports sub folders. Doesn't have to be `.json` but will use the correct formatting for a ``.json``.
+    - `string file` The name of the file you want to store, this supports sub folders. Doesn't have to be ``.json`` but will use the correct formatting for a ``.json``.
 
     - `table data` The table that will be written to the file, this only supports the types specified in the `json_overview`.
 
