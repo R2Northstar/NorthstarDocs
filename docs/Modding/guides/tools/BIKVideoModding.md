@@ -23,10 +23,11 @@ The Video will now be in the same folder as the original one and converted to a 
 ## Making a Main Menu Video Mod
 
 1. [Convert](#converting-the-video) a Video to .bik
-2. Rename the newly converted .bik to `menu_act01.bik`
+2. Rename the newly converted .bik to ``menu_act01.bik``
 3. Make a mod according to [Getting Started](../gettingstarted.md)
 4. Copy the .bik to the following path in your mod folder:
     ```text
+
         author.mod/
         ├─ mod.json
         ├─ media/
