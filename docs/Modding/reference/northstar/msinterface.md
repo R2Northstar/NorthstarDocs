@@ -1,6 +1,7 @@
 # Server Authentification
 
 !!! note
+
     All of these functions are only exposed to the ``UI`` VM.
 
 These are functions required for the ingame server browser and the authorization process for the Masterserver and game servers.
