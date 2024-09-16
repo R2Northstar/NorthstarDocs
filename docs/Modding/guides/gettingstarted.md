@@ -120,6 +120,7 @@ This is what a well-formatted ``mod.json`` looks like:
 ```
 
 !!! note
+
     The real ``Northstar.CustomServers`` mod contains more convars and scripts, some
     have been removed for the readability of the example.
 
@@ -162,6 +163,7 @@ You can access configuration variables from squirrel code using ``GetConVarInt``
 ``GetConVarFloat``, ``GetConVarBool`` or ``GetConVarString`` calls.
 
 !!! warning
+
     No matter the type of your variables, they have to be JSON strings, otherwise game
     won't start!
 
@@ -197,6 +199,7 @@ variable value, or its default value if it hasn't been specified in configuratio
 ```
 
 !!! note
+
     All ``Northstar.CustomServers`` ConVars are listed here:
     https://r2northstar.gitbook.io/r2northstar-wiki/hosting-a-server-with-northstar/basic-listen-server
 
@@ -238,6 +241,7 @@ their values.
 |FCVAR_CLIENTCMD_CAN_EXECUTE|1073741824|IVEngineClient::ClientCmd is allowed to execute this command. Note: IVEngineClient::ClientCmd_Unrestricted can run any client command.|
 
 !!! note
+
     Some flags have been skipped due to them being generally useless unless you have
     very specific requirements.
 
