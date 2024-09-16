@@ -40,7 +40,7 @@ Once it has been downloaded, it is recommended to set up your file structure as 
 ```
 
 - ``RePak``: the base folder where your RePak/RPak related files go
-- ``RePak.exe``: the [unzipped] file you downloaded from GitHub
+- ``RePak.exe``: the `unzipped` file you downloaded from GitHub
 - ``pack_all.bat``: a .bat file that will pack all of your RPaks when opened (outlined below)
 - ``rpaks``: the folder where RePak.exe will put your RPaks when they have been created
 - ``maps``: the folder where you will write your "map" files, these define the contents of your RPaks
