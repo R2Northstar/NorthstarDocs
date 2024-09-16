@@ -308,9 +308,10 @@ Then add a ``UIE_CLICK`` callback for the button. It also makes sense to move th
 
 You can add callbacks for menu events, for example when a menu is closed or opened.
 
-If you want to reset the counter if the menu is closed, edit `AddCustomMenu` like this:
+If you want to reset the counter if the menu is closed, edit ``AddCustomMenu`` like this:
 
 ```diff
+
 	 void function AddCustomMenu()
 	 {
 	 	AddMenu( "CustomMenu", $"resource/ui/menus/custommenu.menu", CustomMenu_Init )
