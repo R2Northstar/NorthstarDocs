@@ -16,8 +16,7 @@ are happening at that moment on the console.
 For example, use your Grapple and open the console the event ID will be
 ``pilot_grapple_fire``
 
-How it looks in the console:
-![console](https://raw.githubusercontent.com/rwynx/audio-overriding-northstar/main/Images/audioeventeample.png)
+How it looks in the console: ![console](https://raw.githubusercontent.com/rwynx/audio-overriding-northstar/main/Images/audioeventeample.png)
 
 All weapons, boosts, tacticals have different events IDs on different surfaces (concrete, solidmetal, wood, dirt etc.)
 That's why you must identify the exact event/s. Examples based on Grapple:
@@ -51,7 +50,7 @@ When you successfully identified your event and have the audio file/s
 ready it's time to set up the folder structure.
 Assuming the event name is ``pilot_grapple_fire``, the folder structure of your mod should look like this:
 
-``` text
+```text
    
    author.mod/
    ├── audio/
@@ -60,8 +59,10 @@ Assuming the event name is ``pilot_grapple_fire``, the folder structure of your 
    │   └── pilot_grapple_fire.json
    └── mod.json
 ```
+   
 
-Example of a `mod.json` (documented here: [Getting Started](../gettingstarted.md))
+Example of a ``mod.json`` (documented here: [Getting Started](../gettingstarted.md))
+
 
 ```json
 
@@ -73,16 +74,17 @@ Example of a `mod.json` (documented here: [Getting Started](../gettingstarted.md
    }
 ```
 
+
 **Inside the ``audio/`` folder:**
 
-- ``pilot_grapple_fire/`` folder which needs to contain your .wav file(s)
-- ``pilot_grapple_fire.json`` json used to configure the sound override, dont forget to edit.
+-  ``pilot_grapple_fire/`` folder which needs to contain your .wav file(s)
+-  ``pilot_grapple_fire.json`` json used to configure the sound override, dont forget to edit.
 
 You will have to add that folder with your sound and the json for each event you want to override.
 The event JSON files must contain both ``EventId`` and ``AudioSelectionStrategy`` like this:
 
 
-``` json
+```json
 
    {
        "EventId": [ "pilot_grapple_fire" ],
@@ -94,6 +96,7 @@ The ``AudioSelectionStrategy`` can be either:
 
 - ``sequential``: If you have one sound or you want to play them in alphabetical order.
 - ``random``: If you have more than one sound and you want to randomize them.
+
 
 ## Creating Your Sound {#creating_your_sound}
 
@@ -124,18 +127,18 @@ This is usually because there's some metadata left in the audio. Remove it to fi
 
 === "Linux"
 
-    You can bulk remove it with [Metadata Cleaner](https://metadatacleaner.romainvigier.fr) or a shell script (requires ffmpeg to be installed) and also individually with Audacity.
+      You can bulk remove it with [Metadata Cleaner](https://metadatacleaner.romainvigier.fr) or a shell script (requires ffmpeg to be installed) and also individually with Audacity.
 
-    ``metadata_remover.sh`` (WAV only)
+      ``metadata_remover.sh`` (WAV only)
 
     ??? script
         ```shell
-        shopt -s globstar nullglob
-        for f in *.wav **/*.wav
-        do
-        ffmpeg -i "$f" -map 0 -map_metadata -1 -c:v copy -c:a copy "${f%.wav}.new.wav"
-        mv -f "${f%.wav}.new.wav" "$f"
-        done
+            shopt -s globstar nullglob
+            for f in *.wav **/*.wav
+            do
+            ffmpeg -i "$f" -map 0 -map_metadata -1 -c:v copy -c:a copy "${f%.wav}.new.wav"
+            mv -f "${f%.wav}.new.wav" "$f"
+            done
         ```
             
 - Sound is slightly higher/lower pitched in game. This is usually because the sampling rate of your sound doesn't match the original sound's sampling rate. You can use a tool like Audacity to resample your sound to match the original rate. Consult `_creating_your_sound` for more information.
@@ -146,34 +149,38 @@ This is usually because there's some metadata left in the audio. Remove it to fi
 
 === "Windows"
 
-    \# todo
+      # todo
 
 === "Linux"
 
-    On Linux you can use shell scripts that convert all WAV or MP3 audio files from the current directory (including folders) to WAV 48000Hz 16-bit. They require ffmpeg to be installed.
+      On Linux you can use shell scripts that convert all WAV or MP3 audio files from the current directory (including folders) to WAV 48000Hz 16-bit. They require ffmpeg to be installed.
 
-    MP3 and other formats scripts don't delete previous files, so just search for them (.format) and delete after conversion. WAV script automatically replaces old files.
+      MP3 and other formats scripts don't delete previous files, so just search for them (.format) and delete after conversion. WAV script automatically replaces old files.
+
 
     === "WAV script"
 
         ```shell
-        #WAV to WAV 16-bit 48000 Hz.
-        #wav_converter.sh
-
-        shopt -s globstar nullglob
-        for f in *.wav **/*.wav
-        do
-        ffmpeg -i "$f" -acodec pcm_s16le -ar 48000 "${f%.wav}.new.wav"
-        mv -f "${f%.wav}.new.wav" "$f"
-        done
+               
+               #WAV to WAV 16-bit 48000 Hz.
+               #wav_converter.sh
+               
+               shopt -s globstar nullglob
+               for f in *.wav **/*.wav
+               do
+               ffmpeg -i "$f" -acodec pcm_s16le -ar 48000 "${f%.wav}.new.wav"
+               mv -f "${f%.wav}.new.wav" "$f"
+               done
         ```
+
 
     === "MP3 Script"
 
         ```shell
+
         #MP3 to WAV 16-bit 48000 Hz.
         #mp3-wav_converter.sh
-
+        
         shopt -s globstar nullglob
         for f in *.mp3
         do
@@ -181,12 +188,13 @@ This is usually because there's some metadata left in the audio. Remove it to fi
         done
         ```
 
+
     === "Script for other formats"
 
         ```shell
         #Replace .format with the one you want to convert.
         #format-wav_converter.sh
-
+        
         shopt -s globstar nullglob
         for f in *.format
         do
