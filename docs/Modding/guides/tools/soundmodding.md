@@ -1,7 +1,6 @@
 # Sound Modding
 
 
-
 ## Audio Type
 
 -  You will need to use ``WAV`` format and either ``48000hz`` or ``44100hz`` sample rate.
@@ -177,29 +176,29 @@ This is usually because there's some metadata left in the audio. Remove it to fi
     === "MP3 Script"
 
         ```shell
-
-        #MP3 to WAV 16-bit 48000 Hz.
-        #mp3-wav_converter.sh
-        
-        shopt -s globstar nullglob
-        for f in *.mp3
-        do
-        ffmpeg -i "${f}" -vn -c:a pcm_s16le  -ar 48000 "${f%.*}.wav"
-        done
+               
+               #MP3 to WAV 16-bit 48000 Hz.
+               #mp3-wav_converter.sh
+               
+               shopt -s globstar nullglob
+               for f in *.mp3
+               do
+               ffmpeg -i "${f}" -vn -c:a pcm_s16le  -ar 48000 "${f%.*}.wav"
+               done
         ```
 
 
     === "Script for other formats"
 
         ```shell
-        #Replace .format with the one you want to convert.
-        #format-wav_converter.sh
-        
-        shopt -s globstar nullglob
-        for f in *.format
-        do
-        ffmpeg -i "${f}" -vn -c:a pcm_s16le  -ar 48000 "${f%.*}.wav"
-        done
+               #Replace .format with the one you want to convert.
+               #format-wav_converter.sh
+               
+               shopt -s globstar nullglob
+               for f in *.format
+               do
+               ffmpeg -i "${f}" -vn -c:a pcm_s16le  -ar 48000 "${f%.*}.wav"
+               done
         ```
 
 ## Installation
