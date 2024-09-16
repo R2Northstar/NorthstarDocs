@@ -36,6 +36,7 @@ The returns ``void`` and takes no parameters. It gets called once the menu is in
 It's recommended to create a file struct in which you store menu states:
 
 ```squirrel
+
     struct {
         var menu
     } file
