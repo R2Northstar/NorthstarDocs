@@ -18,17 +18,16 @@ https://github.com/snake-biscuits/bsp_tool
 
 **Docs:** https://github.com/snake-biscuits/bsp_tool/blob/master/docs/supported/titanfall.md
 
+
 ## Other:
 
 Netradiant Custom Tutorial - Part 2:
 
-!!! info[Youtube]
-    JZO8H4rBqtA
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/JZO8H4rBqtA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 How titanfall custom map:
 
-!!! info[Youtube]
-    gmNzc5Go2ow
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/gmNzc5Go2ow" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### How to make corners correctly
 
@@ -39,12 +38,10 @@ Improper corners can cause the player to get stuck
 alt="/_static/map-corners.png" />
 </figure>
 
-!!! info[Youtube]
-    mwvxonuCm8U
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/mwvxonuCm8U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Sample clip: 
 
-!!! info[Youtube]
-    zgWDme7Y6oI
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/zgWDme7Y6oI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Sample map: https://cdn.discordapp.com/attachments/925435799057604709/1041813222547791953/corner_test_map.map
