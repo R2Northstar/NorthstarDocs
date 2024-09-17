@@ -39,3 +39,4 @@ Otherwise you can simply search "Respawn Squirrel" in the extensions tab
 
 [Kate syntax highlighting for Squirrel](https://gist.github.com/CTalvio/6de535f9258cfebd71ab64d7e6af4ee6)
 
+
