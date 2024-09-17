@@ -2255,6 +2255,8 @@ CNPC_SentryTurret / C_NPC_SentryTurret
 		
 		Cockpit booting takes 1.3 seconds, so anything less than 1.3 seconds is still playing the booting animation. You can use ``TitanCockpit_IsBooting( entity cockpit )`` to determine this state.
 
+	!!! cpp-function "void SetOpenViewmodelOffset( float x, float y, float z )"
+
 ## CParticleSystem
 
 !!! cpp-class "CParticleSystem : extends CBaseEntity"
