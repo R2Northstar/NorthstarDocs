@@ -11,7 +11,6 @@ In Titanfall it is possible to draw shapes in 3D, from the SERVER and CLIENT VM,
 These debug drawing functions are available:
 
 
-
 !!! cpp-function "void DebugDrawLine( vector start, vector end, int r, int b, int g, bool drawThroughObject, float time)"
 
 !!! cpp-function "void DebugDrawCylinder( vector origin, vector angles, float radius, float height, int r, int g, int b, bool throughGeo, float time )"
