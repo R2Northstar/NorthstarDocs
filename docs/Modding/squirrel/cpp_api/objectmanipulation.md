@@ -27,12 +27,12 @@
     ```
 
 
+
 !!! cpp-function "SQRESULT arrayappend(HSquirrelVM* sqvm, const SQInteger stackpos)"
 
     - `HSquirrelVM* sqvm` the target vm
     - `SQInteger stackpos` stack position of the array to append to
-
-    Returns a ``SQRESULT``
+    - Returns a ``SQRESULT``
 
     pops a value from the stack and pushes it to the back of the array at the position idx in the stack
 
