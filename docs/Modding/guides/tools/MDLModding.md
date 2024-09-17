@@ -11,6 +11,7 @@ Model (MDL) is the extension for Source's proprietary model format. It defines t
 
 While creating an entire Model from scratch is possible it would be an extremely long and tedious task. Instead its recommended to use an existing Model as your base.
 
+
 ## Prequisites
 
 - [Blender](https://www.blender.org/download/) (min. 2.92)
