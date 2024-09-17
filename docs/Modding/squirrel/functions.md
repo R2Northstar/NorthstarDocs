@@ -39,8 +39,8 @@ If you don't want to return any value, use ``void`` as the return type. This ind
 
 If nothing is returned by a function, ``null`` will get returned implicitly.
 
-
 ```squirrel
+
   void function ReturnNull()
   {
     // return null regardless what happens, this all does the same
@@ -110,7 +110,8 @@ With vargs you can pass a function an unlimited amount of parameters. The parame
 
 You can denote a function to have vargs with adding ``...`` to the end of the parameter list.
 
-``` 
+```squirrel
+
    string function CombineStuff( string base, ... )
    {
     string s = base
