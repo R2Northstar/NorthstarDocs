@@ -8,7 +8,7 @@ They will also often pass arguments to those functions based on the callbacks us
 
 Please refer to [Custom Northstar Callbacks](../northstar/callbacks.md) for callbacks defined in Northstar.
 
-## \_codecallbacks_common.gnut:
+## _codecallbacks_common.gnut:
 
 !!! cpp-function "void AddDamageCallback( string className, void functionref( entity, var ) callbackFunc )"
 !!! cpp-function "void RemoveDamageCallback( string className, void functionref( entity, var ) callbackFunc )"
@@ -57,7 +57,7 @@ Please refer to [Custom Northstar Callbacks](../northstar/callbacks.md) for call
 !!! cpp-function "void RemovePlayerMovementEventCallback( entity player, int playerMovementEvent, void functionref( entity player ) callbackFunc )"
 !!! cpp-function "void AddCallback_OnPlayerInventoryChanged( void functionref( entity ) callbackFunc )"
 
-## \_codecallbacks_player_input.gnut:
+## _codecallbacks_player_input.gnut:
 
 !!! cpp-function "void AddPlayerInputEventCallback_Internal( entity player, PlayerInputEventCallbackStruct inputCallbackStruct ) //Not really meant to be used directly unless you know what you're doing! Use utility functions like AddButtonPressedPlayerInputCallback instead"
 !!! cpp-function "void RemovePlayerInputEventCallback_Internal( entity player, PlayerInputEventCallbackStruct inputCallbackStruct ) //Not really meant to be used directly unless you know what you're doing! Use utility functions like RemoveButtonPressedPlayerInputCallback instead"
@@ -97,16 +97,16 @@ Please refer to [Custom Northstar Callbacks](../northstar/callbacks.md) for call
 !!! cpp-function "void RunInputAxisCallbackAfterTimePasses( entity player, PlayerInputAxisEventCallbackStruct callbackStruct )"
 
 
-## \_global_entities.gnut:
+## _global_entities.gnut:
 
 !!! cpp-function "function( callback )"
 
-## \_items.nut:
+## _items.nut:
 
 !!! cpp-function "void StatsCallback_ItemUnlockUpdate( entity player, float changeInValue, string itemRef )"
 !!! cpp-function "void StatsCallback_SubItemUnlockUpdate( entity player, float changeInValue, string fullRef )"
 
-## \_on_spawned.gnut:
+## _on_spawned.gnut:
 
 !!! cpp-function "void AddSpawnCallback( string classname, void functionref( entity ) func )"
 !!! cpp-function "void AddSpawnCallbackEditorClass( string classname, string editorClassname, void functionref( entity ) func )"
@@ -117,22 +117,22 @@ Please refer to [Custom Northstar Callbacks](../northstar/callbacks.md) for call
 !!! cpp-function "void RunScriptNoteworthyCallbacks( entity ent )"
 !!! cpp-function "void AddScriptNoteworthySpawnCallback( string script_noteworthy, void functionref( entity ) func )"
 
-## \_passives.gnut:
+## _passives.gnut:
 
 !!! cpp-function "void PassiveDeathCallback( entity player, var damageInfo )"
 
-## \_script_triggers.gnut:
+## _script_triggers.gnut:
 
 !!! cpp-function "void AddCallback_ScriptTriggerEnter( entity trigger, void functionref( entity, entity ) callbackFunc )"
 !!! cpp-function "void AddCallback_ScriptTriggerLeave( entity trigger, void functionref( entity, entity )  callbackFunc )"
 
-## \_utility_shared.nut:
+## _utility_shared.nut:
 
 !!! cpp-function "void AddCallback_OnUseEntity( entity ent, callbackFunc )"
 !!! cpp-function "void RunCallbacks_EntitiesDidLoad()"
 !!! cpp-function "void AddCallback_EntitiesDidLoad( EntitiesDidLoadCallbackType callback )"
 
-## \_utility.gnut:
+## _utility.gnut:
 
 !!! cpp-function "void AddCallback_GameStateEnter( int gameState, void functionref() callbackFunc )"
 !!! cpp-function "void GM_SetObserverFunc( void functionref( entity ) callbackFunc )"
@@ -145,26 +145,26 @@ Please refer to [Custom Northstar Callbacks](../northstar/callbacks.md) for call
 
 !!! cpp-function "void UpdateDerivedPilotLoadoutData( PilotLoadoutDef loadout, bool doOverrideCallback = true )"
 
-## ai/\_ai_marvin_faces.gnut:
+## ai/_ai_marvin_faces.gnut:
 
 !!! cpp-function "void MarvinSpawnCallback( entity npc_marvin )"
 
-## ai/\_ai_mortar_titans.gnut:
+## ai/_ai_mortar_titans.gnut:
 
 !!! cpp-function "void MortarMissileFiredCallback( entity missile, entity weaponOwner )"
 
-## ai/\_ai_nuke_titans.gnut:
+## ai/_ai_nuke_titans.gnut:
 
 !!! cpp-function "void AutoTitan_NuclearPayload_PostDamageCallback( entity titan, var damageInfo )"
 
-## ai/\_ai_pilots.gnut:
+## ai/_ai_pilots.gnut:
 
 !!! cpp-function "function( pilot, titan )"
 !!! cpp-function "function( pilot, titan )"
 !!! cpp-function "function( callbackFunc )"
 !!! cpp-function "function( callbackFunc )"
 
-## ai/\_ai_suicide_spectres.gnut:
+## ai/_ai_suicide_spectres.gnut:
 
 !!! cpp-function "void SpectreSuicideOnDamaged_Callback( entity spectre, var damageInfo )"
 
@@ -177,63 +177,63 @@ Please refer to [Custom Northstar Callbacks](../northstar/callbacks.md) for call
 !!! cpp-function "void DummyRewardEarnedCallback( entity player )"
 !!! cpp-function "void DummyGoalEarnedCallback( entity player )"
 
-## gamemodes/\_frontline.gnut:
+## gamemodes/_frontline.gnut:
 
 !!! cpp-function "void AddCalculateFrontlineCallback( void functionref() callbackFunc )"
 
-## mp/\_base_gametype.gnut:
+## mp/_base_gametype.gnut:
 
 !!! cpp-function "bool ScriptCallback_ShouldEntTakeDamage( entity ent, damageInfo )"
 !!! cpp-function "function( ent, callbackFunc )"
 
-## mp/\_bleedout.gnut:
+## mp/_bleedout.gnut:
 
 !!! cpp-function "void Bleedout_SetCallback_OnPlayerStartBleedout( void functionref(entity) callback )"
 !!! cpp-function "void Bleedout_SetCallback_OnPlayerGiveFirstAid( void functionref(entity) callback )"
 
 
-## mp/\_spawn_functions.nut:
+## mp/_spawn_functions.nut:
 
 !!! cpp-function "void EmptyDeathCallback( entity _1, var _2 )"
 
-## mp/\_spectre_rack.nut:
+## mp/_spectre_rack.nut:
 
 !!! cpp-function "void AddSpectreRackCallback( void functionref( entity, entity ) func )"
 
 
-## mp/\_titan_tether.gnut:
+## mp/_titan_tether.gnut:
 
 !!! cpp-function "void AddOnTetherCallback( void functionref( entity, entity ) callback )"
 
-## mp/\_vr.nut:
+## mp/_vr.nut:
 
 !!! cpp-function "void VR_GroundTroopsDeathCallback( entity guy, var damageInfo )"
 
-## pilot/\_leeching.gnut:
+## pilot/_leeching.gnut:
 
 !!! cpp-function "void TryLeechStartCallback( entity self, entity leecher )"
 !!! cpp-function "void TryLeechAbortCallback( entity self, entity leecher )"
 
-## pilot/\_zipline.gnut:
+## pilot/_zipline.gnut:
 
 !!! cpp-function "void AddCallback_ZiplineStart( void functionref(entity,entity) callback )"
 !!! cpp-function "void AddCallback_ZiplineStop( void functionref(entity) callback )"
 
-## rodeo/\_rodeo_titan.gnut:
+## rodeo/_rodeo_titan.gnut:
 
 !!! cpp-function "void AddOnRodeoStartedCallback( void functionref(entity,entity) callbackFunc )"
 !!! cpp-function "void AddOnRodeoEndedCallback( void functionref(entity,entity) callbackFunc )"
 !!! cpp-function "void SetApplyBatteryCallback( void functionref(entity,entity,entity) func )"
 
-## weapons/\_arc_cannon.nut:
+## weapons/_arc_cannon.nut:
 
 !!! cpp-function "void ClientDestroyCallback_ArcCannon_Stop( entity ent )"
 
-## weapons/\_grenade.nut:
+## weapons/_grenade.nut:
 
 !!! cpp-function "void ClientDestroyCallback_GrenadeDestroyed( entity grenade )"
 
-## weapons/\_weapon_utility.nut:
+## weapons/_weapon_utility.nut:
 
 !!! cpp-function "unknown ServerCallback_GuidedMissileDestroyed()"
 !!! cpp-function "unknown ServerCallback_AirburstIconUpdate( toggle )"
