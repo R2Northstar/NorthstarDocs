@@ -57,6 +57,7 @@ There is no way to define a complex array that holds multiple different types.
    a.append( "3" ) // this will throw a compile error because the array can only contain integers
 ```
 
+
 ## Static Arrays
 
 Static arrays are a different kind of complex type. Like complex arrays they can only hold values of one specific type. However unlike complex arrays static arrays have a set length that cannot be changed.
