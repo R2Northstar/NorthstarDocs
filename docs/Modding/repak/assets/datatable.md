@@ -22,6 +22,7 @@
 |`titan_ogre_meteor`|`scorch`|`3`|`0`|`rui\titan_loadout\core\titan_core_flame_wave`|
 |`string`|`string`|`int`|`bool`|`asset`|
 
+
 ## Asset Structure:
 
 ### ``$type``
