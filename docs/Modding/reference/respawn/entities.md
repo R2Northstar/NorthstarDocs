@@ -1244,7 +1244,13 @@ Grenade entities in worldspace. Grenades that are equipped ("cooked") by players
 
 ### CMissile
 
+!!! cpp-class "CMissile : extends CProjectile"
+
 ### C_Missile
+
+!!! cpp-class "C_Missile : extends C_Projectile"
+
+
 
 ## CPlayer / C_Player
 
@@ -1846,7 +1852,6 @@ Grenade entities in worldspace. Grenades that are equipped ("cooked") by players
 
 ### CBaseCombatCharacter
 
-
 !!! cpp-class "CBaseCombatCharacter : extends CBaseAnimating"
 
 	!!! cpp-function "void SetFullBodygroup( int group )"
@@ -2016,7 +2021,6 @@ Grenade entities in worldspace. Grenades that are equipped ("cooked") by players
 ### C_AI_BaseNPC
 
 !!! cpp-class "C_AI_BaseNPC : extends C_BaseCombatCharacter"
-
 
 ## CNPC_Titan / C_NPC_Titan
 
