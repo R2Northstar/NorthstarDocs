@@ -48,7 +48,6 @@ Creating entities is documented [here](createent.md).
 
 !!! cpp-function "array<entity> GetPlayerDecoryArray()"
 
-
 ### Connecting Players
 
 !!! cpp-function "array<entity> GetConnectingAndConnectedPlayerArray()"
