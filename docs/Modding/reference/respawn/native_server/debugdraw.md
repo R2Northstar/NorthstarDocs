@@ -27,8 +27,8 @@ These debug drawing functions are available:
 
 !!! cpp-function "void DebugDrawBoxSimple( vector origin, vector min = < -4.0, -4.0, -4.0>, vector max = <4.0, 4.0, 4.0>, int r = 255, int g = 255, int b = 100, int alpha = 255, float time = 0.2 )"
 
-!!! cpp-function "void DrawBox( vector org, vector mins, vector maxs, int r, int g, int b, bool throughSolid, float time )"
 
+!!! cpp-function "void DrawBox( vector org, vector mins, vector maxs, int r, int g, int b, bool throughSolid, float time )"
 
 !!! cpp-function "void DebugDrawCube( vector cubeCenter, float cubeSize, int r, int g, int b, bool throughSolid, float time )"
 
@@ -96,6 +96,6 @@ These debug drawing functions are available:
 
 !!! cpp-function "void DebugScreenText( float posX, float posY, string text )"
 
-    !!! error
+!!! error
 
-        This function is stripped. It does nothing.
+    This function is stripped. It does nothing.
