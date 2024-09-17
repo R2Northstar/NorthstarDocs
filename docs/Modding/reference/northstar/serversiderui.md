@@ -37,7 +37,7 @@ alt="/_static/serversiderui/vote.png" />
 
 !!! cpp-function "int NSGetPlayerResponse( entity player )"
 
-    Returns the index of the item from `options` the player voted for. If the player hadn't voted yet it returns a -1.
+    Returns the index of the item from ``options`` the player voted for. If the player hadn't voted yet it returns a -1.
 
 **Example:**
 
