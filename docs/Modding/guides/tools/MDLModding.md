@@ -71,11 +71,13 @@ Crowbar is a tool written by ZeqMacaw. It is used to decompile and compile Sourc
 
 We will use it to decompile and compile the model.
 
+
 ## MDLShit
 
 MDLShit is a tool written by headassbtw. It is used to combine the MDL file with the other output files from Crowbar.
 
 We will use it to combine the MDL file with the other output files from Crowbar.
+
 
 ## Harmony VPK
 
@@ -135,6 +137,7 @@ We will add a cube to the side of the Flatline and assign a custom material to i
     In order to use Crowbar the way we will we need to setup a few things first.
     
     This step only needs to be done once
+
 
 ### Setup Crowbar (one time only)
 
