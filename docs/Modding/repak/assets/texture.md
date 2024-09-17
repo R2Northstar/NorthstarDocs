@@ -109,7 +109,7 @@ The ``path`` field must start with ``textures/`` and must not end with a file ex
     ``Attempted to add txtr asset '%s' that was not using a supported DDS type.
     Exiting...`` where ``%s`` is the ``path`` field of the texture.
 
-### `starpakPath`
+### ``starpakPath``
 
 The ``starpakPath`` field of a texture asset determines the path of the starpak in which
 the higher resolution mip levels should be stored.
@@ -136,7 +136,7 @@ The ``starpakPath`` field should be a string, and importantly, should end in
     available. to fix: add 'starpakPath' as an rpak-wide variable or: add 'starpakPath'
     as an asset specific variable`` where %s is the ``path`` of the texture asset
 
-### `disableStreaming`
+### ``disableStreaming``
 
 The ``disableStreaming`` field of a texture asset determines if the texture should use a
 starpak to store the higher resolution mip levels.
