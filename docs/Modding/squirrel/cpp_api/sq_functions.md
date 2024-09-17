@@ -28,7 +28,7 @@ Return a string from a native registered function:
         g_pSquirrel<context>->pushstring(sqvm, "native gaming"); // push a string to the stack
         
         return SQRESULT_NOTNULL; // Signal that the topmost item on the stack is returned by this function
-}
+    }
 ```
 
 Return a complex ``ornull`` type:
