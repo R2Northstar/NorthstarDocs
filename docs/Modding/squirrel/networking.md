@@ -4,7 +4,7 @@ All VMs (``CLIENT``, ``UI``, ``SERVER``) are seperate from each other and do not
 
 However, there are different interfaces to communicate between all VMs.
 
-## `SERVER` to `CLIENT` vm
+## ``SERVER`` to ``CLIENT`` vm
 
 ### Remote Functions
 
@@ -82,7 +82,6 @@ The networked ``CLIENT`` function has to be global
 
 Calling the ``CLIENT`` function ``Server_GetNetworkedVariable`` on ``SERVER`` vm:
 
-
 ```squirrel
 
 	// player: CPlayer entity that should execute the function
@@ -98,8 +97,7 @@ Calling the ``CLIENT`` function ``Server_GetNetworkedVariable`` on ``SERVER`` vm
 
 ### Server to Client command callbacks
 
-Allows the `SERVER` vm to create a `ServerToClientStringCommand` on a
-player which is linked to a Callback locally
+Allows the ``SERVER`` vm to create a ``ServerToClientStringCommand`` on a player which is linked to a Callback locally
 
 #### Register a server command
 
@@ -134,7 +132,7 @@ and execute with the function serverside:
 	}
 ```
 
-## `SERVER` to `UI` vm
+## ``SERVER`` to ``UI`` vm
 
 !!! cpp-function "Remote_CallFunction_UI( entity player, string functionName, ... )"
 
@@ -147,7 +145,7 @@ and execute with the function serverside:
 	Remote_CallFunction_UI( player, "ScriptCallback_UnlockAchievement", achievementID )
 ```
 
-## `CLIENT` to `SERVER` vm
+## ``CLIENT`` to ``SERVER`` vm
 
 ### Client to Server command callbacks
 
@@ -184,7 +182,7 @@ Since version 1.5 mods can receive notifications when a client command has been 
 
 Please refer to :ref:`list_client_commands` for a list of native client commands you could catch.
 
-### `CLIENT` to `UI` vm
+### ``CLIENT`` to ``UI`` vm
 
 Create a global function in the ``UI`` vm and call it in the ``CLIENT`` vm with the function:
 
@@ -208,7 +206,7 @@ You can also pass parameters to the function. ``identifier`` is the name of the 
 	#endif
 ```
 
-## `UI` to `CLIENT` vm
+## ``UI`` to ``CLIENT`` vm
 
 Create a global function in the ``CLIENT`` vm and call it in the ``UI`` vm with the function:
 
@@ -216,7 +214,6 @@ Create a global function in the ``CLIENT`` vm and call it in the ``UI`` vm with 
 
 
 You can also pass parameters to the function. ``identifier`` is the name of the function you want to call.
-
 
 #### Example
 
