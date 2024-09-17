@@ -1153,7 +1153,6 @@ Projectiles.
 
 	!!! cpp-function "void SetProjectileImpactDamageOverride( int flag )"
 
-
 ### C_Projectile
 
 !!! cpp-class "C_Projectile : extends C_DynamicProp"
