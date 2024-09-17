@@ -90,16 +90,14 @@
 
     - `HSquirrelVM* sqvm` the target vm
     - `SQInteger stackpos` stack position of the object
-
-    Returns The value of the object
+    - Returns The value of the object
 
 
 !!! cpp-function "SQInteger getinteger(HSquirrelVM* sqvm, const SQInteger stackpos)"
 
     - `HSquirrelVM* sqvm` the target vm
     - `SQInteger stackpos` stack position of the object
-
-    Returns The value of the object
+    - Returns The value of the object
 
 
 
@@ -107,8 +105,7 @@
 
     - `HSquirrelVM* sqvm` the target vm
     - `SQInteger stackpos` stack position of the object
-
-    Returns The value of the object
+    - Returns The value of the object
 
 
 
@@ -116,8 +113,7 @@
 
     - `HSquirrelVM* sqvm` the target vm
     - `SQInteger stackpos` stack position of the object
-
-    Returns The value of the object
+    - Returns The value of the object
 
 
 
@@ -125,8 +121,7 @@
 
     - `HSquirrelVM* sqvm` the target vm
     - `SQInteger stackpos` stack position of the object
-
-    Returns The value of the object
+    - Returns The value of the object
 
 
 
@@ -134,8 +129,7 @@
 
     - `HSquirrelVM* sqvm` the target vm
     - `SQInteger stackpos` stack position of the object
-
-    Returns The value of the object
+    - Returns The value of the object
 
 
 
@@ -151,8 +145,7 @@
 
 
     - `HSquirrelVM* sqvm` the target vm
-
-    Returns the table of constants
+    - Returns the table of constants
 
     Pushes the constants table to the stack.
 
@@ -257,8 +250,7 @@
 
     - `HSquirrelVM* sqvm` the target vm
     - `int depth` stack depth of the origin mod
-
-    Returns Pointer to the Mod object at the stack depth
+    - Returns Pointer to the Mod object at the stack depth
 
     !!! note
 
