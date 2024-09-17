@@ -54,8 +54,7 @@ The workflow for editing a model is as follows:
 This is a short video guide on MDL Editing, there are some discrepancies between the video and this guide but the general workflow is the same.
 Its relatively quick but shows the process quite well.
 
-!!! youtube
-    mZg5AlWvXZs
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/mZg5AlWvXZs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>    
 
 ## Blender
 
@@ -90,6 +89,7 @@ We will use it to extract the model from the game files.
 In this section we will go through the workflow in detail by using the Flatline as an example.
 We will add a cube to the side of the Flatline and assign a custom material to it.
 
+
 ## Step 1: Extracting
 
 !!! note
@@ -116,14 +116,14 @@ We will add a cube to the side of the Flatline and assign a custom material to i
 - Navigate to the ``models`` folder (this is where all models in this file are located).
 - Navigate to the folder of the model you want to extract (for example ``weapons/vinson`` which is the internal name for the Flatline).
 - Select the ``.mdl`` file you want to extract (for example ``ptpov_vinson.mdl``).
+ 
+!!! note
+    Weapons are mostly split into two models, one for the first person view(``ptpov_`` and the world model ``w_``.
 
-    !!! note
-        Weapons are mostly split into two models, one for the first person view(``ptpov_`` and the world model ``w_``.
-
-        ``ptpov`` is used when you are in first person.
+    ``ptpov`` is used when you are in first person.
     
-        ``w_`` is used when the weapon is viewed in the world (for example when its dropped on the ground).
-
+    ``w_`` is used when the weapon is viewed in the world (for example when its dropped on the ground).
+    
 - Click on the ``Unpack`` button on the top right.
 - You are now prompted to select a folder to extract the model to, select a folder of your choice and click on ``Select Folder``.
 - Your model is now extracted and you can close Harmony VPK.
@@ -133,6 +133,7 @@ We will add a cube to the side of the Flatline and assign a custom material to i
 
 !!! note
     In order to use Crowbar the way we will we need to setup a few things first.
+    
     This step only needs to be done once
 
 ### Setup Crowbar (one time only)
@@ -191,6 +192,7 @@ We will add a cube to the side of the Flatline and assign a custom material to i
 - Open Blender.
 - In the top left corner select ``File`` -> ``Import`` -> ``Source Engine``.
 - Navigate to the folder you extracted the model to in the previous step and select the ``.qc`` file (for example ``ptpov_vinson.qc``) and uncheck the ``Import Animations`` box and check the ``Create Collections`` box.
+
 
 ## Step 4: Editing the model
 
@@ -266,7 +268,7 @@ Usage:
 
 Example:
 
-``` text
+```text
 
         $renamematerial	"models\weapons_r2\coolmaterial\cool_material"	"models\amazing\uncoolmaterial\cool_material2"
 ```
@@ -290,7 +292,7 @@ Command docs: [VALVe developer docs $renamematerial](https://developer.valvesoft
 
 - Open your ``.qc`` file in a text editor of your choice.
 - On the top of the file you will see so called "bodygroup" lines, these are used to define the bodygroups of the model. They look a bit like this:
-    ``` 
+    ```
     
             $bodygroup "body"
             {
