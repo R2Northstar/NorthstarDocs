@@ -8,7 +8,7 @@ When ejecting the game selects a random number between 0 and 1, if this number i
 
 ### Adding new messages
 
-Using `AddCommonEjectMessage( String message )` and `AddRareEjectMessage( String message )` in script additional messages can be added to the pool of potential ejection messages
+Using ``AddCommonEjectMessage( String message )`` and ``AddRareEjectMessage( String message )`` in script additional messages can be added to the pool of potential ejection messages
 
 ### Localisation
 
@@ -82,7 +82,7 @@ Below are a list of useful functions added by Northstar.
     !!! note
         Respawn comment next to the function:
 
-        `TODO: This is a copy of SP's PlayerPosInSolid(). Not changing it to avoid patching SP. Merge into one function next game`
+        ``TODO: This is a copy of SP's PlayerPosInSolid(). Not changing it to avoid patching SP. Merge into one function next game``
 
 
 !!! cpp-function "bool function PlayerSpawnpointIsValid( entity ent )"
@@ -257,7 +257,7 @@ Below are a list of useful functions added by Northstar.
 
 !!! cpp-function "int function array.find(var value)"
 
-    !!! war-ing "this returns ``-1`` if the item was not found in the array"
+    !!! warning "this returns ``-1`` if the item was not found in the array"
 
 !!! cpp-function "array.fastremove(var)"
 
@@ -340,7 +340,7 @@ Below are a list of useful functions added by Northstar.
 !!! cpp-function "array.slice(int start, int end = null)"
 
     !!! note
-        Returns a section of the array as new array. Copies from start to the end (not included). If start is negative the index is calculated as length + start, if end is negative the index is calculated as length + end. If end is omitted end is equal to the array length."
+        Returns a section of the array as new array. Copies from start to the end (not included). If start is negative the index is calculated as length + start, if end is negative the index is calculated as length + end. If end is omitted end is equal to the array length.
 
 ### String
 
@@ -370,7 +370,7 @@ Below are a list of useful functions added by Northstar.
 
     !!! warning
 
-        returns `null` if the string is not found.
+        returns ``null`` if the string is not found.
         
         You can eliminate the possibility of the returned index being null by casting like this:
 
