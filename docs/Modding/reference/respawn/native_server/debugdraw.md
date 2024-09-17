@@ -93,7 +93,6 @@ These debug drawing functions are available:
 !!! cpp-function "void DrawLineForPoints( array<vector> points, vector color, float duration )"
 
 
-
 !!! cpp-function "void DebugScreenText( float posX, float posY, string text )"
 
 !!! error
