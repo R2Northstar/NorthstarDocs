@@ -46,7 +46,6 @@
 
 !!! cpp-function "void SpawnPoints_SortDropPodStart()"
 
-
 ## Ratings
 
 !!! cpp-function "void SpawnPoints_InitRatings( entity point, number rating )"
