@@ -22,6 +22,7 @@ Parameters are the initial stack in the function context.
 Return a string from a native registered function:
 
 ```cpp
+
     ADD_SQFUNC("string", CPlugTest, "", "returns \"native gaming\"", ScriptContext::CLIENT | ScriptContext::SERVER)
     {
         g_pSquirrel<context>->pushstring(sqvm, "native gaming"); // push a string to the stack
@@ -33,6 +34,7 @@ Return a string from a native registered function:
 Return a complex ``ornull`` type:
 
 ```cpp
+
     ADD_SQFUNC("array<int> ornull", CPlugComplex, "int n", "returns null", ScriptContext::CLIENT | ScriptContext::SERVER | ScriptContext::UI)
     {
         SQInteger n = g_pSquirrel<context>->getinteger(sqvm, 1);
@@ -117,6 +119,7 @@ Squirrel functions need to return a ``SQRESULT``. Valid results are
 
         Call("PluginCallbackTest"); // PluginCallbackTest()
     ```
+
 
 !!! cpp-function "SQRESULT Call(const char* funcname, Args... args)"
 
