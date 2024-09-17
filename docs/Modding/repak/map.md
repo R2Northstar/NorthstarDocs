@@ -15,7 +15,7 @@
 
 ```text
 
-root
+    root
     ├── RePak.exe
     ├── example1.json
     └── build
@@ -192,7 +192,7 @@ necessary
 
 If no ``outputDir`` is provided in the map file, RePak defaults to ``.\build\``
 
-### `version`
+### ``version``
 
 The ``version`` field of a map file determines the RPak version that RePak will create.
 
