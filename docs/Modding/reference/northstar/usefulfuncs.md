@@ -360,10 +360,12 @@ Below are a list of useful functions added by Northstar.
 !!! cpp-function "string function Localize( string token )"
     
     !!! note
-        replaces text that should be localized on the client"
+
+        replaces text that should be localized on the client
 
         ```squirrel
-        string localized = Localize( token )
+
+            string localized = Localize( token )
         ```
 
 !!! cpp-function "int ornull function string.find( string s )"
@@ -375,12 +377,13 @@ Below are a list of useful functions added by Northstar.
         You can eliminate the possibility of the returned index being null by casting like this:
 
         ```squirrel
-        int ornull index = GetMapName().find( "mp" )
 
-        if( !index )
-            return
-        int( index )
-        int n = index + 1 //now we do not need the ornull anymore
+            int ornull index = GetMapName().find( "mp" )
+
+            if( !index )
+                return
+            int( index )
+            int n = index + 1 //now we do not need the ornull anymore
         ```
 
 !!! cpp-function "string function string.slice( int start, int end = null )"
