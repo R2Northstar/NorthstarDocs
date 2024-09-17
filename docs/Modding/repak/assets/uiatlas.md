@@ -9,6 +9,7 @@ reference a single texture asset, known as the ``atlas`` and have an array of
 ### 1. Basic UI Image Atlas with 2 Textures
 
 ```json
+
     {
         "$type":"uimg",
         "path":"rui/atlas/example1",
@@ -35,12 +36,13 @@ reference a single texture asset, known as the ``atlas`` and have an array of
 
 !!! note
 
-    This UI Image Atlas expects a texture with the path of `rui/example1` which is at
+    This UI Image Atlas expects a texture with the path of ``rui/example1`` which is at
     least 256x128
 
 ### 2. Full Map File With a UI Image Atlas
 
 ```json
+
     {
         "name":"blue_fire",
         "assetsDir":"../depot",
@@ -155,7 +157,7 @@ to identify and show the texture.
 
     where ``%s`` is the ``path`` field of the UI Image Atlas
 
-#### `width` and `height`
+#### ``width`` and ``height``
 
 An entry in the ``textures`` array must have both a ``width`` and a ``height`` field,
 these values should both be integers.
@@ -179,7 +181,7 @@ these values should both be integers.
     where the first ``%s`` is the ``path`` field of the texture, and the second ``%s``
     is the ``path`` field of the UI Image Atlas
 
-#### `posX` and `posY`
+#### ``posX`` and ``posY``
 
 An entry in the ``textures`` array must have both a ``posX`` and a ``posY`` field, these
 values should both be integers. These fields determine the location of the top-left
