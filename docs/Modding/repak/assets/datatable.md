@@ -14,6 +14,7 @@
 
 ### 2. Example Datatable ``.csv`` File
 
+
 |`setFile`|`titanRef`|`difficulty`|`isPrime`|`coreBuildingIcon`|
 |---------|----------|------------|---------|------------------|
 |`titan_buddy`|`bt`|`1`|`0`|`rui\titan_loadout\core\titan_core_burst_core`|
@@ -25,7 +26,7 @@
 
 ### ``$type``
 
-For an asset to be a datatable asset, the `$type` field must be `"dtbl"`.
+For an asset to be a datatable asset, the ``$type`` field must be ``"dtbl"``.
 
 ### ``path``
 
