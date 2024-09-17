@@ -75,14 +75,15 @@ Every object has a reference to itself called ``this``. You can change parameter
 object by reference.
 
 ```squirrel
-void function initClient() {
-    class ExampleClass {
-        property = null
-        constructor( var parameter ) {
-            this.property = expect int(parameter);
+
+    void function initClient() {
+        class ExampleClass {
+            property = null
+            constructor( var parameter ) {
+                this.property = expect int(parameter);
+            }
         }
     }
-}
 ```
 
 You can't use the class name as a type. Use ``var`` instead. You can't ``expect`` them
@@ -273,6 +274,7 @@ of an object.
         con.content = "manipulated string";
     }
 ```
+
 
 ## Emulating Namespaces {#namespaces}
 
