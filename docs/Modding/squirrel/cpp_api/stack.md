@@ -22,14 +22,18 @@ See this example stack for reference:
 |p2|2| -3|
 |p1|1| -4|
 
+
 ## Stack manipulation
 
 The Squirrel API offers several functions to push and retrieve data from the Stack.
 
+
 !!! cpp-function "__int64 removeFromStack(HSquirrelVM* sqvm)"
 
     !!! note
-        This function (`server.dll+0x7000`) is not available in the launcher or plugins at the moment.
+
+        This function (``server.dll+0x7000```) is not available in the launcher or plugins at the moment.
+
         You can open a PR if you need it now.
 
     - `HSquirrelVM* sqvm` the target vm
