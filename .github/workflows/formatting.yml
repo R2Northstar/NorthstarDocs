@@ -30,7 +30,7 @@ jobs:
         run: |
           # List all text file extensions to check
           FILE_EXTENSIONS=("*.txt" "*.md" "*.yml" "*.yaml" "*.json" "*.sh" "*.py")
-          
+
           # Loop over each extension and check for trailing whitespaces
           for EXT in "${FILE_EXTENSIONS[@]}"; do
             if git ls-files "$EXT" | grep -q .; then
