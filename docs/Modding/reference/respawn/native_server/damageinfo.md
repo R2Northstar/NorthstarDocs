@@ -47,16 +47,16 @@ Because damageInfo instances are implemented as userdata they can't be typed.
 
 !!! cpp-function "int DamageInfo_GetDamageSourceIdentifier( var damageInfo )"
 
-    Returns the ``eDamageSourceId``
-    
-    ``damageSourceId`` is an ``int`` that references an ``enum`` and can be used to identify what source damage came from. 
+    Returns the `eDamageSourceId`
 
-    ``damageSourceId`` is mostly found as an argument in some kill and damage related functions. Respawn has created a function that will attempt to localise the damageSourceId inputed.
-    To add your own custom ``damageSourceID`` , see: :doc:`../../northstar/customdamagesources`
+    `damageSourceId` is an `int` that references an `enum` and can be used to identify what source damage came from.
 
-    Other useful functions can be found in the ``damageinfo`` section of this page and in :doc:`entities`
+    `damageSourceId` is mostly found as an argument in some kill and damage related functions. Respawn has created a function that will attempt to localise the damageSourceId inputed.
+    To add your own custom `damageSourceID` , see: :doc:`../../northstar/customdamagesources`
 
-    ``GetObitFromdamageSourceId`` is a global function that attempts to localise the ``damageSourceId`` inputed, if it cannot get a localised string it will simply return the localisation string of the source.
+    Other useful functions can be found in the `damageinfo` section of this page and in :doc:`entities`
+
+    `GetObitFromdamageSourceId` is a global function that attempts to localise the `damageSourceId` inputed, if it cannot get a localised string it will simply return the localisation string of the source.
 
 !!! cpp-function "float DamageInfo_GetViewPunchMultiplier( vare damageInfo )"
 
@@ -144,19 +144,19 @@ Because damageInfo instances are implemented as userdata they can't be typed.
 
 !!! cpp-function "bool HeavyArmorCriticalHitRequired( var damageInfo )"
 
-  .. note::
+  !!! note
 
     SERVER only
 
 !!! cpp-function "bool CritWeaponInDamageInfo( var damageInfo )"
 
-  .. note::
+  !!! note
 
     SERVER only
 
 !!! cpp-function "float GetCriticalScaler( ent, damageInfo )"
 
-  .. note::
+  !!! note
 
     SERVER only
 
@@ -225,27 +225,27 @@ You can get a bitflag of all damage types used with `DamageInfo_GetDamageType`.
     ```squirrel
 
 
-        global enum damageTypes
-        {
-            gibs = (DF_GIB)
-            largeCaliberExp	 = (DF_BULLET | DF_GIB | DF_EXPLOSION)
-            gibBullet = (DF_BULLET | DF_GIB)
-            instant = (DF_INSTANT)
-            dissolve = (DF_DISSOLVE)
-            projectileImpact = (DF_GIB)
-            pinkMist = (DF_GIB) //If updated from DF_GIB, change the DF_GIB in Arc Cannon to match.
-            ragdoll = (DF_RAGDOLL)
-            titanStepCrush = (DF_TITAN_STEP)
-            arcCannon = (DF_DISSOLVE | DF_GIB | DF_ELECTRICAL )
-            electric = (DF_ELECTRICAL) //Only increases Vortex Shield decay for bullet weapons atm.
-            explosive = (DF_RAGDOLL | DF_EXPLOSION )
-            bullet = (DF_BULLET)
-            largeCaliber = (DF_BULLET | DF_KNOCK_BACK)
-            shotgun = (DF_BULLET | DF_GIB | DF_SHOTGUN )
-            titanMelee = (DF_MELEE | DF_RAGDOLL)
-            titanBerserkerMelee	= (DF_MELEE | DF_RAGDOLL)
-            titanEjectExplosion	= (DF_GIB | DF_EXPLOSION)
-            dissolveForce = (DF_DISSOLVE | DF_KNOCK_BACK | DF_EXPLOSION)
-            rodeoBatteryRemoval	= (DF_RODEO | DF_EXPLOSION | DF_STOPS_TITAN_REGEN )
-        }
+    global enum damageTypes
+    {
+        gibs = (DF_GIB)
+        largeCaliberExp  = (DF_BULLET | DF_GIB | DF_EXPLOSION)
+        gibBullet = (DF_BULLET | DF_GIB)
+        instant = (DF_INSTANT)
+        dissolve = (DF_DISSOLVE)
+        projectileImpact = (DF_GIB)
+        pinkMist = (DF_GIB) //If updated from DF_GIB, change the DF_GIB in Arc Cannon to match.
+        ragdoll = (DF_RAGDOLL)
+        titanStepCrush = (DF_TITAN_STEP)
+        arcCannon = (DF_DISSOLVE | DF_GIB | DF_ELECTRICAL )
+        electric = (DF_ELECTRICAL) //Only increases Vortex Shield decay for bullet weapons atm.
+        explosive = (DF_RAGDOLL | DF_EXPLOSION )
+        bullet = (DF_BULLET)
+        largeCaliber = (DF_BULLET | DF_KNOCK_BACK)
+        shotgun = (DF_BULLET | DF_GIB | DF_SHOTGUN )
+        titanMelee = (DF_MELEE | DF_RAGDOLL)
+        titanBerserkerMelee = (DF_MELEE | DF_RAGDOLL)
+        titanEjectExplosion = (DF_GIB | DF_EXPLOSION)
+        dissolveForce = (DF_DISSOLVE | DF_KNOCK_BACK | DF_EXPLOSION)
+        rodeoBatteryRemoval = (DF_RODEO | DF_EXPLOSION | DF_STOPS_TITAN_REGEN )
+    }
     ```

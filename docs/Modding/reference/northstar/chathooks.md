@@ -1,12 +1,12 @@
 # Chathooks
 
-This document provides usage of the Chathook API added in Northstar ``v1.6.0``.
+This document provides usage of the Chathook API added in Northstar `v1.6.0`.
 For an example of chathooks in use, check out EmmaM's [OwOfier mod](https://github.com/emma-miler/OwOfier/).
 
 
 !!! warning
-	
-	Your mod needs to be load priority 1 or above to use the structs and callbacks in your script.
+
+    Your mod needs to be load priority 1 or above to use the structs and callbacks in your script.
 
 
 ## Client chat API
@@ -29,17 +29,17 @@ The client chat callbacks allow you to intercept chat messages and modify or blo
 
         the player who sent the chat.
     !!! cpp-var "string playerName"
-    
+
        the display name of the player who sent the chat.
     !!! cpp-var "bool isTeam"
 
-        whether this chat has a ``[TEAM]`` tag.
+        whether this chat has a `[TEAM]` tag.
     !!! cpp-var "bool isDead"
 
-        whether this chat has a ``[DEAD]`` tag.
+        whether this chat has a `[DEAD]` tag.
     !!! cpp-var "bool isWhisper"
 
-        whether this chat has a ``[WHISPER]`` tag.
+        whether this chat has a `[WHISPER]` tag.
     !!! cpp-var "bool shouldBlock"
 
         if true, this chat will not be displayed.
@@ -57,23 +57,22 @@ The client chat callbacks allow you to intercept chat messages and modify or blo
     **Example:**
 
     ```squirrel
-
-        ClClient_MessageStruct function MyChatFilter(ClClient_MessageStruct message)
+    ClClient_MessageStruct function MyChatFilter(ClClient_MessageStruct message)
+    {
+        if (message.message.find("nft") != null)
         {
-            if (message.message.find("nft") != null)
-            {
-                message.shouldBlock = true
-            }
-            
-            message.message = StringReplace(message.message, "yes", "no", true, true)
-            
-            return message
+            message.shouldBlock = true
         }
 
-        void function MyModInit()
-        {
-            AddCallback_OnReceivedSayTextMessage(MyChatFilter)
-        }
+        message.message = StringReplace(message.message, "yes", "no", true, true)
+
+        return message
+    }
+
+    void function MyModInit()
+    {
+        AddCallback_OnReceivedSayTextMessage(MyChatFilter)
+    }
     ```
 
 
@@ -89,11 +88,10 @@ players, they only display them locally.
     **Example:**
 
     ```squirrel
-
-        void function OnGameStarted()
-        {
-            Chat_GameWriteLine("You got this, " + GetLocalClientPlayer().GetPlayerName() + "!")
-        }
+    void function OnGameStarted()
+    {
+        Chat_GameWriteLine("You got this, " + GetLocalClientPlayer().GetPlayerName() + "!")
+    }
     ```
 
 
@@ -104,19 +102,18 @@ players, they only display them locally.
     **Example:**
 
     ```squirrel
-        
-        void function InitialiseHEVSuit()
-        {
-            Chat_GameWriteLine("SENSOR ARRAYS-")
-            ActivateSensorArrays()
-            Chat_GameWrite("ACTIVATED")
-            wait 1
-            Chat_GameWriteLine("BIOMETRIC MONITORING SYSTEMS-")
-            ActivateBiometricMonitoringSystems()
-            Chat_GameWrite("ACTIVATED")
-            wait 1
-            Chat_GameWriteLine("HAVE A VERY SAFE DAY.")
-        }
+    void function InitialiseHEVSuit()
+    {
+        Chat_GameWriteLine("SENSOR ARRAYS-")
+        ActivateSensorArrays()
+        Chat_GameWrite("ACTIVATED")
+        wait 1
+        Chat_GameWriteLine("BIOMETRIC MONITORING SYSTEMS-")
+        ActivateBiometricMonitoringSystems()
+        Chat_GameWrite("ACTIVATED")
+        wait 1
+        Chat_GameWriteLine("HAVE A VERY SAFE DAY.")
+    }
     ```
 
 !!! cpp-function "void Chat_NetworkWriteLine(string text)"
@@ -126,11 +123,10 @@ players, they only display them locally.
     **Example:**
 
     ```squirrel
-
-        void function MyModInit()
-        {
-            Chat_NetworkWriteLine("MyMod v1.0.0 is good to go!")
-        }
+    void function MyModInit()
+    {
+        Chat_NetworkWriteLine("MyMod v1.0.0 is good to go!")
+    }
     ```
 
 
@@ -141,18 +137,17 @@ players, they only display them locally.
     **Example:**
 
     ```squirrel
-
-        void function OnButtonPressed()
-        {
-            Chat_NetworkWrite("Connecting in 3...")
-            wait 1
-            Chat_NetworkWrite("2...")
-            wait 1
-            Chat_NetworkWrite("1...")
-            wait 1
-            Chat_NetworkWrite("0")
-            Connect()
-        }
+    void function OnButtonPressed()
+    {
+        Chat_NetworkWrite("Connecting in 3...")
+        wait 1
+        Chat_NetworkWrite("2...")
+        wait 1
+        Chat_NetworkWrite("1...")
+        wait 1
+        Chat_NetworkWrite("0")
+        Connect()
+    }
     ```
 
 
@@ -169,16 +164,16 @@ The server chat callbacks allow you to intercept incoming chat messages and modi
     `AddCallback_OnReceivedSayTextMessage`.
 
     !!! cpp-var "string message"
-        
+
         the text sent by the player.
     !!! cpp-var "entity player"
-        
+
         the player who sent the chat.
     !!! cpp-var "bool isTeam"
-        
+
         whether this chat is only sent to the player's team.
     !!! cpp-var "bool shouldBlock"
-        
+
         if true, this chat will not be sent.
 
 
@@ -194,22 +189,21 @@ The server chat callbacks allow you to intercept incoming chat messages and modi
     **Example:**
 
     ```squirrel
+    ClServer_MessageStruct function MyChatFilter(ClServer_MessageStruct message)
+    {
+        if (message.message.find("nft") != null)
+        {
+            message.shouldBlock = true
+        }
 
-        ClServer_MessageStruct function MyChatFilter(ClServer_MessageStruct message)
-        {
-            if (message.message.find("nft") != null)
-            {
-                message.shouldBlock = true
-            }
-            
-            message.message = StringReplace(message.message, "yes", "no", true, true)
-            
-            return message
-        }
-        void function MyModInit()
-        {
-            AddCallback_OnReceivedSayTextMessage(MyChatFilter)
-        }
+        message.message = StringReplace(message.message, "yes", "no", true, true)
+
+        return message
+    }
+    void function MyModInit()
+    {
+        AddCallback_OnReceivedSayTextMessage(MyChatFilter)
+    }
     ```
 
 
@@ -224,18 +218,17 @@ With custom messages you can send chat messages at any time, to all players or t
 
     **Parameters:**
 
-    - ``entity player`` - the player that the chat message will appear to be from.
-    - ``string text`` - the contents of the chat message. Supports [ANSI escape codes](#ansi_escape)  for colors.
-    - ``bool isTeamChat`` - whether this chat is only sent to the player's team.
+    - `entity player` - the player that the chat message will appear to be from.
+    - `string text` - the contents of the chat message. Supports [ANSI escape codes](#ansi_escape)  for colors.
+    - `bool isTeamChat` - whether this chat is only sent to the player's team.
 
     **Example:**
 
     ```squirrel
-
-        void function OnSayRedCommand(entity player, string text)
-        {
-            Chat_Impersonate(player, "red text -> \x1b[31m" + text)
-        }
+    void function OnSayRedCommand(entity player, string text)
+    {
+        Chat_Impersonate(player, "red text -> \x1b[31m" + text)
+    }
     ```
 
 
@@ -246,23 +239,22 @@ With custom messages you can send chat messages at any time, to all players or t
 
     **Parameters:**
 
-    - ``entity fromPlayer`` - the player the message will be from.
-    - ``entity toPlayer`` - the player that the message will be shown to.
-    - ``string text`` - the contents of the chat message. Supports [ANSI escape codes](#ansi_escape) for colors.
-    - ``bool whisper`` - if true, ``[WHISPER]`` will be displayed before the message to indicate the message is private.
+    - `entity fromPlayer` - the player the message will be from.
+    - `entity toPlayer` - the player that the message will be shown to.
+    - `string text` - the contents of the chat message. Supports [ANSI escape codes](#ansi_escape) for colors.
+    - `bool whisper` - if true, `[WHISPER]` will be displayed before the message to indicate the message is private.
 
     **Example:**
 
     ```squirrel
-
-        void function OnSendToFriendsCommand(entity fromPlayer, string text)
+    void function OnSendToFriendsCommand(entity fromPlayer, string text)
+    {
+        array<entity> friends = GetPlayerFriends(fromPlayer)
+        foreach (friend in friends)
         {
-            array<entity> friends = GetPlayerFriends(fromPlayer)
-            foreach (friend in friends)
-            {
-                Chat_PrivateMessage(fromPlayer, friend, text, true)
-            }
+            Chat_PrivateMessage(fromPlayer, friend, text, true)
         }
+    }
     ```
 
 
@@ -272,29 +264,28 @@ With custom messages you can send chat messages at any time, to all players or t
 
     **Parameters:**
 
-    - ``string text`` - the contents of the chat message. Supports [ANSI escape codes](#ansi_escape) for colors.
-    - ``bool withServerTag`` - if true, ``[SERVER]`` will appear before the message in chat. Defaults to true.
+    - `string text` - the contents of the chat message. Supports [ANSI escape codes](#ansi_escape) for colors.
+    - `bool withServerTag` - if true, `[SERVER]` will appear before the message in chat. Defaults to true.
 
     **Example:**
 
     ```squirrel
-
-        void function RestartServerThread()
-        {
-            // wait one hour
-            wait 3600
-            Chat_ServerBroadcast("Server will be shut down in \x1b[93m5 seconds")
-            wait 1
-            Chat_ServerBroadcast("Server will be shut down in \x1b[93m4 seconds")
-            wait 1
-            Chat_ServerBroadcast("Server will be shut down in \x1b[93m3 seconds")
-            wait 1
-            Chat_ServerBroadcast("Server will be shut down in \x1b[93m2 seconds")
-            wait 1
-            Chat_ServerBroadcast("Server will be shut down in \x1b[93m1 second")
-            wait 1
-            StopServer()
-        }
+    void function RestartServerThread()
+    {
+        // wait one hour
+        wait 3600
+        Chat_ServerBroadcast("Server will be shut down in \x1b[93m5 seconds")
+        wait 1
+        Chat_ServerBroadcast("Server will be shut down in \x1b[93m4 seconds")
+        wait 1
+        Chat_ServerBroadcast("Server will be shut down in \x1b[93m3 seconds")
+        wait 1
+        Chat_ServerBroadcast("Server will be shut down in \x1b[93m2 seconds")
+        wait 1
+        Chat_ServerBroadcast("Server will be shut down in \x1b[93m1 second")
+        wait 1
+        StopServer()
+    }
     ```
 
 
@@ -304,25 +295,24 @@ With custom messages you can send chat messages at any time, to all players or t
 
     **Parameters:**
 
-    - ``entity toPlayer`` - the player that the message will be shown to.
-    - ``string text`` - the contents of the chat message. Supports [ANSI escape codes](#ansi_escape) for colors.
-    - ``bool whisper`` - if true, ``[WHISPER]`` will be displayed before the message to indicate the message is private.
-    - ``bool withServerTag`` - if true, ``[SERVER]`` will appear before the message in chat. Defaults to true.
+    - `entity toPlayer` - the player that the message will be shown to.
+    - `string text` - the contents of the chat message. Supports [ANSI escape codes](#ansi_escape) for colors.
+    - `bool whisper` - if true, `[WHISPER]` will be displayed before the message to indicate the message is private.
+    - `bool withServerTag` - if true, `[SERVER]` will appear before the message in chat. Defaults to true.
 
     **Example:**
 
     ```squirrel
-
-        void function OnBanCommand(entity player, array<string> args)
+    void function OnBanCommand(entity player, array<string> args)
+    {
+        if (!PlayerIsModerator(player))
         {
-            if (!PlayerIsModerator(player))
-            {
-                Chat_ServerPrivateMessage(player, "You do not have the permissions to perform this command.", true, false)
-                return
-            }
-            
-            BanPlayerByName(args[0])
+            Chat_ServerPrivateMessage(player, "You do not have the permissions to perform this command.", true, false)
+            return
         }
+
+        BanPlayerByName(args[0])
+    }
     ```
 
 
@@ -332,23 +322,22 @@ All messages support ANSI escape codes for customising text color. These are com
 meaning. For example, the string:
 
 ```text
-
-    Hello world, \x1b[31mthis text is red\x1b[0m. And \x1b[34mthis text is blue\x1b[0m.
+Hello world, \x1b[31mthis text is red\x1b[0m. And \x1b[34mthis text is blue\x1b[0m.
 ```
 
-``\x1b`` is a special character that Squirrel (and other languages) replace with a reserved ASCII character. For future
-reference this will be referred to with ``ESC`` (e.g. setting red text is ``ESC[31m``).
+`\x1b` is a special character that Squirrel (and other languages) replace with a reserved ASCII character. For future
+reference this will be referred to with `ESC` (e.g. setting red text is `ESC[31m`).
 
 The following commands are available:
 
 
 |Codes|Description|
 |-----|-----------|
-|``ESC[0m`` and ``ESC[39m``|Reset text formatting.|
-|``ESC[30-37m``, ``ESC[90-97m``|Set to one of [the available color presets](https://en.wikipedia.org/wiki/ANSI_escape_code#3-bit_and_4-bit).|
-|``ESC[38;5;Xm``|Set to one of [the available 8-bit colors](https://en.wikipedia.org/wiki/ANSI_escape_code#8-bit).|
-|``ESC[38;2;R;G;Bm``|Set to an RGB color, with ``R``, ``G`` and ``B`` in the range 0-255.|
-|``ESC[110m``|Set to chat text color.|
-|``ESC[111m``|Set to friendly player name color.|
-|``ESC[112m``|Set to enemy player name color.|
-|``ESC[113m``|Set to network name color.|
+|`ESC[0m` and `ESC[39m`|Reset text formatting.|
+|`ESC[30-37m`, `ESC[90-97m`|Set to one of [the available color presets](https://en.wikipedia.org/wiki/ANSI_escape_code#3-bit_and_4-bit).|
+|`ESC[38;5;Xm`|Set to one of [the available 8-bit colors](https://en.wikipedia.org/wiki/ANSI_escape_code#8-bit).|
+|`ESC[38;2;R;G;Bm`|Set to an RGB color, with `R`, `G` and `B` in the range 0-255.|
+|`ESC[110m`|Set to chat text color.|
+|`ESC[111m`|Set to friendly player name color.|
+|`ESC[112m`|Set to enemy player name color.|
+|`ESC[113m`|Set to network name color.|

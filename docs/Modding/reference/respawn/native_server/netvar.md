@@ -8,7 +8,7 @@
 
 !!! cpp-function "int GetNetworkedVariableIndex( string name )"
 
-  Gets the internal index used to reference a scripted network variable. For use with ``FX_PATTACH_SCRIPT_NETWORK_VAR``.
+  Gets the internal index used to reference a scripted network variable. For use with `FX_PATTACH_SCRIPT_NETWORK_VAR`.
 
 !!! cpp-function "void SetGlobalNetBool( string name, bool value )"
 
@@ -34,7 +34,7 @@
 
 ## Remote Functions
 
-Remote functions allow the ``SERVER`` to call registered script functions on the ``CLIENT`` and ``UI`` VM.
+Remote functions allow the `SERVER` to call registered script functions on the `CLIENT` and `UI` VM.
 
 !!! cpp-function "void Remote_BeginRegisteringFunctions()"
 
@@ -55,19 +55,19 @@ Remote functions allow the ``SERVER`` to call registered script functions on the
   To register custom remote functions you are **required** to use this callback because functions can only be registered once.
 
   ```squirrel
-    globalize_all_functions
+globalize_all_functions
 
-    void function MyMod_Init()
-    {
-      AddCallback_OnRegisteringCustomNetworkVars( MyModRegisterRemoteFunctions )
-    }
+void function MyMod_Init()
+{
+    AddCallback_OnRegisteringCustomNetworkVars( MyModRegisterRemoteFunctions )
+}
 
-    void function MyModRegisterRemoteFunctions()
-    {
-      Remote_RegisterFunction( "ExampleRemoteFunction" )
-    }
+void function MyModRegisterRemoteFunctions()
+{
+    Remote_RegisterFunction( "ExampleRemoteFunction" )
+}
 
-    void function ExampleRemoteFunction() {}
+void function ExampleRemoteFunction() {}
   ```
 
 !!! cpp-function "void Remote_RegisterFunction( string name )"
@@ -93,9 +93,9 @@ Remote functions allow the ``SERVER`` to call registered script functions on the
         Allowed extra parameter types are null, bool, int, and float.
 
   Given a player, function name, and optional parameters, call function in client script.
-  
+
   Does not get called again in replays.
-  
+
 !!! cpp-function "void Remote_CallFunction_UI( entity player, string functionName, ... )"
 
     !!! note

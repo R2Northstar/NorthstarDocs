@@ -9,8 +9,8 @@
 !!! cpp-function "void SaveGame_CreateWithCommitDelay( string saveName, int saveVersion, float delay, int trycount )"
 
   Do a save.
-  
-  Will call back ``bool CodeCallback_SaveGameIsSafeToCommit()`` to validate if it is ok to commit the save file.
+
+  Will call back `bool CodeCallback_SaveGameIsSafeToCommit()` to validate if it is ok to commit the save file.
 
 !!! cpp-function "void SaveGame_Commit()"
 
@@ -44,12 +44,12 @@
 
 !!! cpp-function "void ChangeLevel( string mapName, LevelTransitionStruct transitionStruct )"
 
-  Loads a new level. The data in ``transitionStruct`` can be read in the next level with ``GetLevelTransitionStruct()``.
+  Loads a new level. The data in `transitionStruct` can be read in the next level with `GetLevelTransitionStruct()`.
 
 !!! cpp-function "LevelTransitionStruct ornull GetLevelTransitionStruct()"
 
-  Reads the transition data set by ``ChangeLevel()`` on the previous map.
-  Return ``null`` if this is the first map or the previous map didn't supply any data.
+  Reads the transition data set by `ChangeLevel()` on the previous map.
+  Return `null` if this is the first map or the previous map didn't supply any data.
 
 ## Timeshift
 

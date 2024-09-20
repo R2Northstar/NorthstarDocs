@@ -8,7 +8,7 @@ When ejecting the game selects a random number between 0 and 1, if this number i
 
 ### Adding new messages
 
-Using ``AddCommonEjectMessage( String message )`` and ``AddRareEjectMessage( String message )`` in script additional messages can be added to the pool of potential ejection messages
+Using `AddCommonEjectMessage( String message )` and `AddRareEjectMessage( String message )` in script additional messages can be added to the pool of potential ejection messages
 
 ### Localisation
 
@@ -82,7 +82,7 @@ Below are a list of useful functions added by Northstar.
     !!! note
         Respawn comment next to the function:
 
-        ``TODO: This is a copy of SP's PlayerPosInSolid(). Not changing it to avoid patching SP. Merge into one function next game``
+        `TODO: This is a copy of SP's PlayerPosInSolid(). Not changing it to avoid patching SP. Merge into one function next game`
 
 
 !!! cpp-function "bool function PlayerSpawnpointIsValid( entity ent )"
@@ -92,7 +92,7 @@ Below are a list of useful functions added by Northstar.
     !!! note
         Respawn comment next to the function:
 
-        ``TODO:  This function returns true for a player standing inside a friendly grunt. It also returns true if you are right up against a ceiling.Needs fixing for next game``
+        `TODO:  This function returns true for a player standing inside a friendly grunt. It also returns true if you are right up against a ceiling.Needs fixing for next game`
 
 !!! cpp-function "bool function EntityInSpecifiedEnt( entity ent, entity specifiedEnt, int buffer = 0 )"
 
@@ -125,7 +125,7 @@ Below are a list of useful functions added by Northstar.
 
 !!! cpp-function "vector function GetCenter( array<entity> ents )"
 
-### Turret functions 
+### Turret functions
 
 !!! cpp-function "void function TurretChangeTeam( entity turret, int team )"
 
@@ -164,7 +164,7 @@ Below are a list of useful functions added by Northstar.
 
 !!! cpp-function "void function ClearChildren( entity parentEnt )"
 
-### Titans 
+### Titans
 
 !!! cpp-function "bool function TitanHasRegenningShield( entity soul )"
 
@@ -186,7 +186,7 @@ Below are a list of useful functions added by Northstar.
 
 !!! cpp-function "string NSGetLocalPlayerUID()"
 
-    Returns the local player's UID, else ``null``.
+    Returns the local player's UID, else `null`.
     Available on CLIENT, UI and SERVER VM.
 
 !!! cpp-function "bool function IsMultiplayer()"
@@ -224,11 +224,11 @@ Below are a list of useful functions added by Northstar.
 !!! cpp-function "bool function IsPlayerFemalePilot( entity player )"
 
 !!! cpp-function "void function RandomizeHead( entity model ) "
-    
+
     Randomize head across all available heads
 
 !!! cpp-function "void function RandomizeHeadByTeam( entity model, int headIndex, int numOfHeads ) "
-    
+
     Randomize head across heads available to a particular team. Assumes for a model all imc heads are first, then all militia heads are later.
 
 !!! cpp-function "void function CreateZipline( vector startPos, vector endPos )"
@@ -236,11 +236,11 @@ Below are a list of useful functions added by Northstar.
 !!! cpp-function "bool function HasTeamSkin( entity model )"
 
 !!! cpp-function "void function DropToGround( entity ent )"
-    
+
 !!! cpp-function "void function DropTitanToGround( entity titan, array<entity> ignoreEnts )"
 
 
-## Type Utilities 
+## Type Utilities
 
 ### Table
 
@@ -257,7 +257,7 @@ Below are a list of useful functions added by Northstar.
 
 !!! cpp-function "int function array.find(var value)"
 
-    !!! warning "this returns ``-1`` if the item was not found in the array"
+    !!! warning "this returns `-1` if the item was not found in the array"
 
 !!! cpp-function "array.fastremove(var)"
 
@@ -273,11 +273,11 @@ Below are a list of useful functions added by Northstar.
 
 !!! cpp-function "array.resize(int newSize, var fillValue = 0)"
 
-    changes the size of the array to the first int, new slots will be filled with the 2nd argument. 
+    changes the size of the array to the first int, new slots will be filled with the 2nd argument.
 
 !!! cpp-function "array.sort( compare_func = null )"
 
-!!! note  
+!!! note
 
     A few built-in functions you can give as arguments to sort an array.
 
@@ -296,7 +296,7 @@ Below are a list of useful functions added by Northstar.
         !!! cpp-function "int function SortStringAsset( asset a, asset b )"
 
         !!! cpp-function "int function SortBySpawnTime( entity a, entity b )"
-    
+
         Functions for score comparison
 
         !!! cpp-function "int function CompareKills( entity a, entity b )"
@@ -334,7 +334,7 @@ Below are a list of useful functions added by Northstar.
 
 
 !!! cpp-function "array.reverse()"
-    
+
     reverse the array in place
 
 !!! cpp-function "array.slice(int start, int end = null)"
@@ -358,32 +358,30 @@ Below are a list of useful functions added by Northstar.
     Returns a formatted template
 
 !!! cpp-function "string function Localize( string token )"
-    
+
     !!! note
 
         replaces text that should be localized on the client
 
         ```squirrel
-
-            string localized = Localize( token )
+        string localized = Localize( token )
         ```
 
 !!! cpp-function "int ornull function string.find( string s )"
 
     !!! warning
 
-        returns ``null`` if the string is not found.
-        
+        returns `null` if the string is not found.
+
         You can eliminate the possibility of the returned index being null by casting like this:
 
         ```squirrel
+        int ornull index = GetMapName().find( "mp" )
 
-            int ornull index = GetMapName().find( "mp" )
-
-            if( !index )
-                return
-            int( index )
-            int n = index + 1 //now we do not need the ornull anymore
+        if( !index )
+            return
+        int( index )
+        int n = index + 1 //now we do not need the ornull anymore
         ```
 
 !!! cpp-function "string function string.slice( int start, int end = null )"

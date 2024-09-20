@@ -12,7 +12,7 @@ For settings, see [AI Settings](settings.md#ai-settings)
 
 !!! cpp-function "void ToggleNPCPathsForEntity( entity ent, bool pathable )"
 
-  Controls if ``ent`` is traversable by NPCs
+  Controls if `ent` is traversable by NPCs
 
 !!! cpp-function "void ToggleNPCPathsForEntityAtPosition( entity ent, vector pos, bool pathable )"
 
@@ -93,16 +93,16 @@ For settings, see [AI Settings](settings.md#ai-settings)
 
 !!! cpp-function "array<vector> NavMesh_RandomPositions( vector startPos, int hull, int numPositionsRequested, float minDist, float maxDist )"
 
-  Get n( < 64 ) ground positions around a spot within ``minDist`` and ``maxDist``
+  Get n( < 64 ) ground positions around a spot within `minDist` and `maxDist`
 
 !!! cpp-function "array<vector> NavMesh_RandomPositions_LargeArea( vector startPos, int hull, int numPositionsRequested, float minDist, float maxDist )"
 
-  Get up to n ground positions around a spot within ``minDist`` and ``maxDist``. Gets center of random polygons.
+  Get up to n ground positions around a spot within `minDist` and `maxDist`. Gets center of random polygons.
 
 !!! cpp-function "bool NavMesh_IsPosReachableForAI( entity npc, vector point )"
 
   Checks if the npc can reach the position over graph
-  
+
 !!! cpp-function "vector GetBoundsMin( int hull )"
 
 !!! cpp-function "vector GetBoundsMax( int hull )"

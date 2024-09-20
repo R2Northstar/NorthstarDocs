@@ -8,22 +8,21 @@
     - `HSquirrelVM* sqvm` the target vm
     - `SQInteger size` initial size of the array
 
-    Returns a ``SQRESULT``
+    Returns a `SQRESULT`
 
     creates a new array and pushes it to the stack
 
     ```cpp
+    newarray(sqvm, 0);
+    pushstring(sqvm, "val1");
+    arrayappend(sqvm, -2);
+    pushinteger(sqvm, 15);
+    arrayappend(sqvm, -2);
 
-        newarray(sqvm, 0);
-        pushstring(sqvm, "val1");
-        arrayappend(sqvm, -2);
-        pushinteger(sqvm, 15);
-        arrayappend(sqvm, -2);
-
-        /*
-            The array on the stack now looks like this:
-            [ "val1", 15 ]
-        */
+    /*
+        The array on the stack now looks like this:
+        [ "val1", 15 ]
+    */
     ```
 
 
@@ -32,7 +31,7 @@
 
     - `HSquirrelVM* sqvm` the target vm
     - `SQInteger stackpos` stack position of the array to append to
-    - Returns a ``SQRESULT``
+    - Returns a `SQRESULT`
 
     pops a value from the stack and pushes it to the back of the array at the position idx in the stack
 
@@ -43,7 +42,7 @@
 
     - `HSquirrelVM* sqvm` the target vm
 
-    Returns a ``SQRESULT``
+    Returns a `SQRESULT`
 
     creates a new table and pushes it onto the stack.
 
@@ -52,37 +51,36 @@
 
     - `HSquirrelVM* sqvm` the target vm
     - `SQInteger stackpos` the index of the table to insert into
-    - `SQBool bstatic` if ``SQTrue`` creates a static member. This parameter is only used if the target object is a class.
+    - `SQBool bstatic` if `SQTrue` creates a static member. This parameter is only used if the target object is a class.
 
     pops a key and a value from the stack and performs a set operation on the table or class that is at position idx in the stack, if the slot does not exist it will be created.
 
     ```cpp
+    newtable(sqvm);
+    // slot 1
+    pushstring(sqvm, "key");
+    pushstring(sqvm, "value");
+    newslot(sqvm, -3);
+    // slot 2
+    pushstring(sqvm, "key2");
+    pushasset(sqvm, "value2");
+    newslot(sqvm, -3);
+    // slot 3
+    pushstring(sqvm, "key3");
+    newtable(sqvm);
+    pushstring(sqvm, "sub");
+    pushinteger(sqvm, 13);
+    newslot(sqvm, -3);
+    newslot(sqvm, -3);
 
-        newtable(sqvm);
-        // slot 1
-        pushstring(sqvm, "key");
-        pushstring(sqvm, "value");
-        newslot(sqvm, -3);
-        // slot 2
-        pushstring(sqvm, "key2");
-        pushasset(sqvm, "value2");
-        newslot(sqvm, -3);
-        // slot 3
-        pushstring(sqvm, "key3");
-        newtable(sqvm);
-        pushstring(sqvm, "sub");
-        pushinteger(sqvm, 13);
-        newslot(sqvm, -3);
-        newslot(sqvm, -3);
-
-        /*
-            The table on the stack now looks like this:
-            {
-                key = "value"
-                key2 = $"value2"
-                key3 = { sub = 13 }
-            }
-        */
+    /*
+        The table on the stack now looks like this:
+        {
+            key = "value"
+            key2 = $"value2"
+            key3 = { sub = 13 }
+        }
+    */
     ```
 
 ## Structs
@@ -96,8 +94,8 @@
 
     - `HSquirrelVM* sqvm` The target vm
     - `int fieldCount` total number of fields the struct contains
-    
-    Creates and pushes a struct instance with ``fieldCount`` to the stack.
+
+    Creates and pushes a struct instance with `fieldCount` to the stack.
 
 
 !!! cpp-function "SQRESULT::SQRESULT_NULL sealstructslot(HSquirrelVM* sqvm, int fieldIndex)"
@@ -105,26 +103,25 @@
     - `HSquirrelVM* sqvm` The target vm
     - `int fieldIndex` Index of the field to fill
 
-    Pops a value from the stack and fills the field at ``fieldIndex`` from the struct object that needs to be at the top of the stack.
+    Pops a value from the stack and fills the field at `fieldIndex` from the struct object that needs to be at the top of the stack.
 
     ```cpp
+    pushnewstructinstance(sqvm, 2); // create a struct instance with 2 slots
+    pushinteger(sqvm, 12);
+    sealstructslot(sqvm, 0);
+    pushstring(sqvm, "example", -1);
+    sealstructslot(sqvm, 1);
 
-        pushnewstructinstance(sqvm, 2); // create a struct instance with 2 slots
-        pushinteger(sqvm, 12);
-        sealstructslot(sqvm, 0);
-        pushstring(sqvm, "example", -1);
-        sealstructslot(sqvm, 1);
+    /*
+        Assuming the compiler expects this slot:
+        struct ExStruct { int i, string s }
+        , the struct on the stack looks like this
 
-        /*
-            Assuming the compiler expects this slot:
-            struct ExStruct { int i, string s }
-            , the struct on the stack looks like this
-
-            ExStruct {
-                i = 12,
-                s = "example"
-            }
-        */
+        ExStruct {
+            i = 12,
+            s = "example"
+        }
+    */
     ```
 
 # Userdata
