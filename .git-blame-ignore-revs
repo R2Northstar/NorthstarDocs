@@ -17,3 +17,9 @@ be210eef0ad8c49f3f74ecb974978d95239b7641
 
 # Remove cases of trailing whitespaces (#41)
 6f17ba8a22640bbb8cfb131d5bd5796ec6b4c060
+
+# Remove superfluous newline at the start of codeblocks (#44)
+8f9c10d7840c4051fce7bf1260e644752bd8dfc6
+
+# Fix indentation in codeblocks (#45)
+028e59941946ed37d29f73ac902d70d00bc2257d
