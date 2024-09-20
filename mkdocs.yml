@@ -42,6 +42,11 @@ plugins:
       enabled: !ENV CI
   - search
   - social
+  - git-committers:
+      repository: R2Northstar/NorthstarDocs
+      branch: main
+      enabled: !ENV [GITHUB_ACTIONS, false]
+      token: !ENV [GH_TOKEN]
 
 markdown_extensions:
   - abbr
