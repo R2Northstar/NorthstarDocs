@@ -8,6 +8,9 @@
         },
         {
             "pattern": "https://crates.io/crates/rrplug"
+        },
+        {
+            "pattern": "https://www.wunderboy.org/valve-hl2source-sdk-tools/#vtf_shell"
         }
     ]
 }
