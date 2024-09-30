@@ -23,7 +23,7 @@ For code review head to the _"Files changed"_ section of the PR.
 
 From there you can select the line(s) you want to leave a comment on.
 
-![](/_static/wiki/review2.PNG)
+![](/_static/wiki/review2.png)
 
 Type in your comment and click on _"Start a review"_.
 
