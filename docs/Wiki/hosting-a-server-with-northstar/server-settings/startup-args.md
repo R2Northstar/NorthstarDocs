@@ -9,7 +9,7 @@ Example: `+setplaylist private_match +mp_gamemode ps`
 | `+setplaylistvaroverrides` | see [PlaylistOverrides](playlistvar.md)                         | Edits the behaviour of the server                                         |
 | `-port`                    | int beteween `1-65535`                                          | Determines which UDP port the server will listen to                       |
 | `+mp_gamemode`             | see [Gamemodes](./#gamemodes)                                   | Forces the gamemode of the server                                         |
-| `+map`                     | see [Maps](./#maps) (`mp_lobby` is the default if not included) | Forces the map of the server at the first start                           |
+| `+map`                     | see [Maps](../server-settings/file-names.md#maps) (`mp_lobby` is the default if not included) | Forces the map of the server at the first start                           |
 
 | Flags                 | Description                                                                    |
 | --------------------- | ------------------------------------------------------------------------------ |
