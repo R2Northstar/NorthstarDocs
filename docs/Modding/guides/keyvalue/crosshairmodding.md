@@ -52,7 +52,7 @@ WeaponData
 }
 ```
 
-**To add more crosshairs add another Crosshair\_\X following the
+**To add more crosshairs add another Crosshair\_X following the
 formating in the script above.**
 
 !!! note
