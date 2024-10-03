@@ -102,11 +102,9 @@ WeaponData
 These are the available crosshairs in-game, along with their in-game
 reference:
 
-| Picture | Value | Notes |
-| ------- | ----- | ----- |
-| ![](/_static/crosshairmodding/crosshair_grenade_launcher.png)| `ui/crosshair_grenade_launcher` | * |
-| ![](/_static/crosshairmodding/crosshair_mastiff.png)| `ui/crosshair_mastiff` ||
-| ![](/_static/crosshairmodding/crosshair_wingman_n.png)| `ui/crosshair_wingman_n` ||
+![Crosshair examples](https://github.com/Riccorbypro/Custom.Crosshairs/raw/main/assets/crosshairs.png)
+
+Crosshair images are taken from the modding guide on the [NoSkill Wiki](https://noskill.gitbook.io/titanfall2).
 
 !!! note
     Some crosshairs completely ignore the `"base_spread"` setting, and will always use a specific spread. <br> Some crosshairs don't disappear when aiming down sights.
