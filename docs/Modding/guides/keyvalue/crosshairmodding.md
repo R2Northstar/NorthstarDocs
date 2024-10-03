@@ -37,7 +37,7 @@ into one.**
 WeaponData
 {
     "active_crosshair_count"            "2" //Amount of crosshairs you want to use
-    
+
     RUI_CrosshairData
     {
         Crosshair_1
@@ -107,8 +107,7 @@ reference:
 Crosshair images are taken from the modding guide on the [NoSkill Wiki](https://noskill.gitbook.io/titanfall2).
 
 !!! note
-    Some crosshairs completely ignore the `"base_spread"` setting, and will always use a specific spread.   
-    Some crosshairs don't disappear when aiming down sights.
+    Some crosshairs completely ignore the `"base_spread"` setting, and will always use a specific spread. <br> Some crosshairs don't disappear when aiming down sights.
 
 ## Examples
 
