@@ -102,12 +102,17 @@ WeaponData
 These are the available crosshairs in-game, along with their in-game
 reference:
 
-![Crosshair examples](https://github.com/Riccorbypro/Custom.Crosshairs/raw/main/assets/crosshairs.png)
-
-Crosshair images are taken from the modding guide on the [NoSkill Wiki](https://noskill.gitbook.io/titanfall2).
+| Picture | Value | Special Property |
+| ------- | ----- | ------- -------- |
+| ![](/../../../_static/crosshairmodding/crosshair_grenade_launcher.png)| `ui/crosshair_grenade_launcher` | TODO2 |
+| ![](/../../../_static/crosshairmodding/crosshair_mastiff.png)| `ui/crosshair_mastiff` ||
+| ![](/../../../_static/crosshairmodding/crosshair_wingman_n.png)| `ui/crosshair_wingman_n` ||
 
 !!! note
-    Some crosshairs completely ignore the `"base_spread"` setting, and will always use a specific spread. <br> Some crosshairs don't disappear when aiming down sights.
+    `TODO1` means the crosshair completely ignores the `"base_spread"` setting, and will always use a specific spread. <br>
+    `TODO2` means the crosshair doesn't disappear when aiming down sights. <br>
+    `TODO3` means the crosshair can track a specific value of your weapon (charge amount, clip size...). <br>
+    `TODO4` means the crosshair is invisible, unless the weapon is amped.
 
 ## Examples
 
