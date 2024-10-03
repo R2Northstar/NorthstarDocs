@@ -23,7 +23,7 @@ WeaponData
 }
 ```
 
-3: change `"ui/crosshair_alternator"` to your desired crosshair.
+3: Change `"ui/crosshair_alternator"` to your desired crosshair.
 
 ## Overlapping Crosshairs
 
@@ -52,7 +52,7 @@ WeaponData
 }
 ```
 
-**To add more crosshairs add another Crosshair\_\ X following the
+**To add more crosshairs add another Crosshair\_\X following the
 formating in the script above.**
 
 !!! note
@@ -64,9 +64,7 @@ formating in the script above.**
 
 ## Adjust Crosshair Spread?
 
-Simply add the following line below the  "ui" line
-`"base_spread"               "3.0"`
-, like this:
+Simply add the following line below the "ui" line: `"base_spread"               "3.0"`
 
 ```
 WeaponData
@@ -82,7 +80,7 @@ WeaponData
 }
 ```
 
-* This only affects the visual spread of the crosshair, not the actual bullet spread. Positive values increase the spread while negative values decrease it. By default it is based on the weapon's own stats.
+* This only affects the visual spread of the crosshair, not the actual bullet spread. Positive values increase the spread while negative values decrease it. By default, it is based on the weapon's own stats.
 
 ## No Crosshair?
 
@@ -110,7 +108,7 @@ Crosshair images are taken from the modding guide on the [NoSkill Wiki](https://
 
 !!! note
    Some crosshairs completely ignore the `"base_spread"` setting, and will always use a specific spread.
-   Some crosshairs do not disappear when aiming down sights.
+   Some crosshairs don't disappear when aiming down sights.
 
 ## Examples
 
