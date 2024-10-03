@@ -119,7 +119,7 @@ Crosshair images are taken from the modding guide on the [NoSkill Wiki](https://
 ### Extra Info
 
 
-* As with any mod, it is recommended to test this out in a private match first. Save any changes you made to the desired weapon's file and type `"sv_cheats 1; reload_mods; weapon_reparse; sv_cheats 0"` in your console.
+* As with any mod, it is recommended to test this out in a private match first. Save any changes you made to the desired weapon's file and type `sv_cheats 1; reload_mods; weapon_reparse; sv_cheats 0` in your console.
 
 
 * Keep in mind that some weapons have animated or dynamic crosshairs. Weapons like the Charge Rifle, Cold War, Frag Grenade, etc... have custom animations for their crosshairs. Which can cause weirdness or jank when used on other weapons or when using other crosshairs on them.
