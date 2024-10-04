@@ -45,13 +45,13 @@ For simplicity it's assumed your development environment is Visual Studio and yo
 
 Otherwise are the steps basically the same everywhere else.
 
-1) Clone the [Launcher](https://github.com/R2Northstar/NorthstarLauncher)
+1. Clone the [Launcher](https://github.com/R2Northstar/NorthstarLauncher)
 
-2) Set the binary output directory to the location wherever you have installed your game. The compiled `NorthstarLauncher.exe` should be outputted next to `Titanfall.exe`.
+2. Set the binary output directory to the location wherever you have installed your game. The compiled `NorthstarLauncher.exe` should be outputted next to `Titanfall.exe`.
 
-3) Launch `NorthstarLauncher.exe` with a debugger or attach a debugger to a running process
+3. Launch `NorthstarLauncher.exe` with a debugger or attach a debugger to a running process
 
-4) Load debug symbols of your plugin(s) (`myplugin.pdb`) in the debugger
+4. Load debug symbols of your plugin(s) (`myplugin.pdb`) in the debugger
 
 That's it.
 
