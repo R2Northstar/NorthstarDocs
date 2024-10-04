@@ -33,7 +33,7 @@ Every plugin must fulfill these criteria to be considered valid by Northstar.
 
 Invalid plugins get unloaded as soon as possible.
 
-- The plugin module must export a function named [`CreateInterface`](interfaces.md/#CreateInterface) that returns an interface instance when called.
+- The plugin module must export a function named [`CreateInterface`](interfaces.md/#createinterface) that returns an interface instance when called.
 
 - Every [required interface](required-interfaces.md) must be exposed via `CreateInterface`
 
