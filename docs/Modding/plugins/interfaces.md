@@ -32,7 +32,7 @@ The first parameter of these methods is always a pointer to the instance. In C++
 
 For example, the method [`ISys::Reload`](https://github.com/R2Northstar/NorthstarLauncher/blob/71349f05b69923dbf091d27f8e256bcc3022e859/primedev/plugins/interfaces/sys/ISys.h#L18) has two parameters: `ISys*` and `HMODULE`, even though only one is defined explicitly. Keep this in mind when you're writing plugins not in C++.
 
-The complete [`ISys`](exposed-interfaces/northstar/index.md#isys) interface instance layout looks like this in C:
+The complete [`ISys`](exposed-interfaces/northstar#isys) interface instance layout looks like this in C:
 
 ```c
 typedef struct CSys {
