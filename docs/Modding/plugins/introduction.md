@@ -67,4 +67,4 @@ Northstar does not expose an interface to (un)install hooks. Every plugin is exp
 
 - A small plugin [""framework""](https://github.com/uniboi/NSPluginTemplate/) to show the basics of writing plugins and Squirrel bindings in C
 
-- A complete [rust plugin library](https://crates.io/crates/rrplug) that allows you to easily integrate safely with large parts of the engine itself
+- A complete [Rust plugin library](https://crates.io/crates/rrplug) that allows you to easily integrate safely with large parts of the engine itself
