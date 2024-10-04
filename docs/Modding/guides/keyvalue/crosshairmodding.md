@@ -102,11 +102,11 @@ WeaponData
 These are the available crosshairs in-game, along with their in-game
 reference:
 
-| Picture | Value | Special Property |
+| Picture | Value | Special Properties |
 | ------- | ----- | ------- -------- |
-| ![](/../../../_static/crosshairmodding/crosshair_grenade_launcher.png)| `ui/crosshair_grenade_launcher` | TODO2 |
-| ![](/../../../_static/crosshairmodding/crosshair_mastiff.png)| `ui/crosshair_mastiff` ||
-| ![](/../../../_static/crosshairmodding/crosshair_wingman_n.png)| `ui/crosshair_wingman_n` ||
+| ![](../../_static/crosshairmodding/crosshair_grenade_launcher.png)| `ui/crosshair_grenade_launcher` | TODO2 |
+| ![](../../_static/crosshairmodding/crosshair_mastiff.png)| `ui/crosshair_mastiff` ||
+| ![](../../_static/crosshairmodding/crosshair_wingman_n.png)| `ui/crosshair_wingman_n` ||
 
 !!! note
     `TODO1` means the crosshair completely ignores the `"base_spread"` setting, and will always use a specific spread. <br>
