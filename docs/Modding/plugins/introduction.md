@@ -14,7 +14,8 @@ To manually install a plugin, copy the plugin `.dll` into the `<Northstar Profil
 
 !!! note
 
-    The default northstar profile name is `R2Northstar`. Profiles located in the same location as `NorthstarLauncher.exe`.
+    The default northstar profile name is `R2Northstar`. Profiles are located in the same location as `NorthstarLauncher.exe`.
+
 
 Any Plugin is only valid if it exposes every required [interface](interfaces.md).
 
