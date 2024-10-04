@@ -91,7 +91,7 @@ WeaponData
     {
         Crosshair_1
         {
-            "ui"                        "ui/crosshair_sniper_amped" //This means NO crosshair
+            "ui"                        "ui/crosshair_sniper_amped" //This means NO crosshair, unless your weapon is amped
         }
     }
 }
@@ -104,13 +104,18 @@ reference:
 
 | Picture | Value | Special Properties |
 | ------- | ----- | ------- -------- |
-| ![](../../_static/crosshairmodding/crosshair_grenade_launcher.png)| `ui/crosshair_grenade_launcher` | TODO2 |
-| ![](../../_static/crosshairmodding/crosshair_mastiff.png)| `ui/crosshair_mastiff` ||
-| ![](../../_static/crosshairmodding/crosshair_wingman_n.png)| `ui/crosshair_wingman_n` ||
+| ![](../../../_static/crosshairmodding/crosshair_40mm.png)| `ui/crosshair_40mm` | TODO2 |
+| ![](../../../_static/crosshairmodding/crosshair_40mm_burst.png)| `ui/crosshair_40mm_burst` | TODO2, TODO3 |
+| ![](../../../_static/crosshairmodding/crosshair_grenade_launcher.png)| `ui/crosshair_grenade_launcher` | TODO2 |
+| ![](../../../_static/crosshairmodding/crosshair_heat_shield.png)| `ui/crosshair_heat_shield` | TODO1, TODO2, TODO3 |
+| ![](../../../_static/crosshairmodding/crosshair_leadwall.png)| `ui/crosshair_leadwall` | TODO1, TODO2 |
+| ![](../../../_static/crosshairmodding/crosshair_mastiff.png)| `ui/crosshair_mastiff` ||
+| ![](../../../_static/crosshairmodding/crosshair_turret.png)| `ui/crosshair_turret` | TODO2, TODO3 |
+| ![](../../../_static/crosshairmodding/crosshair_wingman_n.png)| `ui/crosshair_wingman_n` ||
 
 !!! note
     `TODO1` means the crosshair completely ignores the `"base_spread"` setting, and will always use a specific spread. <br>
-    `TODO2` means the crosshair doesn't disappear when aiming down sights. <br>
+    `TODO2` means the crosshair doesn't fully disappear when aiming down sights. <br>
     `TODO3` means the crosshair can track a specific value of your weapon (charge amount, clip size...). <br>
     `TODO4` means the crosshair is invisible, unless the weapon is amped.
 
