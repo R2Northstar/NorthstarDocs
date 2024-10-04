@@ -91,7 +91,11 @@ WeaponData
     {
         Crosshair_1
         {
-            "ui"                        "ui/crosshair_sniper_amped" //This means NO crosshair
+            //This means NO crosshair, unless your weapon is amped
+            //Ideally, we would disable it entirely via: "ui"    ""
+            //But the game crashes unfortunately
+
+            "ui"                        "ui/crosshair_sniper_amped"
         }
     }
 }
