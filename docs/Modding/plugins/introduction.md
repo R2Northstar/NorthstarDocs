@@ -34,7 +34,7 @@ Invalid plugins get unloaded as soon as possible.
 
 - The plugin module must export a function named [`CreateInterface`](interfaces.md/#CreateInterface) that returns an interface instance when called.
 
-- Every [required interface](/required-interfaces.md) must be exposed via `CreateInterface`
+- Every [required interface](required-interfaces.md) must be exposed via `CreateInterface`
 
 ### Debugging
 
