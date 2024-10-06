@@ -12,7 +12,9 @@
 
 Some interfaces are required to be exposed by every plugin.
 
-# IPluginId
+Plugins without all of these interfaces will be unloaded immediately.
+
+## IPluginId
 
 !!! note
 
@@ -22,11 +24,11 @@ The IPluginId provides information about the plugin itself, like the name and wh
 
 !!! cpp-class "IPluginId"
 
-    !!! cpp-function "[offset 0] char* GetString(PluginString id)"
+    !!! cpp-function "char* GetString(PluginString id)"
 
         Returns a string associated with the id, or `0` if the id is unknown.
 
-    !!! cpp-function "[offset 8] int64_t GetField(PluginField id)"
+    !!! cpp-function "int64_t GetField(PluginField id)"
 
         Returns a number associated with the id, or `0` if the id is unknown.
 
@@ -36,19 +38,13 @@ The IPluginId provides information about the plugin itself, like the name and wh
 
     !!! cpp-member "NAME = 0"
 
-        [REQUIRED]
-
         The name of the plugin
 
     !!! cpp-member "LOG_NAME = 1"
 
-        [REQUIRED]
-
         The prefix to use for logs in northstar. Use 8 characters to align with northstar prefixes.
 
     !!! cpp-member "DEPENDENCY_NAME = 1"
-
-        [REQUIRED]
 
         For every loaded plugin a squirrel global constant is registered with this value. Has to be a valid squirrel identifier.
 
@@ -68,8 +64,6 @@ The IPluginId provides information about the plugin itself, like the name and wh
 
     !!! cpp-member "CONTEXT = 0"
 
-        [REQUIRED]
-
         A bitfield used to determine if the plugin should loaded in the current context.
 
         - DEDICATED: 0x1
@@ -80,11 +74,11 @@ The IPluginId provides information about the plugin itself, like the name and wh
 
             Keep the plugin loaded on dedicated northstar clients
 
-    !! cpp-member "COLOR = 1"
-
-        [OPTIONAL]
+    !!! cpp-member "COLOR = 1"
 
         Determines the color used for the log prefix of the plugin.
+
+        If all channels are 0, Northstar will use a default color.
 
         - [bits 0-8]: RED
 
@@ -92,13 +86,14 @@ The IPluginId provides information about the plugin itself, like the name and wh
 
         - [bits 16-24]: GREEN
 
-# IPluginCallbacks
-
-For some commonly used events northstar provides callbacks.
+## IPluginCallbacks
 
 !!! note
 
     Current latest version: `IPluginCallbacks001`
+
+
+For some commonly used events northstar provides callbacks.
 
 !!! cpp-class "IPluginCallbacks"
 

@@ -56,7 +56,7 @@ Otherwise are the steps basically the same everywhere else.
 
 3. Launch `NorthstarLauncher.exe` with a debugger or attach a debugger to a running process
 
-4. Load debug symbols of your plugin(s) (`myplugin.pdb`) in the debugger
+4. Load debug symbols of your plugin(s) (for example `myplugin.pdb`) in the debugger
 
 That's it.
 

@@ -26,6 +26,10 @@ Because interface instances are C++ class instances that extend a virtual class,
 
 ### VTables
 
+!!! note
+
+    Methods interfaces are always documented in the order they appear in the vtable.
+
 A vtable is a list of pointers to methods of that interface.
 
 The first parameter of these methods is always a pointer to the instance. In C++ this parameter is passed implicitly.
