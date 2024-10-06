@@ -46,7 +46,6 @@ This is a public server that anyone is welcome to join. As such, we expect every
 Please note:
 
 > **These rules are not comprehensive.** Moderators and staff may remove content, administer reprimands, or warn users for violations not codified here at their discretion. If a moderator or staff member asks you to stop doing something, please respect their request.
-**Staff and Other VIPs may be exempt** (to some extent) from any of these rules due to their reputation in the community, if you feel like they should be warned for a violation you should report to staff
 
 For questions regarding Discord's Privacy Policy or Terms of Use, please refer to the documents here (<https://discord.com/terms>)
 `Last Updated: 2024-08-18`
