@@ -80,11 +80,11 @@ The IPluginId provides information about the plugin itself, like the name and wh
 
         If all channels are 0, Northstar will use a default color.
 
-        - [bits 0-8]: RED
+        * \[bits 0-8\]: RED
 
-        - [bits 8-16]: BLUE
+        * \[bits 8-16\]: BLUE
 
-        - [bits 16-24]: GREEN
+        * \[bits 16-24\]: GREEN
 
 ## IPluginCallbacks
 
