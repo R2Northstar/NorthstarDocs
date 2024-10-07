@@ -40,6 +40,8 @@ The endpoint for this is `/client/mainmenupromos`
 
 `ImageIndex` corresponds to the index of the corresponding spotlight + 1
 
+### Spotlights
+
 The spotlights are:
 
 | Name           | Image                                                                |
