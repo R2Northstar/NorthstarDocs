@@ -152,6 +152,9 @@ reference:
 | ![](../../../_static/crosshairmodding/crosshair_wingman.png)| `ui/crosshair_wingman` ||
 
 !!! note
+    ``ui/crosshair_test`` has a rapidly flashing dot in its center.
+
+!!! note
     Some of the crosshairs shown above were recreated from scratch, and may not be entirely accurate to their in-game look.
 
 * `AMPED` means the crosshair is invisible, unless your weapon is amped.
