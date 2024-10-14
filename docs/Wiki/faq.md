@@ -13,7 +13,9 @@ A: Northstar is a mod for Titanfall2 that allows you to run your own gameservers
 It consists out of the launcher that hooks into the game and scripts that replicate vanilla functionality and extend them.
 
 The launcher re-purposes the existing `server.dll` that is shipped with the Titanfall2 client for running single-player (which is essentially just a local server) to host servers that other players can join.
-From there a bunch of logic is added to ensure some levels of security as the vanilla client fully trusts server (which is fine for vanilla where servers are run by Respawn but is not enough for Northstar cause anyone can host a server including malicious entities) as well as additional features and functionality.
+From there a bunch of logic is added to ensure some levels of security as the vanilla client fully trusts server[^1] as well as additional features and functionality.
+
+[^1]: Which is fine for vanilla where servers are run by Respawn but is not enough for Northstar cause anyone can host a server including malicious entities.
 
 The game scripts replicate vanilla functionality to mimic the gamemodes that can be played in vanilla as well as adding additional ones.
 
