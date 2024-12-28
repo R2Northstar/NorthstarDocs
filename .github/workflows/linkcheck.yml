@@ -1,5 +1,5 @@
 name: Linkcheck
-on: 
+on:
   push:
   pull_request:
   schedule:
