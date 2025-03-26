@@ -17,7 +17,7 @@ Adding the vanilla file will cause a merge conflict on the PR, that is expected.
 
 ### 2. Add vanilla file to NorthstarMods' `main`
 
-Before adding the vanilla file to `NorthstarMods`, make sure its end-of-line sequence is set to LF, as CRLF would cause merge conflicts on every single line.
+Before adding the vanilla file to `NorthstarMods`, make sure its end-of-line sequence is set on the host native line ending (LF on Linux, CRLF on Windows).
 When it is done, push the file on `main` as `Respawn`:
 
 ```sh
