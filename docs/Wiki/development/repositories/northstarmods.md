@@ -38,7 +38,7 @@ This will merge `main` into the PR branch and always prefer the changes from the
 
 (in case you forgot to update the PR first, you can also merge the commit before that into the PR branch manually by using `git merge <commit hash>`)
 
-#### Exemple with a PR from NachosChipeados
+#### Example with a PR from NachosChipeados
 
 ```sh
 # After pushing vanilla files to main, configure PR branch
