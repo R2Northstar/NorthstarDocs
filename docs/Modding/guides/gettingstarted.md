@@ -213,11 +213,11 @@ The `"Function"` field is the Squirrel function that will run every time the com
 
 ```json
 "ConCommands": [
-	{
-		"Name": "my_custom_concommand",
-		"Function": "my_custom_function",
-		"Context": "CLIENT"
-	},
+    {
+        "Name": "my_custom_concommand",
+        "Function": "my_custom_function",
+        "Context": "CLIENT"
+    },
 
     ...
 ]
