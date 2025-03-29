@@ -126,7 +126,7 @@ RootDir
 - Select the `.mdl` file you want to extract (for example `ptpov_vinson.mdl`).
 
 !!! note
-    Weapons are mostly split into two, sometimes three or four models: 
+    Weapons are mostly split into two, sometimes three or four models:
 
     `ptpov_` is used when you are in first person.
 
