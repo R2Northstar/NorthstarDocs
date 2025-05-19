@@ -153,4 +153,4 @@ Now we would call this interface `ILog002` because it's the second iteration of 
 
     Because you are only allowed to increase the size of an interface while keeping the offsets of all previous members the same, the interfaces **`ILog002` is backwards compatible with `ILog001`**.
 
-	This means that [CreateInterface](#createinterface) will return the same pointer for `ILog002` and `ILog001`.
+    This means that [CreateInterface](#createinterface) will return the same pointer for `ILog002` and `ILog001`.
