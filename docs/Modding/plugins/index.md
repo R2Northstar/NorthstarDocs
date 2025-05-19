@@ -26,12 +26,6 @@ Any Plugin is only valid if it exposes every required [interface](interfaces.md)
 
 If a plugin does not expose every Interface the Launcher requires, it is unloaded immediately.
 
-## Development
-
-To debug a plugin it's recommended to compile Northstar itself or download the debug data from the [Release Page](https://github.com/R2Northstar/NorthstarLauncher/releases).
-
-When developing a plugin it's usually easier to output the binary directly in the `<profile>/plugins/` directory, the `packages/` directory is usually only used for complete packaged mods downloaded from Thunderstore.
-
 ### Valid plugins
 
 Every plugin must fulfill these criteria to be considered valid by Northstar.
