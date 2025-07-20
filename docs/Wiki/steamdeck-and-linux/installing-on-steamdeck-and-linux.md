@@ -6,8 +6,6 @@
     NorthstarProton has some problems and may stop working at any point, if this happens you can try [deleting the compatibility directory](linux-troubleshooting.md#northstar-not-launching-with-steam) or visit the Northstar Discord for help.
 
 
-> **Check your GLIBC version.** NorthstarProton currently only supports version 2.33 and higher. Verify your installed version with `ldd --version`. **Ubuntu 20.04 LTS** and **Debian 11** are known to have outdated GLIBC packages, meaning you will have to experiment with finding a Proton version that works for you, or use Lutris. It is therefore strongly recommended to use an up-to-date Linux distro to be able to make use of NorthstarProton. This check does not need to be completed on Steam Deck or Steam OS.
-
 On Steam Deck, complete the following in desktop mode. You may return to game mode once completed _(A mouse + keyboard plugged into the Deck are recommended for easier navigation of menus)_
 
  1. Make sure you ran the vanilla version of Titanfall2 at least once on Linux!<br>
