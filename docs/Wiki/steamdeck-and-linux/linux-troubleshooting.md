@@ -99,18 +99,6 @@ Proton: extract and put it in `/path/to/steamapps/shadercache/1237970/DXVK_state
 
 Wine: extract and put it next to game's .exe. Also remember to rename it if the .exe has a different name.
 
-### Steam/Steam Deck (dxvk-async)
-
-DXVK-async is automatically installed and enabled if using the NorthstarProton runner.
-
-### Lutris (dxvk-async)
-
-DXVK-[_async_](https://github.com/Sporif/dxvk-async#improvements) can optionally be used on Lutris to prevent stutter during shader compilation by asynchronously compiling and allowing the frame to render with not-yet-compiled shaders simply not drawn.
-
-Download [**dxvk-async**](https://github.com/Sporif/dxvk-async/releases), extract and put it in `~/.local/share/lutris/runtime/dxvk` then type the name of the folder in `▲` -> `Configure` -> `Runner Options` -> `DXVK version`, to enable add `DXVK_ASYNC 1` to `System Options` -> `Environment variables`
-
-_DXVK-async can also be installed for Lutris with_ [_ProtonUp-Qt_](https://davidotek.github.io/protonup-qt/)
-
 ### Origin Continual File Writing Fix
 
 [_Preventing_](https://github.com/ValveSoftware/Proton/issues/4001#issuecomment-647014231) _Origin from writing certain files_:
