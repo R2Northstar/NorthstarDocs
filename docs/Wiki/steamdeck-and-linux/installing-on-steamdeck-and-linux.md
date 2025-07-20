@@ -3,10 +3,6 @@
 ## Steam & Steam Deck (NorthstarProton)
 
 !!! warning
-    EA App currently displays a blank screen when using NorthstarProton, however Northstar will still launch assuming you have logged in to EA App at least once.
-
-
-!!! warning
     NorthstarProton has some problems and may stop working at any point, if this happens you can try [deleting the compatibility directory](linux-troubleshooting.md#northstar-not-launching-with-steam) or visit the Northstar Discord for help.
 
 
