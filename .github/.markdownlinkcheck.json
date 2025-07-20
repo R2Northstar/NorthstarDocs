@@ -40,6 +40,9 @@
             "pattern": "https://www.blender.org/"
         },
         {
+            "pattern": "#*"
+        },
+        {
             "pattern": "/_static/"
         }
     ]
