@@ -9,7 +9,7 @@ Docs about shaders inside of Titanfall 2's rpak system
 - [MSWUnpacker](https://github.com/RoyalBlue1/MSWUnPacker) (you will need to build this yourself)
 - [MSW Shaderset Modifier](https://github.com/EM4Volts/MSW_shds_modifier)
 - A working decompiler for dxbc shaders, we will use [HLSLDecompiler](https://github.com/zxxyye/HLSLDecompiler)
-- The "Effect Compiler Tool" from Microsoft, source this from a compatible DirectX SDK or download from [My uploaded one](https://mega.nz/file/jYsUkKbD#Vur3NnpoP25xrZ-UMAgH8Edo7i1o5nGbqFA7XWyIthk)
+- The "Effect Compiler Tool" from Microsoft, source this from a [compatible DirectX SDK](https://www.microsoft.com/en-us/download/details.aspx?id=6812) or download from [My uploaded one](https://mega.nz/file/jYsUkKbD#Vur3NnpoP25xrZ-UMAgH8Edo7i1o5nGbqFA7XWyIthk)
 - A modern installation of [Python](https://www.python.org/downloads/)
 
 
