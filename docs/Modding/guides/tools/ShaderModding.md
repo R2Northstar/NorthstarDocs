@@ -56,7 +56,7 @@ There should be an packed `.msw` file next to the unpacked shader folder.
 
 # Decompiling your Shader
 
-To decoompile the compiled `.fxc` file to a readable, and recompilable file use the [HLSLDecompiler](https://github.com/zxxyye/HLSLDecompiler)
+To decompile the compiled `.fxc` file to a readable, and recompilable file use the [HLSLDecompiler](https://github.com/zxxyye/HLSLDecompiler)
 Do so using the commandline
 
 ``` .\cmd_Decompiler.exe -D <your fxc file> ``` 
