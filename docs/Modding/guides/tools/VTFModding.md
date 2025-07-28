@@ -104,7 +104,7 @@ When we use vtf textures, we can only use the albedo and normal. Learn more abou
 
 ## VTFEdit
 
-[VTFEdit](https://nemstools.github.io/pages/VTFLib-Download.html) is a tool to edit, view, and create .vtf files.
+[VTFEdit](https://nemstools.github.io/pages/VTFLib-Download.html) or it's newer version [VTFEdit Reloaded](https://github.com/Sky-rym/VTFEdit-Reloaded/releases) is a tool to edit, view, and create .vtf files.
 
 
 Launch [VTFEdit](https://nemstools.github.io/pages/VTFLib-Download.html). Top left, click `File`, `Import`, find and Import your custom texture(s).
