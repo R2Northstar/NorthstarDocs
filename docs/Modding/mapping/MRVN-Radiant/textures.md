@@ -182,25 +182,7 @@ Example folder layout:
 You can include an `rpak.json` file in your `pak/` folder to define how your RPAK files are loaded by the game. 
 This allows you to specify preload and postload behavior, or set up aliases for existing RPAK files.
 
-Here’s an example `rpak.json`:
-
-```json
-{
-    "Preload": {
-        "mp_example.rpak": false
-    },
-    "Aliases": {
-        "mp_example.rpak": "mp_grave.rpak"
-    },
-    "Postload": {
-        "mp_example.rpak": false
-    }
-}
-```
-
-- **Preload**: Loads the RPAK before the map starts (if set to `true`).
-- **Postload**: Loads the RPAK after the map has started.
-- **Aliases**: Redirects one RPAK name to another. In this example, requests for `mp_example.rpak` will load `mp_grave.rpak` instead.
+You can read about it [here](../../guides/tools/rpakmodding.md)
 
 ## Common Problems
 
