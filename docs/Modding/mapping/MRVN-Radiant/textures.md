@@ -171,7 +171,7 @@ The `$basetexture` line defines the path to your `.vtf` texture file, relative t
 The RPAK method involves using [RePak](../../repak/map.md) to compile your `.dds` texture files into material entries into a `.rpak` based on a JSON configuration.
 
 After generating the `.rpak` file make sure the `.rpak` is named the same as your bsp map file. This makes sure the `.rpak` loads properly with the map.
-Place the `.rapk` file(s) into the `pak/` folder within your mod directory. The game will automatically load them from there.
+Place the `.rpak` file(s) into the `pak/` folder within your mod directory. The game will automatically load them from there.
 
 Example folder layout:
 ![RePak Folder Example](../../../_static/images/mrvn/textures/rpak_example_folder.jpg)
