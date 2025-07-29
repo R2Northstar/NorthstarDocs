@@ -123,9 +123,7 @@ The **VMT method** is quicker and easier to set up, making it ideal for testing 
 control over how textures appear in-game, and the visual quality may be lower.
 
 The **RPAK method** requires more setup, as it involves using [RePak](../../repak/map.md) and creating a JSON file to compile 
-your textures into an `.rpak` file. While this method is more complex, it provides greater control over texture behavior and appearance. 
-Additionally, combining it with a `.starpak` allows for better pefromance because it will stream textures from the `.starpak` if you
-have a mips maps setup on your `.dds` files.
+your textures into an `.rpak` file. While this method is more complex, it provides greater control over texture behavior and appearance.
 
 ---
 
@@ -172,17 +170,20 @@ The `$basetexture` line defines the path to your `.vtf` texture file, relative t
 
 The RPAK method involves using [RePak](../../repak/map.md) to compile your `.dds` texture files into material entries into a `.rpak` based on a JSON configuration.
 
-After generating the `.rpak` file (and optionally a `.starpak` if texture streaming is enabled), place the file(s) into the `pak/` folder within your mod directory. The game will automatically load them from there.
+After generating the `.rpak` file make sure the `.rpak` is named the same as your bsp map file. This makes sure the `.rpak` loads properly with the map.
+Place the `.rapk` file(s) into the `pak/` folder within your mod directory. The game will automatically load them from there.
 
 Example folder layout:
 ![RePak Folder Example](../../../_static/images/mrvn/textures/rpak_example_folder.jpg)
 
 ---
 
-You can include an `rpak.json` file in your `pak/` folder to define how your RPAK files are loaded by the game. 
+##### Optional: Using `rpak.json` for Custom `.rpak` Load Behavior
+
+You can optionally include an `rpak.json` file in your `pak/` folder to control how your RPAK files are handled by the game.
 This allows you to specify preload and postload behavior, or set up aliases for existing RPAK files.
 
-You can read about it [here](../../guides/tools/rpakmodding.md)
+For more details, see the [RPAK Modding Guide](../../guides/tools/rpakmodding.md).
 
 ## Common Problems
 
