@@ -65,7 +65,7 @@ After adding your custom folder and the MRVN Resource Pack, your list of resourc
 
 ---
 
-There only textures you have right now is the ones added in the MRVN Resource pack and you mrvn radiant should look like this.
+The only textures you should have right now is the ones added in the MRVN Resource pack and your MRVN Radiant should look like this.
 
 ![Path Example Image](../../../_static/images/mrvn/textures/mrvn_resource_pack_show.jpg)
 
