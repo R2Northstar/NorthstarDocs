@@ -1,6 +1,6 @@
 # Textures
 
-MRVN Radiant is a brush-based level editor used for creating custom maps for Titanfall 2. In MRVN, most surfaces such as floors, 
+MRVN Radiant is a brush-based level editor used for creating custom maps for Titanfall 2. In MRVN, most surfaces such as floors,
 walls, and ceilings are made up of brushes. These brushes are textured using image files mapped onto their surfaces.
 
 ---
@@ -9,7 +9,8 @@ walls, and ceilings are made up of brushes. These brushes are textured using ima
 
 Proper texture paths are important because both MRVN and Titanfall 2 rely on these paths to locate texture files.
 
-In MRVN, textures are referenced relative to the `textures/` directory. When you apply a texture to a brush, MRVN looks inside this folder to match the path. Titanfall 2 expects those same textures to be defined either by `.vmt/.vtf` materials (VMT method) or embedded in `.rpak` files (RPAK method) using the exact same relative path.
+In MRVN, textures are referenced relative to the `textures/` directory. When you apply a texture to a brush, MRVN looks inside this folder to match the path.
+Titanfall 2 expects those same textures to be defined either by `.vmt/.vtf` materials (VMT method) or embedded in `.rpak` files (RPAK method) using the exact same relative path.
 
 ---
 
@@ -38,9 +39,9 @@ A more complete structure may look like:
 └── model/            # 3D models (OBJ or mdl format) used in MRVN
 ```
 
-It is strongly recommend downloading the [MRVN Resource Pack](https://github.com/MRVN-Radiant/MRVN-Resource-Pack). 
-The pack includes helpful assets such as spawnpoint models, other entity models, and utility textures commonly used in Source Engine and Titanfall development.
-It also provides a reference for proper folder structure.
+It is strongly recommend downloading the [MRVN Resource Pack](https://github.com/MRVN-Radiant/MRVN-Resource-Pack).
+The pack includes helpful assets such as spawnpoint models, other entity models, and utility textures commonly used in Source Engine
+and Titanfall development. It also provides a reference for proper folder structure.
 
 ---
 
@@ -72,9 +73,11 @@ The only textures you should have right now is the ones added in the MRVN Resour
 ---
 ### Step 3: Add Textures to the `textures/` Folder
 
-MRVN supports multiple image formats such as `.png`, `.dds`, and other image formats. These image files are used to apply textures to geometry within the editor.
+MRVN supports multiple image formats such as `.png`, `.dds`, and other image formats. These image files are used to apply textures to
+geometry within the editor.
 
-However, **Titanfall 2 requires that the in-game material file (either a `.vmt` or a compiled `.rpak` material) matches the texture path exactly as used in MRVN.** This path must reflect everything after the `textures/` folder.
+However, **Titanfall 2 requires that the in-game material file (either a `.vmt` or a compiled `.rpak` material) matches the texture path
+exactly as used in MRVN.** This path must reflect everything after the `textures/` folder.
 
 #### Example Full File Path:
 
@@ -102,7 +105,7 @@ Used in Titanfall 2 (VMT method):
 world/dev/generic_grey.vmt
 ```
 
-Ensure the filename (excluding extension) and folder structure are **exactly the same** for both the texture file and the material file.
+Ensure the filename (excluding file extension) and folder structure are **exactly the same** for both the texture file and the material file.
 
 ---
 
@@ -110,7 +113,7 @@ Ensure the filename (excluding extension) and folder structure are **exactly the
 
 Here is an example of a correctly structured texture folder and how it appears inside MRVN:
 
-![Texture Folder Example](../../../_static/images/mrvn/textures/mrvn_texture_example.jpg)  
+![Texture Folder Example](../../../_static/images/mrvn/textures/mrvn_texture_example.jpg)
 ![In-Editor Texture Example](../../../_static/images/mrvn/textures/mrvn_texture_example_in_mrvn.jpg)
 
 ---
@@ -119,31 +122,32 @@ Here is an example of a correctly structured texture folder and how it appears i
 
 There are two main methods for loading textures into the game for use in your custom map: the **VMT method** and the **RPAK method**.
 
-The **VMT method** is quicker and easier to set up, making it ideal for testing or simple projects. However, it offers limited 
+The **VMT method** is quicker and easier to set up, making it ideal for testing or simple projects. However, it offers limited
 control over how textures appear in-game, and the visual quality may be lower.
 
-The **RPAK method** requires more setup, as it involves using [RePak](../../repak/map.md) and creating a JSON file to compile 
+The **RPAK method** requires more setup, as it involves using [RePak](../../repak/map.md) and creating a JSON file to compile
 your textures into an `.rpak` file. While this method is more complex, it provides greater control over texture behavior and appearance.
 
 ---
 
 #### VMT Method
 
-The VMT method uses `.vmt` (Valve Material Type) and `.vtf` (Valve Texture Format) files to define and load materials. You will need to convert your `.dds` or
-other image texture file into a `.vtf` using [VTFEdit Reloaded](https://github.com/Sky-rym/VTFEdit-Reloaded/releases) or other tools. There are two main ways to use this method:
+The VMT method uses `.vmt` (Valve Material Type) and `.vtf` (Valve Texture Format) files to define and load materials. You will need to
+convert your `.dds` or other image texture file into a `.vtf`
+using [VTFEdit Reloaded](https://github.com/Sky-rym/VTFEdit-Reloaded/releases) or other tools. There are two main ways to use this method:
 
-1. **Using a `materials/` folder in your mod (recommended)**  
-   The simplest approach is to create a `materials/` folder inside your mod folder. 
+1. **Using a `materials/` folder in your mod (recommended)**
+   The simplest approach is to create a `materials/` folder inside your mod folder.
 
     ```
-        ExampleMod/mod/materials
+    ExampleMod/mod/materials
     ```
     Place your `.vmt` and `.vtf` files there, following the correct folder structure that matches the paths used in MRVN.
 
     Example folder structure:
     ![VMT and VTF Folder Example](../../../_static/images/mrvn/textures/vmt_vtf_example_folder.jpg)
 
-2. **Using a VPK file**  
+2. **Using a VPK file**
     Alternatively, you can package your `.vmt` and `.vtf` files into a `.vpk` (Valve Pak) file and have your mod load it at runtime.
 
     Example VPK setup:
@@ -161,16 +165,19 @@ LightmappedGeneric
 }
 ```
 
-The `$basetexture` line defines the path to your `.vtf` texture file, relative to the `materials/` folder if you use method 1. In this example, it refers to `materials/world/dev/generic_gray.vtf`.
+The `$basetexture` line defines the path to your `.vtf` texture file, relative to the `materials/` folder if you use method 1. In this
+example, it refers to `materials/world/dev/generic_gray.vtf`.
 
 
 ---
 
 #### RPAK Method
 
-The RPAK method involves using [RePak](../../repak/map.md) to compile your `.dds` texture files into material entries into a `.rpak` based on a JSON configuration.
+The RPAK method involves using [RePak](../../repak/map.md) to compile your `.dds` texture files into material entries into a `.rpak` based
+on a JSON configuration.
 
-After generating the `.rpak` file make sure the `.rpak` is named the same as your bsp map file. This makes sure the `.rpak` loads properly with the map.
+After generating the `.rpak` file make sure the `.rpak` is named the same as your bsp map file. This makes sure the `.rpak` loads properly
+with the map.
 Place the `.rpak` file(s) into the `pak/` folder within your mod directory. The game will automatically load them from there.
 
 Example folder layout:
