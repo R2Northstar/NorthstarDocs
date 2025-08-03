@@ -137,7 +137,8 @@ convert your `.dds` or other image texture file into a `.vtf`
 using [VTFEdit Reloaded](https://github.com/Sky-rym/VTFEdit-Reloaded/releases) or other tools. There are two main ways to use this method:
 
 1. **Using a `materials/` folder in your mod (recommended)**
-   The simplest approach is to create a `materials/` folder inside your mod folder.
+
+    The simplest approach is to create a `materials/` folder inside your mod folder.
 
     ```
     ExampleMod/mod/materials
@@ -148,6 +149,7 @@ using [VTFEdit Reloaded](https://github.com/Sky-rym/VTFEdit-Reloaded/releases) o
     ![VMT and VTF Folder Example](../../../_static/images/mrvn/textures/vmt_vtf_example_folder.jpg)
 
 2. **Using a VPK file**
+
     Alternatively, you can package your `.vmt` and `.vtf` files into a `.vpk` (Valve Pak) file and have your mod load it at runtime.
 
     Example VPK setup:
