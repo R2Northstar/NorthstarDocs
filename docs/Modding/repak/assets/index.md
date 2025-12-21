@@ -58,7 +58,7 @@ see [ShaderModding](../../guides/tools/ShaderModding.md) for more info about Sha
   "_type": "shds",
   "_path": "shaderset/uberCutSamp2222_fix.rpak"
 }
-```  
+```
 see [ShaderModding](../../guides/tools/ShaderModding.md) for more info about Shadersets
 
 ## UIAtlas

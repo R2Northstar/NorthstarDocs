@@ -55,8 +55,8 @@ Materials also need to be accompanied by a .uber file with the same name, see [U
 
 ```name``` - string - Debug name of the material, will be omitted from the final `.rpak` if `keepDevOnly` is not set
 
-```width``` - int - textures width in pixels (doesnt seem to actually have an effect in Titanfall 2, would still make accurate to your textures) 
-```height``` - int - textures height in pixels (doesnt seem to actually have an effect in Titanfall 2, would still make accurate to your textures) 
+```width``` - int - textures width in pixels (doesnt seem to actually have an effect in Titanfall 2, would still make accurate to your textures)
+```height``` - int - textures height in pixels (doesnt seem to actually have an effect in Titanfall 2, would still make accurate to your textures)
 ```depth``` - int - texture depth (keep at 0, not used in titanfall 2)
 
 ```glueFlags``` - string - engine flag mask for material behavior
@@ -111,10 +111,10 @@ these slots can differ from material/shader to material/shader but in general th
 3 Glossiness
 4 Specular
 5 Emissive
-6 
-7 
-8 
-9 
+6
+7
+8
+9
 10
 11
 12 Ambient Occlusion

@@ -17,16 +17,16 @@ Once it has been downloaded, it is recommended to set up your file structure as 
 ```text
 RePak
 ├── RePak.exe
-├── repak_map.json 
+├── repak_map.json
 └── assets
 ```
 
 - `RePak`: the base folder where your RePak/RPak related files go
 - `RePak.exe`: the `unzipped` file you downloaded from GitHub
-- `repak_map.json`: the repak map you will use, you can name this json whatever you want 
+- `repak_map.json`: the repak map you will use, you can name this json whatever you want
 - `assets`: the folder where you will put your various different images and folders, used to create your RPaks
 
-see [Repak](../../repak/index.md) for more info on how to setup your repak map 
+see [Repak](../../repak/index.md) for more info on how to setup your repak map
 
 ### Using the RPak in a mod
 
