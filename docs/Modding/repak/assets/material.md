@@ -51,7 +51,7 @@ Materials also need to be accompanied by a .uber file with the same name, see [U
 }
 ```
 
-### Options 
+### Options
 
 ```name``` - string - Debug name of the material, will be omitted from the final `.rpak` if `keepDevOnly` is not set
 
@@ -71,7 +71,7 @@ Materials also need to be accompanied by a .uber file with the same name, see [U
 ```features``` - string - material features settings
 ```samplers``` - string - material samplers settings
 
-```surfaceProp``` - string - primary surface property 
+```surfaceProp``` - string - primary surface property
 ```surfaceProp2``` - string - secondary surface property (used for blendmodulate materials)
 
 ```shaderType``` - string - (skn/fix/wld) most materials, for guns etc are skn
