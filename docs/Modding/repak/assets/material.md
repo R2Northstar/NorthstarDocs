@@ -52,20 +52,20 @@ Materials also need to be accompanied by a .uber file with the same name, see [U
 ```
 
 ### Options 
-    
+
 ```name``` - string - Debug name of the material, will be omitted from the final `.rpak` if `keepDevOnly` is not set
 
 ```width``` - int - textures width in pixels (doesnt seem to actually have an effect in Titanfall 2, would still make accurate to your textures) 
 ```height``` - int - textures height in pixels (doesnt seem to actually have an effect in Titanfall 2, would still make accurate to your textures) 
 ```depth``` - int - texture depth (keep at 0, not used in titanfall 2)
 
-```glueFlags``` - string - engine flag mask for material behavior  
+```glueFlags``` - string - engine flag mask for material behavior
 ```glueFlags2``` - string - additional engine flag mask
 
-```blendStates``` - array(string) - blend state values for different passes  
+```blendStates``` - array(string) - blend state values for different passes
 ```blendStateMask``` - string - blend state mask
-```depthStencilFlags``` - string - depth-stencil configuration  
-```rasterizerFlags``` - string - rasterizer pipeline configuration  
+```depthStencilFlags``` - string - depth-stencil configuration
+```rasterizerFlags``` - string - rasterizer pipeline configuration
 ```uberBufferFlags``` - string - flags for the uber buffer of a material
 
 ```features``` - string - material features settings
@@ -80,9 +80,9 @@ Materials also need to be accompanied by a .uber file with the same name, see [U
 ```$textures``` - json object - a key/value pair of key (slot number), value (texture path relative to `assetsDir`)
 see [Texture Slots](#texture-slots) for more info
 
-```$depthShadowMaterial``` - string - material used for shadow depth pass  
-```$depthPrepassMaterial``` - string - material used for prepass depth  
-```$depthVSMMaterial``` - string - material for VSM depth operations  
+```$depthShadowMaterial``` - string - material used for shadow depth pass
+```$depthPrepassMaterial``` - string - material used for prepass depth
+```$depthVSMMaterial``` - string - material for VSM depth operations
 ```$depthShadowTightMaterial``` - string - tightshadow depth material
 
 ```$colpassMaterial``` - string - colpass material reference

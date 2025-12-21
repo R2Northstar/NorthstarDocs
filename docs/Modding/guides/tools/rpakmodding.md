@@ -26,7 +26,7 @@ RePak
 - `repak_map.json`: the repak map you will use, you can name this json whatever you want 
 - `assets`: the folder where you will put your various different images and folders, used to create your RPaks
 
-see [Repak](/modding/repak/) for more info on how to setup your repak map
+see [Repak](../../repak/index.md) for more info on how to setup your repak map 
 
 ### Using the RPak in a mod
 
