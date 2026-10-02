@@ -93,6 +93,10 @@ demanding than on a Deck. Notes from testing:
   "steam.app.1237970" : { "supersampleScale" : 0.6 }
   ```
   (a global `"steamvr"` `"supersampleManualOverride": true` may be required for it to apply).
+- **Foveated rendering is not implemented yet** ([CircuitLord#15](https://github.com/CircuitLord/CircuitLordVRModInstaller/issues/15)).
+  Titanfall 2 VR is GPU-bound in combat on Steam Frame, and the headset has eye tracking, so
+  dynamic foveation (or even fixed foveation) would help standalone hardware significantly. Until
+  then, expect heavy fights to drop well below the panel refresh.
 
 ## Troubleshooting
 
