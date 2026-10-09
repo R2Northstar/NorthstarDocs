@@ -6,6 +6,19 @@ description: Frequently asked questions
 
 ## **If you have any issues please go to [the troubleshooting page.](installing-northstar/troubleshooting.md)**
 
+### Q: What is Northstar and how does it work? <a href="#what-is-northstar" id="what-is-northstar"></a>
+
+A: Northstar is a mod for Titanfall2 that allows you to run your own gameservers with custom gamemodes, weapons, maps, and skins.
+
+It consists out of the launcher that attaches to the game to inject custom code and scripts that replicate vanilla functionality and extend them.
+
+The launcher re-purposes the existing `server.dll` that is shipped with the Titanfall2 client for running single-player which is essentially just a local server, to host servers that other players can join.
+From there a bunch of logic is added to ensure some levels of security as the vanilla client fully trusts server[^1] as well as additional features and functionality.
+
+[^1]: Which is fine for vanilla where servers are run by Respawn but is not enough for Northstar cause anyone can host a server including malicious entities.
+
+The game scripts replicate vanilla functionality to mimic the gamemodes that can be played in vanilla as well as adding additional ones.
+
 ### Q: Where are all my levels and saved loadouts? <a href="#faq-loadouts" id="faq-loadouts"></a>
 
 A: Northstar runs separate from official servers and progress does not carry over.
@@ -40,17 +53,7 @@ A: AI does work! Custom maps however will take time. Possibly a lot of time, don
 
 A: Due to the way Northstar works, you sadly cannot just create a private match and invite a friend via Steam/Origin. Instead you'll have to host a server.
 
-Check the prerequisites:
-
-{% content-ref url="hosting-a-server-with-northstar/getting-started.md" %}
-[getting-started.md](hosting-a-server-with-northstar/getting-started.md)
-{% endcontent-ref %}
-
-and instructions to host a _listen server_:
-
-{% content-ref url="hosting-a-server-with-northstar/basic-listen-server.md" %}
-[basic-listen-server.md](hosting-a-server-with-northstar/basic-listen-server.md)
-{% endcontent-ref %}
+Check the [prerequisites](hosting-a-server-with-northstar/getting-started.md) and [instructions to host a _listen server_](hosting-a-server-with-northstar/basic-listen-server.md):
 
 ### Q: Can I use Northstar to play the campaign? <a href="#faq-campaign" id="faq-campaign"></a>
 
@@ -71,7 +74,7 @@ A: Add `+net_usesocketsforloopback 1` in your `ns_startup_args.txt` and `ns_star
 ### Q: What's with the "r2" part in the name of some of the Northstar things? <a href="#faq-r2" id="faq-r2"></a>
 
 `r2` refers to the internal development name of Titanfall 2 given to it by Respawn. Titanfall 1 for example is `r1`, Apex Legends is `r5`, etc.\
-The reason this wiki for example is called `r2northstar.gitbook.io` is due to the fact that "_Northstar_" is a rather common name and as such often already reserved by other organisations and people. "_R2Northstar_" is both uncommon and therefore still available and ties "_Northstar_" with Titanfall 2, due to the `r2` part of the name.
+The reason the GitHub organisation for example (where Northstar's code is hosted) is called [`R2Northstar`](https://github.com/R2Northstar/) is due to the fact that "_Northstar_" is a rather common name and as such often already reserved by other organisations and people. "_R2Northstar_" is both uncommon and therefore still available and ties "_Northstar_" with Titanfall 2, due to the `r2` part of the name.
 
 ### Q: Can I use a pirated/cracked copy Titanfall 2 to run Northstar? <a href="#faq-piracy" id="faq-piracy"></a>
 

@@ -122,6 +122,10 @@ Script methods to manipulate hud elements.
 
     Set the angles of the element
 
+!!! cpp-function "void Hud_SetPinSibling( var elem, string sibling_name )"
+
+    Only change the sibling pinned to
+
 ## Visibility & Color
 
 !!! cpp-function "void Hud_Show( var elem )"
@@ -184,17 +188,17 @@ Script methods to manipulate hud elements.
 
     Returns the width an element got initialized with.
 
-!!! cpp-function "int Hud_GetHeigth( var elem )"
+!!! cpp-function "int Hud_GetHeight( var elem )"
 
     Returns the current height of an element.
 
-!!! cpp-function "void Hud_SetHeigth( var elem, int height )"
+!!! cpp-function "void Hud_SetHeight( var elem, int height )"
 
-    Set the heigth of an element.
+    Set the height of an element.
 
-!!! cpp-function "int Hud_GetBaseHeigth( var elem )"
+!!! cpp-function "int Hud_GetBaseHeight( var elem )"
 
-    Returns the heigth an element got initialized with.
+    Returns the height an element got initialized with.
 
 !!! cpp-function "var Hud_GetSize( var elem )"
 
