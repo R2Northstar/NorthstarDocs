@@ -2,6 +2,7 @@
 
 ## Getting the latest build
 
+<!-- TODO: MRVN-Radiant GitHub Releases -->
 
 ### Discord
 If you're in the Northstar Discord, there's a copy of MRVN in `#maps-chat` pins
@@ -11,7 +12,6 @@ If you're in the Northstar Discord, there's a copy of MRVN in `#maps-chat` pins
 > [!WARNING]
 > The current pinned version is extremely outdated (from 2024!)
 
-
 ### GitHub Actions
 Alternatively, download from [GitHub Actions](https://github.com/MRVN-Radiant/MRVN-Radiant/actions)
 
@@ -19,11 +19,6 @@ Alternatively, download from [GitHub Actions](https://github.com/MRVN-Radiant/MR
 
 > [!NOTE]
 > Download links may not be available if you aren't logged in **or** the build is old
-
-### Direct Download
-If neither of those options works for you, use these direct download links (2026-07-29):
- * [Linux](../../_static/mapping/MRVN-Radiant_2026-07-29_8022aef_Linux_x86_64.zip) (~8 MB)
- * [Windows](../../_static/mapping/MRVN-Radiant_2026-07-29_8022aef_Windows_x86_64.zip) (~70 MB)
 
 
 ## Unzip & Run
