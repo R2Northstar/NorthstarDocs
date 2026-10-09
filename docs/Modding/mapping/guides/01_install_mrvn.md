@@ -7,7 +7,7 @@
 ### Discord
 If you're in the Northstar Discord, there's a copy of MRVN in `#maps-chat` pins
 
-![](../../_static/mapping/MRVN_download_Discord.png)
+![](../../../_static/mapping/MRVN_download_Discord.png)
 
 > [!WARNING]
 > The current pinned version is extremely outdated (from 2024!)
@@ -15,7 +15,7 @@ If you're in the Northstar Discord, there's a copy of MRVN in `#maps-chat` pins
 ### GitHub Actions
 Alternatively, download from [GitHub Actions](https://github.com/MRVN-Radiant/MRVN-Radiant/actions)
 
-![](../../_static/mapping/MRVN_download_GitHub.png)
+![](../../../_static/mapping/MRVN_download_GitHub.png)
 
 > [!NOTE]
 > Download links may not be available if you aren't logged in **or** the build is old
@@ -40,8 +40,8 @@ When MRVN first starts up you will be presented with a splash screen
 > TODO: basic setup walkthrough
 
 > TODO: folder structure (PR 158 touches on this)
-... we'll come back to this in [Using Assets](./04_rpak_assets)
+... we'll come back to this in [Using Assets](./04_rpak_assets.md)
 
 
 ## Next Time...
-[Making a map in MRVN-Radiant](./02_first_map)
+[Making a map in MRVN-Radiant](./02_first_map.md)

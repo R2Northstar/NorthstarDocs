@@ -2,7 +2,7 @@
 
 
 ## Previously...
-Before getting here you should have [installed & set up MRVN-Radiant](./guides/01_install_mrvn)
+Before getting here you should have [installed & set up MRVN-Radiant](./01_install_mrvn.md)
 
 
 ## Interface Guide
@@ -36,4 +36,4 @@ Every map needs:
 
 
 ## Next Time...
-Run around your map in: [Custom Maps Mod](./guides/03_map_mod)
+Run around your map in: [Custom Maps Mod](./03_map_mod.md)

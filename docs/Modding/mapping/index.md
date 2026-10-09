@@ -7,10 +7,10 @@
 
 
 ## Guides
- 1. [Installing MRVN-Radiant](./guides/01_install_mrvn)
- 2. [Making a map in MRVN-Radiant](./guides/02_first_map)
- 3. [Custom Maps Mod](./guides/03_map_mod)
- 4. [Using Assets](./guides/04_rpak_assets)
+ 1. [Installing MRVN-Radiant](./guides/01_install_mrvn.md)
+ 2. [Making a map in MRVN-Radiant](./guides/02_first_map.md)
+ 3. [Custom Maps Mod](./guides/03_map_mod.md)
+ 4. [Using Assets](./guides/04_rpak_assets.md)
 <!-- see PRs 7 (rpak loading) & 158 (MRVN textures)-->
 
 
@@ -33,7 +33,7 @@ Thunderstore links included for released mods
 The Level Editor
 
 
-### [RePak](../repak/index)
+### [RePak](../repak/index.md)
 [GitHub Link](https://github.com/r-ex/RePak/releases/latest)
 
 Pack custom assets into `.rpak`
@@ -45,5 +45,5 @@ Pack custom assets into `.rpak`
 Extracting assets from `.rpak`
 
 
-## [Info Dump](./info-dump)
+## [Info Dump](./info-dump.md)
 > TODO: recycle

@@ -1,7 +1,7 @@
 # Custom Maps Mod
 
 ## Previously...
-Read this guide once you have **compiled** your [first map](./guides/02_first_map)
+Read this guide once you have **compiled** your [first map](./02_first_map.md)
 
 
 ## Which files to copy
@@ -79,4 +79,4 @@ Type in `map mp_myfirstmap` & hit enter to start a match of skirmish on your map
 
 
 ## Next Time...
-[Using Assets](./guides/04_rpak_assets)
+[Using Assets](./04_rpak_assets.md)
