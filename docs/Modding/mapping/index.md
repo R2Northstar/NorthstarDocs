@@ -1,9 +1,9 @@
 # Mapping
 
-> [!IMPORTANT]
-> MRVN-Radiant is alpha software. Development is slow.
-> Most of the code was written in the 90s.
-> Don't expect a modern, polished UX experience.
+!!! warning
+    MRVN-Radiant is alpha software. Development is slow.
+    Most of the code was written in the 90s.
+    Don't expect a modern, polished UX experience.
 
 
 ## Guides

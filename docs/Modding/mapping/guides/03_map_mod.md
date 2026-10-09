@@ -57,9 +57,9 @@ Once you've made the mod folder, fire up Northstar & it should load the mod auto
 
 Go into multiplayer so we can fire up a custom server
 
-> [!NOTE]
-> Your map will not appear on the custom server map list.
-> Don't worry! That's normal.
+!!! note
+    Your map will not appear on the custom server map list.
+    Don't worry! That's normal.
 
 > TODO: hint at extending the map list in a future guide
 > (or request a Northstar feature / mod which adds a custom maps menu)
@@ -74,8 +74,8 @@ Type in `map mp_myfirstmap` & hit enter to start a match of skirmish on your map
 > TODO: setting gamemode before launching
 > TODO: troubleshooting (no valid spawns etc.)
 
-> [!TIP]
-> You can quit out of Northstar fast by typing `exit` in console
+!!! tip
+    You can quit out of Northstar fast by typing `exit` in console
 
 
 ## Next Time...

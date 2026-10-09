@@ -9,23 +9,23 @@ If you're in the Northstar Discord, there's a copy of MRVN in `#maps-chat` pins
 
 ![](../../../_static/mapping/MRVN_download_Discord.png)
 
-> [!WARNING]
-> The current pinned version is extremely outdated (from 2024!)
+!!! warning
+    The current pinned version is extremely outdated (from 2024!)
 
 ### GitHub Actions
 Alternatively, download from [GitHub Actions](https://github.com/MRVN-Radiant/MRVN-Radiant/actions)
 
 ![](../../../_static/mapping/MRVN_download_GitHub.png)
 
-> [!NOTE]
-> Download links may not be available if you aren't logged in **or** the build is old
+!!! note
+    Download links may not be available if you aren't logged in **or** the build is old
 
 
 ## Unzip & Run
 Extract the whole `.zip` to a folder
 
-> [!WARNING]
-> Contents are loose
+!!! warning
+    Contents are loose
 
 Run `radiant.exe` (just `radiant` for Linux users)
 

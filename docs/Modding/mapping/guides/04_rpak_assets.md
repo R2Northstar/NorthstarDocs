@@ -36,8 +36,8 @@ author.mod_name/
 }
 ```
 
-> [!WARNING]
-> This `rpak.json` format might be deprecated.
+!!! warning
+    This `rpak.json` format might be deprecated.
 <!-- see PR 7-->
 
 
