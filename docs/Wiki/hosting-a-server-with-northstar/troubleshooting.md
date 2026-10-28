@@ -8,7 +8,7 @@ Check that your server is running on the latest Northstar release as it can some
 
 **MasterServer is down**
 
-Check Northstar's Discord for annoucements.
+Check Northstar's Discord for announcements.
 
 [https://northstar.tf](https://northstar.tf) giving you a HTTP 523 error means that the masterserver is offline.
 
@@ -62,7 +62,7 @@ You can use `netstat -a -b` using CMD as admin to check which process listens on
 
 ## Cannot join own dedicated server via serverbrowser but others can
 
-If you're hosting the dedicated server on the same network as the PC you're trying to join it from but are unabled to join it, the reason is likely that your router doesn't support [NAT loopback](https://en.wikipedia.org/wiki/Network_address_translation#NAT_loopback).
+If you're hosting the dedicated server on the same network as the PC you're trying to join it from but are unable to join it, the reason is likely that your router doesn't support [NAT loopback](https://en.wikipedia.org/wiki/Network_address_translation#NAT_loopback).
 
 The TL;DR is that basically when you connect via serverbrowser to your own dedicated gameserver located on the same network, the message goes to your router where it sees that the gameserver IP requested is the same as its IP address. A router that supports NAT loopback will still check forwarding rules, notice that it goes to your server and "turn the packet around" to your server. A router that doesn't support NAT loopback will simply drop the packet, meaning the request to join will never reach your gameserver.
 

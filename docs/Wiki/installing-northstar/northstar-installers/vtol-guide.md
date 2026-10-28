@@ -133,7 +133,7 @@ The first screen is an area where you can locate a folder for a mod you've creat
 
 ![VTOL's Skin Tool implementation](../../images/vtol-skintool.png)
 
-The second screen is an area where you can drag and drop images to the different maps of a skin to make your own skin. This is an implementaion of the [Skin Tool](https://github.com/zxcPandora/Titanfall2-SkinTool).
+The second screen is an area where you can drag and drop images to the different maps of a skin to make your own skin. This is an implementation of the [Skin Tool](https://github.com/zxcPandora/Titanfall2-SkinTool).
 
 ### Advocate
 
@@ -154,7 +154,7 @@ The fourth screen lists a lot of commonly used tools by modders to help create m
 
 ![VTOL's Profiles menu](../../images/vtol-profiles.png)
 
-The sixth tab is the _"Profiles"_ tab, allowing you to create profiles for Northstar. Profiles are seperate Northstar installs, each with their own set of mods and seperated by folders.
+The sixth tab is the _"Profiles"_ tab, allowing you to create profiles for Northstar. Profiles are separate Northstar installs, each with their own set of mods and separated by folders.
 For example, you can have one profile with your normal set of mods and another profile for only using core mods (those that common with Northstar/the ones that start with `Northstar.`).
 
 ![The Export Profile menu in VTOL](../../images/vtol-export-profile.png)

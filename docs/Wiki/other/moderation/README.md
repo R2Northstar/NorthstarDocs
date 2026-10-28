@@ -1,7 +1,7 @@
 # Moderation
 
 !!! info
-    This page contains information targetted at Discord moderators.
+    This page contains information targeted at Discord moderators.
 
 
 

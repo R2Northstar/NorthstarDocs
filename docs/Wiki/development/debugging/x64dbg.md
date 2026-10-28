@@ -9,7 +9,7 @@
 
 * Download [x64dbg](https://x64dbg.com/)
 * Extract the `release` folder somewhere on your PC
-* Download the latest relase of [SycllaHide](https://github.com/x64dbg/ScyllaHide/releases/latest)
+* Download the latest release of [SycllaHide](https://github.com/x64dbg/ScyllaHide/releases/latest)
 * Merge the contents of the `x64dbg` folder into the previously extracted `release` folder
 * Run `x96dbg.exe`
   * You may receive a Windows SmartScreen prompt, x64dbg snapshots are not signed and will always cause these prompts

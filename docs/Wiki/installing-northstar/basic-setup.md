@@ -18,7 +18,7 @@ You can launch Northstar via Steam, Origin, or EA using [launch options](trouble
 
 If Northstar doesn't appear to be installed, or you have issues entering the lobby, try running vanilla files. It's hard to say what VPK mods could cause issues with Northstar at the moment, so it'd probably be easiest just to try running unmodded.
 
-Northstar can also be launched through Steam or Origin using the "add a game" feature. This allows you to register any .exe as a game. To set up Northstar, navigate to your Titanfall 2 folder and choose `NorthstarLaucher.exe`.
+Northstar can also be launched through Steam or Origin using the "add a game" feature. This allows you to register any .exe as a game. To set up Northstar, navigate to your Titanfall 2 folder and choose `NorthstarLauncher.exe`.
 
 ![steamaddgame](../images/steam-addgame.png) ![originaddgame](../images/origin-addgame.png)
 

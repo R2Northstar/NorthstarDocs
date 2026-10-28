@@ -3,7 +3,7 @@
 ## Opening the Console
 
 Commands are run on the console. To open it, press `` ` `` (the key above `TAB`).\
-Note that this key generally only exists in this form on English keybords (ANSI US, ISO UK, ...).
+Note that this key generally only exists in this form on English keyboards (ANSI US, ISO UK, ...).
 
 If you for example have a German keyboard you'll notice that this key is located left of `BACKSPACE` but won't open the console when you press it.
 
@@ -25,7 +25,7 @@ Look for the line containing `toggleconsole`, i.e.
 bind "`" "toggleconsole"
 ```
 
-and replace the `` ` `` key with your prefered key to open console. So if you want to open console with `F5`, change the line to
+and replace the `` ` `` key with your preferred key to open console. So if you want to open console with `F5`, change the line to
 
 ```txt
 bind "F5" "toggleconsole"

@@ -225,7 +225,7 @@ Another common issue that can cause this error is when Steam and EA accounts are
 
 This error can also appear if you are pirating the game, which we neither condone nor support as stated [here](../faq.md#faq-piracy)
 
-If none of the previous solutions apply, you can try logging out of the EA App, closing all EA related proccesses (including background ones) using task manager. After this, manually reopen the EA App, log in, and try to launch Northstar again. (If you don't know how to use task manager, press `"ctrl + alt + delete"`, select Task Manager, and hit `"More Info"` on the bottom right. If you can't see more info, then you've already clicked it before and don't need to do it again. After this, when you right click on a process it will open a small pop up with`"End Task"`as an option, which is what you want to use).
+If none of the previous solutions apply, you can try logging out of the EA App, closing all EA related processes (including background ones) using task manager. After this, manually reopen the EA App, log in, and try to launch Northstar again. (If you don't know how to use task manager, press `"ctrl + alt + delete"`, select Task Manager, and hit `"More Info"` on the bottom right. If you can't see more info, then you've already clicked it before and don't need to do it again. After this, when you right click on a process it will open a small pop up with`"End Task"`as an option, which is what you want to use).
 
 ## Disable EA App overlay <a href="#ea-overlay" id="ea-overlay"></a>
 

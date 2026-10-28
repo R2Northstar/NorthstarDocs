@@ -23,7 +23,7 @@ If your change is a new feature, make sure to test both that the newly added fun
 
 ## Maintainers
 
-This section applies to you if you're someone who's able to merge PRs in any of the repos of the Northstar GitHub org as well as when simplying performing reviews, even without being able to actually merge a PR.
+This section applies to you if you're someone who's able to merge PRs in any of the repos of the Northstar GitHub org as well as when simplifying performing reviews, even without being able to actually merge a PR.
 
 When reviewing pull requests on GitHub, make sure to checkout the changes made by a PR locally and test it there. In particular, test the parts of the code that are touched by a PR.
 

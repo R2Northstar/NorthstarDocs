@@ -32,7 +32,7 @@ The current process of making release (includinging release candidate) is:
 2. Take desired commits from `main`
     - Make sure to consider whether changing are breaking in regards to older/newer server/client and in regards to Squirrel API.
       - Older/newer client/server breakage might need to be version gated and should **NOT** be done in patch releases.
-      - Squirrel API changes likely breaks mods and should **NOT** be done in patch releases. Additionaly make sure to ping modders on release or preferably even in advance.
+      - Squirrel API changes likely breaks mods and should **NOT** be done in patch releases. Additionally make sure to ping modders on release or preferably even in advance.
     - If changes can be merged fast-forward use `git merge --ff-only origin/main` otherwise cherry-pick relevant commits.
 
 3. Make release candidate\
